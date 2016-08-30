@@ -5,13 +5,9 @@ from pdfminer.pdfpage import PDFPage
 from cStringIO import StringIO
 #!/usr/bin/python
 import MySQLdb
+import sqlite3
 
-
-db = MySQLdb.connect(host="localhost",    # your host, usually localhost
-                     user="root",         # your username
-                     passwd="",  # your password
-                     db="chom")        # name of the data base
-
+import os
 def convert_pdf_to_txt(path):
     rsrcmgr = PDFResourceManager()
     retstr = StringIO()
@@ -35,41 +31,39 @@ def convert_pdf_to_txt(path):
     retstr.close()
     return text
 
-
-
-def test(sql):
-
-    cursor = db.cursor()
-    try:
-
-        cursor.execute(sql)
-
-        db.commit()
-    except:
-
-        db.rollback()
-    db.close()
-
-
 def extract():
     string = convert_pdf_to_txt("/Users/dipit/Documents/RA/RA/sample.pdf")
-    lines = list(filter(bool, string.split('1.')))
+    lines = list(filter(bool, string.split('.')))
     Data = {}
     for i in range(len(lines)):
         if 'References' in lines[i]:
             Data = (lines[i + 1])
             d = Data.split('  ')
-            # print (d)
-            # print (Data)
+            for r in range(4):
+                x= "INSERT INTO Reference (NAME) \
+                   VALUES" + '(' + '"{}"'.format(d[r]) + ')'
+                data(x)
 
-            x= "INSERT INTO `ref` (`Reference`) VALUES" + '(' + '"{}"'.format(d[3]) + ')'
-            print (x)
-            test(x)
 
+def data(sql):
+    conn = sqlite3.connect('test2.db', timeout=100)
+    cursor = conn.cursor()
+    # cursor.execute("INSERT INTO Reference(NAME) \
+    #                    VALUES ('dipit')")
+
+    cursor.execute(sql)
+    p = cursor.execute("Select * from Reference Limit 1")
+    for row in p:
+        x = "python scholar.py -c 1 --author " + row[0]
+        print(x)
+        os.system(x)
+
+    conn.commit()
+    # print("Records created successfully")
+    conn.close()
 
 if __name__ == "__main__":
     hello_world_text = convert_pdf_to_txt("/Users/dipit/Documents/RA/RA/sample.pdf")
-    # print(hello_world_text)
     extract()
     text_file = open("Output.txt", "w")
     text_file.write(hello_world_text)
