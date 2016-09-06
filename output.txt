@@ -1,1659 +1,999 @@
- 
+Political Science 856: 
 
-Writing Good Software Engineering Research Papers 
+Field Seminar in Comparative Politics 
 
-    Minitutorial 
-Mary Shaw 
+UW-Madison, fall 2013 
 
- 
-
-Carnegie Mellon University 
-
-mary.shaw@cs.cmu.edu 
+Thursdays, 1:45 pm-3:45 pm, 422 North Hall (Ogg room) 
+See the Learn@UW website for more course information 
 
  
+Professor: 
+Yoshiko Herrera 
+yherrera@wisc.edu 
+https://mywebspace.wisc.edu/yherrera/web/ 
  
-
-Abstract 
-
-Software  engineering  researchers  solve  problems  of 
-several  different  kinds.  To  do  so,  they  produce  several 
-different  kinds  of  results,  and  they  should  develop 
-appropriate evidence to validate these results. They often 
-report their research in conference papers. I analyzed the 
-abstracts  of  research  papers  submitted  to  ICSE  2002  in 
-order  to  identify  the  types  of  research  reported  in  the 
-submitted  and  accepted  papers,  and  I  observed  the 
-program  committee  discussions  about  which  papers  to 
-accept.  This  report  presents  the  research  paradigms  of 
-the papers, common concerns of the program committee, 
-and  statistics  on  success  rates.  This  information  should 
-help researchers design better research projects and write 
-papers that present their results to best advantage. 
- 
-Keywords: 
-validation, software profession, technical writing 
-
-research  paradigms, 
-
-research  design, 
-
-1. Introduction 
-
-In software engineering, research papers are customary 
-vehicles  for  reporting  results  to  the  research  community. 
-In  a  research  paper,  the  author  explains  to  an  interested 
-reader what he or she accomplished, and how the author 
-accomplished it, and why the reader should care. A good 
-research paper should answer a number of questions: 
-♦  What, precisely, was your contribution? 
-
-•  What question did you answer? 
-•  Why should the reader care?  
-•  What larger question does this address? 
-
-♦  What is your new result? 
-
-•  What  new  knowledge  have  you contributed that 
-
-the reader can use elsewhere? 
-
-•  What  previous  work  (yours  or  someone  else’s) 
-do you build on? What do you provide a superior 
-alternative to? 
-
-•  How is your result different from and better than 
-
-this prior work? 
-
-•  What, precisely and in detail, is your new result? 
-
-♦  Why should the reader believe your result? 
-
-•  What  standard  should  be  used  to  evaluate  your 
-
-claim? 
 
  
 
-•  What  concrete  evidence  shows  that  your  result 
+316 North Hall 
+Office hours: Tues. 11-12 or by appt. 
+ 
 
-satisfies your claim? 
+I. Course Purposes 
 
-If you answer these questions clearly, you’ll probably 
-communicate  your  result  well.  If  in  addition  your  result 
-represents an interesting, sound, and significant contribu-
-tion  to  our  knowledge  of  software  engineering,  you’ll 
-have a good chance of getting it accepted for publication 
-in a conference or journal. 
+ 
+This seminar is designed to serve five goals: 
+(1)  To acquaint students with many of the leading theories within the field of comparative 
 
-research  paradigms.  For  example, 
+politics. Students will be made aware of the relevant literatures so that they will be able to 
+connect their own research to broad disciplinary concerns. The weekly topics primarily 
+center on dependent variables, and the readings are oriented toward leading theories (or 
+proposed independent variables) that account for inter-polity or inter-temporal variations on 
+the values of those dependent variables.  However, in some cases readings focus on 
+definitions of key concepts. 
 
-Other  fields  of  science  and  engineering  have  well-
-established 
-the 
-experimental  model  of  physics  and  the  double-blind 
-studies  of  medicines  are  understood,  at  least  in  broad 
-outline,  not  only  by  the  research  community  but  also  by 
-the public at large. In addition to providing guidance for 
-the  design  of  research  in  a  discipline,  these  paradigms 
-establish  the  scope  of  scientific  disciplines  through  a 
-social and political process of "boundary setting" [5]. 
+ 
+(2)  To provide examples of how best to prepare work for future submission to journals and top 
 
-Software engineering, however, has not yet developed 
-this  sort  of  well-understood  guidance.  I  previously  [19, 
-20]  discussed  early  steps  toward  such  understanding, 
-including  a  model  of  the  way  software  engineering 
-techniques  mature  [17,  18]  and  critiques  of  the  lack  of 
-rigor in experimental software engineering [1, 22, 23, 24, 
-25].  Those  discussions  critique  software  engineering 
-research  reports  against 
-the  standards  of  classical 
-paradigms. The discussion here differs from those in that 
-this  discussion  reports  on  the  types  of  papers  that  are 
-accepted  in  practices  as  good  research  reports.  Another 
-current activity, the Impact Project [7] seeks to trace the 
-influence  of  software  engineering  research  on  practice. 
-The discussion here focuses on the paradigms rather than 
-the content of the research 
+university publishers. Papers from the leading journals in the field and books from top 
+publishers are included in the syllabus. Students should also peruse these journals, section 
+newsletters, and publisher lists on a regular basis, not only to keep up with trends in the 
+field, but also to learn the styles and forms of contributions to comparative politics.  This is 
+the best way to learn about what Comparative Politics "is" and what the key debates in the 
+subfield are. 
 
-This  report  examines  how  software  engineers  answer 
-the  questions  above,  with  emphasis  on  the  design  of  the 
-research project and the organization of the report. Other 
-sources  (e.g.,  [4])  deal  with  specific  issues  of  technical 
-writing.  Very  concretely,  the  examples  here  come  from 
-the  papers  submitted  to  ICSE  2002  and  the  program 
-committee review of those papers. These examples report 
-research  results  in  software  engineering.  Conferences 
-often include other kinds of papers, including experience 
-reports, materials on software engineering education, and 
-opinion essays. 
+ 
+(3)  To introduce and make students aware of the implications of research strategies. The 
 
-Proceedings of the 25th International Conference on Software Engineering, IEEE Computer Society, 2003, pp. 726-736. 2. What, precisely, was your contribution? 
+seminar will emphasize the point that methodologies in the discipline are diverse, and that 
+these methods, once chosen, have considerable import for both topic choice and the range 
+of findings. 
 
-Before  reporting  what  you  did,  explain  what  problem 
-you set out to solve or what question you set out to answer 
-—and why this is important. 
-2.1  What  kinds  of  questions  do  software 
-engineers investigate? 
+ 
+(4)  To develop among students critical reading, writing, collaboration, and presentation skills. 
 
-Generally  speaking,  software  engineering  researchers 
-seek better ways to develop and evaluate software. Devel-
-opment  includes  all  the  synthetic  activities  that  involve 
-creating  and  modifying  the  software,  including  the code, 
-design  documents,  documentation,  etc.  Evaluation 
+Students will be asked to explain core concepts from the readings to the class, and will 
+collaboratively work on short memos and presentations based on the readings.  In addition, 
+students will write an integrated paper connecting readings with their own research 
+interests. 
 
-includes all the analytic activities associated with predict-
-ing, determining, and estimating properties of the software 
-systems, including both functionality and extra-functional 
-properties such as performance or reliability.  
+ 
+(5)  To substantively introduce students to UW-Madison faculty in comparative politics. For most 
 
-Software engineering research answers questions about 
-methods  of  development  or  analysis,  about  details  of 
-designing or evaluating a particular instance, about gener-
-alizations over whole classes of systems or techniques, or 
-about exploratory issues concerning existence or feasibil-
-ity.  Table  1  lists  the  types  of  research questions that are 
-asked  by  software  engineering  research  papers  and 
-provides specific question templates.  
-
-Type of question 
-Method or means of 
-
-development 
-
-Method for analysis 
-
-or evaluation 
-
-Design, evaluation, or 
-
-analysis of a 
-particular instance 
-
-Generalization or 
-characterization 
-
-Table 1. Types of software engineering research questions 
-
-Examples 
-How can we do/create/modify/evolve (or automate doing) X? 
-
-What is a better way to do/create/modify/evolve X? 
-
-How can I evaluate the quality/correctness of X? 
-
-How do I choose between X and Y? 
-
-How good is Y? What is property X of artifact/method Y? 
-
-What is a (better) design, implementation, maintenance, or adaptation for application X? 
- How does X compare to Y?  
-What is the current state of X / practice of Y? 
-
-Given X, what will Y (necessarily) be? 
-
-What, exactly, do we mean by X? What are its important characteristics? 
-What is a good formal/empirical model for X? 
-What are the varieties of X, how are they related? 
-
-Feasibility study or 
-
-exploration 
-
-Does X even exist, and if so what is it like? 
-
-Is it possible to accomplish X at all? 
-
-The  first  two  types  of  research  produce  methods  of 
-development or of analysis that the authors investigated in 
-one  setting,  but  that  can  presumably  be  applied  in  other 
-settings.  The  third  type  of  research  deals  explicitly  with 
-some particular system, practice, design or other instance 
-of  a  system  or  method;  these  may  range  from  narratives 
-about  industrial  practice  to  analytic  comparisons  of 
-alternative designs. For this type of research the instance 
-itself  should  have  some  broad  appeal—an  evaluation  of 
-Java is more likely to be accepted than a simple evaluation 
-of 
-last  summer. 
-Generalizations  or  characterizations  explicitly  rise  above 
-the  examples  presented in the paper. Finally, papers that 
-deal with an issue in a completely new way are sometimes 
-treated differently from papers that improve on prior art, 
-so  "feasibility"  is  a  separate  category  (though  no  such 
-papers were submitted to ICSE 2002). 
-
-language  you  developed 
-
-toy 
-
-the 
-
-Newman's  critical  comparison  of  HCI  and  traditional 
-engineering papers [12] found that the engineering papers 
-were  mostly  incremental  (improved  model,  improved 
-technique),  whereas  many  of  the  HCI  papers  broke  new 
-ground  (observations  preliminary  to  a  model,  brand  new 
+weeks a guest faculty member will join the class discussion. 
 
  
 
-technique).  One  reasonable  interpretation  is  that  the 
-traditional engineering disciplines are much more mature 
-than  HCI,  and  so  the  character  of  the  research  might 
-reasonably  differ  [17,  18].  Also,  it  appears that different 
-disciplines have different expectations about the "size" of 
-a research result—the extent to which it builds on existing 
-knowledge or opens new questions. In the case of ICSE, 
-the kinds of questions that are of interest and the minimum 
-interesting increment may differ from one area to another.  
-2.2 Which of these are most common? 
+II. Course Requirements: 
 
-The  most  common  kind  of  ICSE  paper  reports  an 
-improved method or means of developing software—that 
-is,  of  designing,  implementing,  evolving,  maintaining, or 
-otherwise operating on the software system itself. Papers 
-addressing  these  questions  dominate  both  the  submitted 
-and  the  accepted  papers.  Also  fairly  common  are  papers 
-about  methods  for  reasoning  about  software  systems, 
-principally 
-and 
-verification).  Analysis  papers  have  a  modest  acceptance 
-edge in this very selective conference. 
-
-analysis  of 
-
-correctness 
-
-(testing 
-
-Table 2 gives the distribution of submissions to ICSE 
-2002, based on reading the abstracts (not the full papers—
-but  remember  that the abstract tells a reader what to ex-
-pect from the paper). For each type of research question, 
-
-the  table  gives  the  number  of  papers  submitted  and  ac-
-cepted, the percentage of the total paper set of each kind, 
-and  the  acceptance  ratio  within  each  type  of  question. 
-Figures 1 and 2 show these counts and distributions.  
-
-Table 2. Types of research questions represented in ICSE 2002 submissions and acceptances 
-
-Type of question 
-Method or means of development 
-Method for analysis or evaluation 
-Design, evaluation, or analysis of a particular instance 
-Generalization or characterization 
-Feasibility study or exploration 
-        TOTAL 
-
-Submitted 
-  142(48%) 
-  95 (32%) 
-  43 (14%) 
-  18 (6%) 
-  0  (0%) 
-  298(100.0%) 
-
-Accepted 
-  18 (42%) 
-  19 (44%) 
-  5  (12%) 
-  1  (2%) 
-  0  (0 %) 
-  43 (100.0%) 
-
-Ratio Acc/Sub 
-
-(13%)  
-(20%)  
-(12%)  
-(6%)  
-(0%)  
-(14%)  
-
-Question
-
-Question
-
-300
-250
-200
-150
-100
-50
-0
-
-100%
-
-80%
-
-60%
-
-40%
-
-20%
-
-0%
-
-Devel Analy
-
-Eval Gener Feas
-
-Total
-
-Devel Analy Eval Gener Feas
-
-Total
-
-Accepted Rejected
-
-    
-
-Figure 1. Counts of acceptances and rejections 
-
-by type of research question 
+ 
+Preparation and participation in class discussions: 
+Individual explanation of concepts (5 times, 6%) 
+Group memo and presentation (3 times, 10%) 
+Final Paper 
+Total  
 
  
 
-2.3 What do program committees look for? 
+1 
 
-Acting  on  behalf  of  prospective  readers,  the  program 
-committee  looks  for  a  clear  statement  of  the  specific 
-problem  you  solved—the  question  about  software  devel-
-opment  you  answered—and  an  explanation  of  how  the 
-answer will help solve an important software engineering 
-problem.  You'll  devote most of your paper to describing 
-your  result,  but  you  should  begin  by  explaining  what 
-question you're answering and why the answer matters. 
-
-If  the  program  committee  has  trouble  figuring  out 
-whether  you  developed  a  new  evaluation  technique  and 
-demonstrated it on an example, or applied a technique you 
-reported  last  year  to  a  new  real-world  example,  or 
-evaluated 
-the  use  of  a  well-established  evaluation 
-technique, you have not been clear. 
-
-3. What is your new result? 
-
-Explain  precisely  what  you  have  contributed  to  the 
-store of software engineering knowledge and how this is 
-useful beyond your own project.  
+20% 
+30% 
+30% 
+20% 
+100% 
 
  
 
-Accepted Rejected
+ 
+(1)  Preparation and Participation in Class Discussions: 
+
+1.  Reading: There is a lot of material and reading is the core activity of the course. The 
+
+readings are a subset of material from the Comparative Politics prelim reading list, which 
+is available on the Learn@UW website. 
+•  All students are responsible for completing all readings. 
+•  All readings will be available on Dropbox or as e-books downloadable in the library. 
+•  Occasional readings by guest faculty will be added. 
+
+2.  Participation: This is a discussion-based class and active participation is essential.  Mere 
+
+attendance is not full participation.  Active participation means being prepared by doing 
+the reading and thinking about the material so that you can ask and answer questions 
+related to the course material in class.  
+•  Absences will only be excused due to religious conflicts or medical issues; contact 
+
+me as soon as possible, should a medical issue or religious conflict arise.  
+
+•  Students are expected to attend for the full class period; arriving late or leaving the 
+
+room during class will result in a lowered participation grade. 
+It is fine to use a laptop in class to take notes, but engaging in other work unrelated 
+to the course during class will result in a lowered participation grade. 
+
+• 
 
  
-Figure 2. Distribution of acceptances and rejections 
+Preparation and participation grading rubric: 
 
-by type of research question 
+A = Attended and actively participated (e.g. raised hand, and seemed in command of 
 
-3.1  What  kinds  of results do software engineers 
-produce? 
+readings and material) 
 
-The  tangible  contributions  of  software  engineering 
-research  may  be  procedures  or  techniques  for  develop-
-ment or analysis; they may be models that generalize from 
-specific examples, or they may be specific tools, solutions, 
-or results about particular systems. Table 3 lists the types 
-of research results that are reported in software engineer-
-ing research papers and provides specific examples.  
-3.2 Which of these are most common? 
+B = Attended and spoke, but without evidence of a high level of preparation 
+C = Attended for the full period, each time, but often did not speak 
+F = Did not attend 
 
-By far the most common kind of ICSE paper reports a 
-new procedure or technique for development or analysis. 
-Models of various degrees of precision and formality were 
-also  common,  with  better  success  rates  for  quantitative 
-than for qualitative models. Tools and notations were well 
-represented,  usually  as  auxiliary  results  in  combination 
-with a procedure or technique. Table 4 gives the distribu-
-tion  of  submissions  to  ICSE  2002,  based  on  reading  the 
-abstracts  (but  not  the  papers),  followed by graphs of the 
-counts and distributions in Figures 3 and 4. 
+Note that there is no "D" reflecting the large gap between attending and not 
+attending.  Also, there are no A/B or B/C grades, but those liminal grades will 
+appear in the final course grades. 
 
-Type of result 
-Procedure or 
-technique 
+•  There will be one participation grade given at the end of course, rather than 
 
-Table 3. Types of software engineering research results 
+individual grades for each class meeting. 
 
-Examples 
-New or better way to do some task, such as design, implementation, maintenance, 
-measurement, evaluation, selection from alternatives; includes techniques for 
-implementation, representation, management, and analysis; a technique should be 
-operational—not advice or guidelines, but a procedure 
-
-Qualitative or 
-
-descriptive model 
-
-Empirical model 
-Analytic model 
-Tool or notation 
-
-Structure or taxonomy for a problem area; architectural style, framework, or design pattern; 
-
-non-formal domain analysis, well-grounded checklists, well-argued informal 
-generalizations, guidance for integrating other results, well-organized interesting 
-observations 
-
-Empirical predictive model based on observed data 
-Structural model that permits formal analysis or automatic manipulation 
-Implemented tool that embodies a technique; formal language to support a technique or model 
-
-(should have a calculus, semantics, or other basis for computing or doing inference) 
-
-Specific solution, 
-
-prototype, answer, 
-or judgment 
-
-Solution to application problem that shows application of SE principles – may be design, 
-
-prototype, or full implementation; careful analysis of a system or its development, result of 
-a specific analysis, evaluation, or comparison 
-
-Report 
-
-Interesting observations, rules of thumb, but not sufficiently general or systematic to rise to the 
-
-level of a descriptive model. 
-
-Table 4. Types of research results represented in ICSE 2002 submissions and acceptances 
-
-Type of result 
-Procedure or technique 
-Qualitative or descriptive model 
-Empirical model 
-Analytic model 
-Tool or notation 
-Specific solution, prototype, answer, or judgment 
-Report 
-        TOTAL 
-
-Result
-
-Submitted 
-  152(44%) 
-  50 (14%) 
-  4  (1%) 
-  48 (14%) 
-  49 (14%) 
-  34 (10%) 
-  11 (3%) 
-  348(100.0%) 
-
-Accepted 
-  28 (51%) 
-  4  (7%) 
-  1  (2%) 
-  7  (13%) 
-  10 (18%) 
-  5  (9%) 
-  0  (0%) 
-  55 (100.0%) 
-
-Result
-
-Ratio Acc/Sub 
-
-18%  
-8%  
-25%  
-15%  
-20%  
-15%  
-0%  
-16%  
-
-350
-300
-250
-200
-150
-100
-50
-0
-Qual mod
-Tech
-
-Emp mod
-
-Anal mod
-
-Spec sol
-Tool
-
-Report
-
-Total
-
-Accepted Rejected
-
-100%
-80%
-60%
-40%
-20%
-0%
-Qual mod
-Tech
-
-Emp mod
-
-Anal mod
-
-Spec sol
-Tool
-
-Report
-
-Total
-
-Accepted Rejected
-
-Figure 3. Counts of acceptances and rejections 
-
-by type of result 
+ 
+(2)  Individual Explanation of Concepts: 
 
  
 
  
-Figure 4. Distribution of acceptances and rejections 
+ 
 
-by type of result 
+ 
+
+Each week four to five students, chosen at random, will explain a concept from the week's 
+readings.  This exercise is meant to strengthen discussion and presentation skills.  Student 
+explanations should be based on mastery of the required reading and will be graded 
+according to the following criteria: 
+
+A = Outstanding explanation of concept, going beyond just description of text and 
+
+offering original analysis. 
+
+B = Good explanation of concept, demonstrating adequate engagement with the text. 
+C = Minimally able to explain or describe concept, but only in the broadest terms. 
+D = Unable to explain concept with any accuracy, suggesting a lack of familiarity with the 
+
+reading. 
+
+F = Did not attend 
+
+ 
+
+2 
+
+(3)  Group Memos and Presentations: 
+
+•  To start off our discussions, each week students will work in groups of 2 or 3 to prepare 
+a short memo and a 10-15 minute oral presentation based on the readings. The goal is 
+to highlight interesting aspects of the readings and to provide points for further 
+discussion.  Presentations should be modeled on the role of a discussant at a 
+professional conference.  Through this activity students will improve their presentation 
+skills and the ability to concisely analyze, categorize, and write about political science 
+literature.  Group presentation dates will be set at the first class meeting.  Each student 
+will participate in three during the semester, and students should choose weeks from at 
+least two different broader themes (e.g. political economy, institutions, identity, conflict). 
 
  
 
  
 
-The  number  of  results  is  larger  than  the  number  of 
-papers  because  50  papers  included  a  supporting  result, 
-usually a tool or a qualitative model.  
-
-Research projects commonly produce results of several 
-kinds.  However,  conferences,  including  ICSE,  usually 
-impose strict page limits. In most cases, this provides too 
-little  space  to  allow  full  development  of  more  than  one 
-idea,  perhaps  with  one  or  two  supporting  ideas.  Many 
-authors present the individual ideas in conference papers, 
-and  then  synthesize  them  in  a  journal  article  that  allows 
-space to develop more complex relations among results.  
-3.3 What do program committees look for? 
-
-The  program  committee  looks  for  interesting,  novel, 
-exciting  results  that  significantly  enhance  our  ability  to 
-develop and maintain software, to know the quality of the 
-software  we  develop,  to  recognize  general  principles 
-about software, or to analyze properties of software. 
-
-You  should  explain  your  result  in  such  a  way  that 
-someone  else  could  use  your  ideas.  Be  sure  to  explain 
-what’s novel or original – is it the idea, the application of 
-the idea, the implementation, the analysis, or what? 
-
-Define critical terms precisely. Use them consistently. 
-The more formal or analytic the paper, the more important 
-this is. 
-
-Here  are  some  questions  that  the  program  committee 
-
-may ask about your paper: 
-What, precisely, do you claim to contribute? 
-
-Does  your  result  fully  satisfy  your  claims?  Are  the 
-
-definitions precise, and are terms used consistently? 
-
-tend 
-
-Authors 
-
-to  have 
-
-in  some  specific 
-situations.  Here  are  some  examples,  with  advice  for 
-staying out of trouble:  
-♦  If your result ought to work on large systems, explain 
-
-trouble 
-
-why you believe it scales. 
-
-♦  If  you  claim  your  method  is  "automatic",  using  it 
-it's 
-should  not  require  human 
-automatic  when  it's  operating  but  requires  manual 
-assistance  to  configure,  say  so.  If  it's  automatic 
-except  for  certain  cases,  say  so,  and  say  how  often 
-the exceptions occur. 
-
-intervention.  If 
-
-♦  If  you  claim your result is "distributed", it probably 
-should not have a single central controller or server. 
-If  it  does,  explain  what  part  of  it  is  distributed  and 
-what part is not. 
-
-♦  If  you're  proposing  a  new  notation  for  an  old 
-problem,  explain  why  your  notation  is  clearly 
-superior to the old one. 
-
-♦  If your paper is an "experience report", relating the 
-use  of  a  previously-reported  tool  or  technique  in  a 
-practical  software  project,  be  sure  that  you  explain 
-what idea the reader can take away from the paper to 
-
  
-
-use  in  other  settings.  If  that  idea  is  increased 
-confidence in the tool or technique, show how your 
-experience  should  increase  the  reader's  confidence 
-for applications beyond the example of the paper.  
-
-What’s new here? 
-
-The  program  committee  wants  to  know what is novel 
-or  exciting,  and  why.  What,  specifically, 
-the 
-contribution? What is the increment over earlier work by 
-the  same  authors?  by  other  authors?  Is  this  a  sufficient 
-increment, given the usual standards of subdiscipline? 
-
-is 
-
-Above all, the program committee also wants to know 
-what  you  actually  contributed  to  our  store  of  knowledge 
-about software engineering. Sure, you wrote this tool and 
-tried it out. But was your contribution the technique that is 
-embedded in the tool, or was it making a tool that’s more 
-effective than other tools that implement the technique, or 
-was  it  showing  that  the tool you described in a previous 
-paper actually worked on a practical large-scale problem? 
-It’s  better  for  you  as  the  author  to  explain  than  for  the 
-program committee to guess. Be clear about your claim … 
-Awful  ▼ (cid:127) I completely and generally solved … 
-
-(unless you actually did!) 
-
-Bad 
-
-▼ (cid:127) I worked on galumphing. 
-
-(or studied, investigated, sought, 
-explored) 
-
-Poor  ▼ (cid:127) I worked on improving galumphing. 
-(or contributed to, participated in, 
-helped with) 
-
-Good  ▲ (cid:127) I showed the feasibility of composing 
-
-blitzing with flitzing. 
-
-(cid:127) I significantly improved the accuracy of 
-
-the standard detector. 
-(or proved, demonstrated, created, 
-established, found, developed) 
-
-Better  ▲ (cid:127) I automated the production of flitz 
-
-tables from specifications. 
-
-(cid:127) With a novel application of the blivet 
-transform, I achieved a 10% increase 
-in speed and a 15% improvement in 
-coverage over the standard method.  
-
-Use verbs that show results and achievement, not just 
-
-effort and activity. 
-  "Try not. Do, or do not. There is no try." -- Yoda .   
-What has been done before? How is your work different 
-or better? 
-
-What existing technology does your research build on? 
-What  existing  technology  or  prior  research  does  your 
-research  provide  a  superior  alternative  to?  What’s  new 
-here  compared  to  your  own  previous  work?  What 
-alternatives  have  other  researchers  pursued,  and  how  is 
-your work different or better? 
-
-As in other areas of science and engineering, software 
-engineering  knowledge  grows  incrementally.  Program 
-committees  are  very  interested  in  your  interpretation  of 
-prior work in the area. They want to know how your work 
-is related to the prior work, either by building on it or by 
-providing  an  alternative.  If  you  don’t  explain  this,  it’s 
-hard for the program committee to understand how you’ve 
-added  to  our  store  of  knowledge.  You  may also damage 
-your  credibility  if  the  program  committee  can’t  tell 
-whether you know about related work.  
-
-Explain the relation to other work clearly … 
-
-Awful  ▼  The galumphing problem has attracted 
-much attention [3,8,10,18,26,32,37] 
-
-Bad  ▼  Smith [36] and Jones [27] worked on 
-
-galumphing. 
-
-Poor  ▼  Smith [36] addressed galumphing by 
-blitzing, whereas Jones [27] took a 
-flitzing approach. 
-
-Good  ▲  Smith’s blitzing approach to galumphing 
-
-[36] achieved 60% coverage [39]. 
-Jones [27] achieved 80% by flitzing, 
-but only for pointer-free cases [16]. 
-
-Better  ▲  Smith’s blitzing approach to galumphing 
-
-[36] achieved 60% coverage [39]. 
-Jones [27] achieved 80% by flitzing, 
-but only for pointer-free cases [16]. 
-We modified the blitzing approach to 
-use the kernel representation of flitzing 
-and achieved 90% coverage while 
-relaxing the restriction so that only 
-cyclic data structures are prohibited. 
-
-What, precisely, is the result? 
-
-Explain  what  your  result  is  and  how  it  works.  Be 
-
-concrete and specific. Use examples.  
-
-If you introduce a new model, be clear about its power. 
-How  general  is  it?  Is  it  based  on  empirical  data,  on  a 
-formal  semantics,  on  mathematical  principles?  How 
-formal  is  it—a  qualitative  model  that  provides  design 
-guidance may be as valuable as a mathematical model of 
-some  aspect  of  correctness,  but  they  will  have  to  satisfy 
-different  standards  of  proof.  Will  the  model  scale  up  to 
-problems of size appropriate to its domain? 
-
-If you introduce a new metric, define it precisely. Does 
-it  measure  what  it  purports  to  measure  and  do  so  better 
-than the alternatives? Why? 
-
-If  you  introduce  a  new  architectural  style,  design 
-pattern, or similar design element, treat it as if it were a 
-new generalization or model. How does it differ from the 
-alternatives? In what way is it better? What real problem 
-does it solve? Does it scale? 
-
- 
-
-If  your  contribution  is  principally  the  synthesis  or 
-integration of other results or components, be clear about 
-why  the  synthesis  is  itself  a  contribution. What is novel, 
-exciting,  or  nonobvious  about  the  integration?  Did  you 
-generalize  prior 
-find  a  better 
-representation? Did your research improve the individual 
-results  or  components  as  well  as  integrating  them?  A 
-paper  that  simply  reports  on  using  numerous  elements 
-together is not enough, even if it's well-engineered. There 
-must be an idea or lesson or model that the reader can take 
-from the paper and apply to some other situation. 
-
-results?  Did  you 
-
-If  your  paper  is  chiefly  a  report  on  experience 
-applying research results to a practical problem, say what 
-the  reader  can  learn  from  the  experience.  Are  your 
-conclusions  strong  and  well-supported?  Do  you  show 
-comparative data and/or statistics? An anecdotal report on 
-a single project is usually not enough. Also, if your report 
-mixes  additional 
-innovation  with  validation  through 
-experience,  avoid  confusing  your  discussion  of  the 
-innovation  with  your  report  on  experience.  After  all,  if 
-you  changed  the  result  before  you  applied  it,  you're 
-evaluating  the  changed  result.  And  if  you  changed  the 
-result  while  you  were  applying  it,  you  may  have 
-confounded the experiences with the two versions. 
-
-If  a  tool  plays  a  featured  role in your paper, what is 
-the  role  of  the  tool?  Does  it  simply  support  the  main 
-contribution, or is the tool itself a principal contribution, 
-or is some aspect of the tool’s use or implementation the 
-main point? Can a reader apply the idea without the tool? 
-If the tool is a central part of result, what is the technical 
-innovation embedded in the tool or its implementation? 
-
-♦  If 
-
-the 
-
-If  a  system  implementation  plays  a  featured  role  in 
-your paper, what is the role of the implementation? Is the 
-system sound? Does it do what you claim it does? What 
-ideas does the system demonstrate? 
-♦  If  the  implementation  illustrates  an  architecture  or 
-design  strategy,  what  does  it  reveal  about  the 
-architecture?  What  was  the  design  rationale?  What 
-were the design tradeoffs? What can the reader apply 
-to a different implementation? 
-implementation 
-
-an 
-implementation  technique,  how  does  it  help  the 
-reader use the technique in another setting? 
-
-demonstrates 
-
-♦  If  the  implementation  demonstrates  a  capability  or 
-performance  improvement,  what  concrete  evidence 
-does it offer to support the claim? 
-
-♦  If  the  system  is  itself  the  result,  in  what  way  is  it  a 
-contribution  to  knowledge?  Does  it,  for  example, 
-show  you  can  do  something  that  no  one  has  done 
-before  (especially  if  people  doubted  that  this  could 
-be done)? 
-
-4. Why should the reader believe your result? 
-Show evidence that your result is valid—that it actually 
-
-helps to solve the problem you set out to solve. 
-4.1.  What  kinds  of  validation  do  software 
-engineers do? 
-
-Software  engineers  offer  several  kinds  of  evidence  in 
-support of their research results. It is essential to select a 
-form  of  validation  that  is  appropriate  for  the  type  of 
-
-research  result  and  the  method  used  to  obtain  the  result. 
-As  an  obvious  example,  a  formal  model  should  be 
-supported by rigorous derivation and proof, not by one or 
-two  simple  examples.  On  the  other  hand,  a  simple 
-example derived from a practical system may play a major 
-role  in  validating  a  new  type  of  development  method. 
-Table 5 lists the types of research validation that are used 
-in  software  engineering  research  papers  and  provides 
-specific examples. In this table, the examples are keyed to 
-the type of result they apply to. 
-
-Table 5. Types of software engineering research validation 
-
-Type of validation  Examples 
-Analysis 
-
-I have analyzed my result and find it satisfactory through rigorous analysis, e.g. … 
-
-For a formal model  
-For an empirical model 
-For a controlled experiment  … carefully designed experiment with statistically significant 
- 
-
-… rigorous derivation and proof 
-… data on use in controlled situation 
-
- 
-
- 
-Given the stated criteria, my result...  
-
-results 
- 
-
-For a descriptive model  
-For a qualitative model 
-For an empirical model  
  
 
  
 
-… adequately describes phenomena of interest … 
-… accounts for the phenomena of interest… 
-… is able to predict … because …, or  
+Memos should: 
+•  Be in bullet point format, no longer than 2 single-spaced pages (12 point font, 1-inch 
+
+margins); 
+
+•  Sort readings into types or categories; 
+•  Highlight key arguments; 
+•  Make connections among the readings; 
+• 
+•  Be posted on Learn@UW as a PDF by 12:00 pm on the day before the seminar 
+
+Include three discussion questions at the end; 
+
+(Wednesday). 
+
+assigned; 
+
+ 
+Presentations: 
+•  Must include all readings and should not veer into discussion of reading that was not 
+
+•  Students should work together to develop an integrated presentation; do not just divide 
+up the reading.  All students should be able to discuss all readings, and the division of 
+the presentation should be based on substantive themes or theories, rather than 
+different works; 
+
+•  Should not include slides, unless there is a figure that needs to be shown; 
+•  Will not be allowed to go past 15 minutes; 
+•  Presenters should engage with the class and not simply read notes. 
+
+Grading criteria (includes memo and presentation): 
+
+A = Outstanding analysis of readings, including original or innovative insights in a well-
+integrated presentation and set of discussion questions, and engaging delivery of 
+material 
+
+B = Made connections between readings, going beyond just description of main 
+
+arguments, and provided insightful discussion questions 
+
+C = Accurately captured the main arguments or critical points in all of the readings and 
+
+provided relevant discussion questions, and memo posted on time. 
+
+D = Egregiously inaccurate or incomplete discussion of readings (did not include all 
+
+readings ) or did not provide discussion questions 
+
+F = Did not attend or participate in presentation or memo-writing. 
+
  
 
-… generates results that fit actual data … 
+3 
 
-Includes feasibility studies, pilot projects 
-My result has been used on real examples by someone other than me, and the evidence of its 
+(4)  Final project: The final project will be a paper of no more than 2500 words (approximately 
+6-7 single-spaced pages), including citations.  The goal of this paper is to draw connections 
+between readings in the course and your research goals, which hopefully will help you 
+develop your dissertation research question and embed your dissertation in existing 
+literature.  You should be considering your own research interests as well as sources for this 
+project throughout the semester. The paper should have 2 sections: 
+•  A discussion of your own research interests (500 words) 
+•  A discussion of two topics from the course that are related to your research interests 
 
-correctness/usefulness/effectiveness is …   
-For a qualitative model  
-For an empirical model or tool  … data, usually statistical, on practice 
-For a notation or technique   … comparison of systems in actual use 
+(approximately 1000 words each). 
 
-… narrative 
+ 
 
-Here’s an example of how it works on  
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+Project requirements: 
+1.  Title: Give your project a title that describes your research topic.  When people ask you 
+
+"what are you interested in?" or "what do you work on?" this should be your answer. 
+
+2.  Define a field of interest to you in approximately 500 words.  This should describe what 
+
+you plan to study.  Do not just summarize a literature.  Say explicitly what you plan to 
+work on within a literature (or literatures), so that the topics in the second part follow 
+from the description of your interests.   
+
+3.  Choose two theoretical topics (from the 13 substantive course meetings) that are related 
+
+to your research interests.  For each topic, in approximately 1000 words, you should 
+discuss the key questions that the literature in that topic addresses and how existing 
+work, including sources listed on the syllabus, connects to your research interests.   
+• 
+
+In discussing specific sources you should not just summarize main arguments, but 
+instead explain why is it important and what it adds that other readings don’t.  You 
+may also explain why certain work or approaches to a question are not applicable to 
+your interests.  For example: 
+o 
+
+"This book is a foundational work on state formation, which is well cited in the 
+literature.  I disagree with the argument for reasons X, Y, and Z, but think it 
+provides a useful foil for my argument." 
+"This book includes gender, and is the only one on this topic to do so, but it 
+leaves out class, so I want to build on it." 
+"This article links civil society and violence, focusing on decentralization, and is 
+the only one to put those three variables together, and hence is innovative." 
+"This book looks at national identity in Latin America, and I'm interested in Africa, 
+but I thought I could learn from the Latin American experience." 
+"This article has a data set on political violence, which is unique.  I want to 
+compare it with some other case studies." 
+
+o 
+o 
+o 
+o 
+
+4.  Other important requirements: 
+
+•  The final project is due as a .pdf posted to Learn@UW on Monday, December 16th, 
+
+•  12 point font, single-spaced, 1-inch margins, include page numbers. 
+•  Cite all your sources fully and properly. 
+•  Title your file that you upload with your name (e.g. "SmithPS856.pdf," not 
+
+10:00 am. 
+
+"PS856.pdf"); 
+
+ 
+
+4 
+
+ 
+
+Date 
+
+Summary of Class Schedule 
+
+Topics 
+
+Guest Faculty 
+
+5-Sep 
+
+Introduction to the course 
 
   
 
-For a technique or procedure  …a "slice of life" example based on a real system … 
-For a technique or procedure  …a system that I have been developing … 
-For a technique or procedure   … a toy example, perhaps motivated by reality 
+12-Sep 
 
-The "slice of life" example is most likely to be convincing, especially if accompanied by an 
+The State and Civil Society 
 
-explanation of why the simplified example retains the essence of the problem being solved. 
-Toy or textbook examples often fail to provide persuasive validation, (except for standard 
-examples used as model problems by the field).  
+Michael Schatzberg 
 
-I thought hard about this, and I believe passionately that ...  
+19-Sep 
 
-For a technique  
-For a system 
-For a model  
+Contentious Politics  
 
-… if you do it the following way, then … 
-… a system constructed like this would … 
-… this example shows how my idea works 
+Erica Simmons 
 
-Validation purely by persuasion is rarely sufficient for a research paper. Note, though, that if the 
-original question was about feasibility, a working system, even without analysis, can suffice 
+26-Sep 
 
-No serious attempt to evaluate result. This is highly unlikely to be acceptable 
+Social Identities, Culture, and Gender  
+
+3-Oct 
+
+Ethnicity and Nationalism  
+
+10-Oct 
+
+Violence and Ethnic Conflict 
+
+ 
+
+Nadav Shelef 
+
+Andrew Kydd 
+
+17-Oct 
+
+Regime Types: Definition and Measurement  
+
+ 
+
+24-Oct 
+
+Regime Types: Explanations of Trajectories  
+
+Melanie Manion 
+
+31-Oct 
+
+Institutions and Institutional change 
+
+Nils Ringe 
+
+7-Nov 
+
+Law, Courts, and Judicial politics 
+
+Alexei Trochev 
+
+14-Nov 
+
+Parties, Voters, and Elections  
+
+Noam Lupu 
+
+21-Nov 
+
+Development and Inequality 
+
+Rikhil Bhavnani 
+
+28-Nov 
+
+Thanksgiving (no class) 
+
+ 
+
+5-Dec 
+
+Economic Reform and Transition 
+
+Scott Gehlbach 
+
+12-Dec 
+
+Political Economy of Developed Democracies 
+
+John Ahlquist 
 
  
  
 
  
- 
- 
-
- 
- 
- 
-
- 
- 
- 
-
- 
- 
- 
-
-Evaluation 
-
-Experience 
-
-Example 
-
-Persuasion 
-
-Blatant assertion 
-4.2 Which of these are most common? 
-
-Alas,  well  over  a  quarter  of  the  ICSE  2002  abstracts 
-give no indication of how the paper's results are validated, 
-if  at  all.  Even  when  the  abstract  mentions  that the result 
-was  applied  to  an  example,  it  was  not  always  clear 
-whether the example was a textbook example, or a report 
-on use in the field, or something in between.  
 
  
 
-The most successful kinds of validation were based on 
-analysis and real-world experience. Well-chosen examples 
-were also successful. Persuasion was not persuasive, and 
-narrative  evaluation  was  only  slightly  more  successful. 
-Table  6  gives  the  distribution  of  submissions  to  ICSE 
-2002, based on reading the abstracts (but not the papers), 
-followed  by  graphs  of  the  counts  and  distributions. 
-Figures 5 and 6 show these counts and distributions.  
-
-Table 6. Types of research validation represented in ICSE 2002 submissions and acceptances 
-
-Type of validation 
-Analysis 
-Evaluation 
-Experience 
-Example 
-Some example, can't tell whether it's toy or actual use 
-Persuasion 
-No mention of validation in abstract 
-        TOTAL 
-
-Validation
-
-Submitted 
-  48 (16%) 
-  21 (7%) 
-  34 (11%) 
-  82 (27%) 
-  6  (2%) 
-  25 (8%) 
-  84 (28%) 
-  300(100.0%) 
-
-Accepted 
-  11 (26%) 
-  1  (2%) 
-  8  (19%) 
-  16 (37%) 
-  1  (2%) 
-  0  (0.0%) 
-  6  (14%) 
-  43 (100.0%) 
-
-Validation
-
-Ratio Acc/Sub 
-
-23%  
-5%  
-24%  
-20%  
-17%  
-0%  
-7%  
-14%  
-
-300
-250
-200
-150
-100
-50
-0
-
-Experience
-Analysis
-
-Example
-
-Ex, kind ?
-
-Evaluate
-
-No mention
-Persuade
-
-Accepted Rejected
-
-100%
-80%
-60%
-40%
-20%
-0%
-
-Experience
-Analysis
-
-Example
-
-Ex, kind ?
-
-Evaluate
-
-No mention
-Persuade
-
-Accepted Rejected
-
-Total
-
-Total
-
-Figure 5. Counts of acceptances and rejections 
-
-by type of validation 
-
-4.3 What do program committees look for? 
-
-The  program  committee  looks  for  solid  evidence  to 
-support  your  result.  It's  not enough that your idea works 
-for you, there must also be evidence that the idea or the 
-technique will help someone else as well.  
-
-The  statistics  above  show 
-
-that  analysis,  actual 
-experience in the field, and good use of realistic examples 
-tend to be the most effective ways of showing why your 
-result  should  be  believed.  Careful  narrative,  qualitative 
-analysis can also work if the reasoning is sound.  
-Why should the reader believe your result? 
-
-Is  the  paper  argued  persuasively?  What  evidence  is 
-presented to support the claim? What kind of evidence is 
-offered?  Does 
-the 
-subdiscipline?  
-
-the  usual  standard  of 
-
-it  meet 
-
-Is the kind of evaluation you're doing described clearly 
-and  accurately?  "Controlled  experiment"  requires  more 
-than data collection, and "case study" requires more than 
-anecdotal discussion. Pilot studies that lay the groundwork 
-for  controlled  experiments  are  often  not  publishable  by 
-themselves. 
-
- 
-
- 
-Figure 6. Distribution of acceptances and rejections 
-
-by type of validation 
-
-Is the validation related to the claim? If you're claiming 
-performance 
-improvement,  validation  should  analyze 
-performance,  not  ease  of  use  or  generality.  And 
-conversely. 
-
-Is  this  such  an  interesting,  potentially  powerful  idea 
-that it should get exposure despite a shortage of concrete 
-evidence? 
-Authors 
-
-in  some  specific 
-situations.  Here  are  some  examples,  with  advice  for 
-staying out of trouble:  
-♦  If  you  claim  to  improve  on  prior  art,  compare  your 
-
-to  have 
-
-trouble 
-
-tend 
-
-result objectively to the prior art. 
-
-♦  If you used an analysis technique, follow the rules of 
-that  analysis  technique.  If  the  technique  is  not  a 
-common  one  in  software  engineering  (e.g.,  meta-
-analysis,  decision  theory,  user  studies  or  other 
-behavioral  analyses),  explain  the  technique  and 
-standards  of  proof,  and  be  clear  about  your 
-adherence to the technique. 
-
-♦  If you offer practical experience as evidence for your 
-result, establish the effect your research has. If at all 
-possible, compare similar situations with and without 
-your result. 
-
-follow 
-
-♦  If you performed a controlled experiment, explain the 
-experimental design. What is the hypothesis? What is 
-the treatment? What is being controlled? What data 
-did you collect, and how did you analyze it? Are the 
-results 
-the  potentially 
-confounding factors, and how are they handled? Do 
-the 
-conclusions 
-the 
-experimental data? 
-
-significant?  What  are 
-
-rigorously 
-
-♦  If  you  performed  an  empirical  study,  explain  what 
-you  measured,  how  you  analyzed  it,  and  what  you 
-concluded. What data did you collect, and how? How 
-is the analysis related to the goal of supporting your 
-claim  about  the  result?  Do  not  confuse  correlation 
-with causality. 
-
-♦  If you use a small example for explaining the result, 
-provide  additional  evidence  of  its  practical  use  and 
-scalability. 
-
-from 
-
-5.  How  do  you  combine  the  elements  into  a 
-research strategy? 
-
-It  is  clear  that  not  all  combinations  of  a  research 
-question,  a  result,  and  a  validation  strategy lead to good 
-research.  Software  engineering  has  not  developed  good 
-general guidance on this question.  
-
-Tables 1, 3, and 5 define a 3-dimensional space. Some 
-portions  of  that  space  are  densely  populated:  One 
-common paradigm is to find a better way to perform some 
-software development or maintenance task, realize this in 
-a concrete procedure supported by a tool, and evaluate the 
-effectiveness  of  this  procedure  and  tool  by  determining 
-how  its  use  affects  some  measure  (e.g.,  error  rates)  of 
-quality. Another common paradigm is to find a better way 
-to evaluate a formalizable property of a software system, 
-develop  a  formal  model  that  supports  inference,  and  to 
-show that the new model allows formal analysis or proof 
-of the properties of interest. 
-
-Clearly,  the  researcher  does  not  have  free  choice  to 
-mix and match the techniques—validating the correctness 
-of a formal model through field study is as inappropriate 
-as  attempting  formal  verification  of  a  method  based  on 
-good organization of rules of thumb. 
-
-Selecting  a  type  of  result  that  will  answer  a  given 
-question usually does not seem to present much difficulty, 
-at  least  for  researchers  who  think  carefully  about  the 
-choice.  Blindly  adopting the research paradigm someone 
-used  last  year  for  a  completely  different  problem  is  a 
-different case, of course, and it can lead to serious misfits. 
-Choosing  a  good  form  of  validation  is  much  harder, 
-and  this  is  often  a  source  of  difficulty  in  completing  a 
-successful  paper.  Table  6  shows  some  common  good 
-matches.  This  does  not,  unfortunately,  provide  complete 
-guidance. 
-
- 
-
-When I advise PhD students on the validation section 
-of  their  theses,  I  offer  the  following  heuristic:  Look 
-carefully at the short statement of the result—the principal 
-claim  of  the  thesis.  This  often  has  two  or  three  clauses 
-(e.g., I found an efficient and complete method …"); if so, 
-each presents a separate validation problem. Ask of each 
-clause whether it is a global statement ("always", "fully"), 
-a  qualified  statement  ("a  25% 
-improvement",  "for 
-noncyclic structures…"), or an existential statement {"we 
-found  an  instance  of").  Global  statements  often  require 
-analytic  validation,  qualified  statements  can  often  be 
-validated  by  evaluation  or  careful  examination  of 
-experience,  and  existential  statements  can  sometimes  be 
-validated by a single positive example. A frequent result 
-of this discussion is that students restate the thesis claims 
-to reflect more precisely what the theses actually achieve. 
-If  we  have  this  discussion  early  enough  in  the  thesis 
-process,  students  think  about  planning  the  research  with 
-demonstrable claims in mind. 
-
-Concretely, Table 7 shows the combinations that were 
-represented  among  the  accepted  papers  at  ICSE  2002, 
-omitting the 7 for which the abstracts were unclear about 
-validation: 
-
-Table 7. Paradigms of ICSE2002 acceptances 
-
-Question 
-Devel method 
-Devel method 
-Devel method 
-Devel method 
-Devel method 
-Devel method 
-Analysis method 
-Analysis method 
-Analysis method 
-Analysis method 
-Analysis method 
-Analysis method 
-Analysis method 
-Eval of instance 
-Eval of instance 
-
-Result 
-Procedure 
-Procedure 
-Procedure 
-Qual model 
-Analytic model 
-Notation or tool 
-Procedure 
-Procedure 
-Procedure 
-Procedure 
-Analytic model 
-Analytic model 
-Tool 
-Specific analysis 
-Specific analysis 
-
-6. Does the abstract matter? 
-
-Validation 
-Analysis 
-Experience 
-Example 
-Experience 
-Experience 
-Experience 
-Analysis 
-Evaluation 
-Experience 
-Example 
-Experience 
-Example 
-Analysis 
-Analysis 
-Example 
-
-# 
-2 
-3 
-3 
-2 
-2 
-1 
 5 
-1 
-2 
+
+ 
+
+Class Schedule 
+
+Week 1, Sept. 5 
+Introduction to Comparative Politics:  
+•  No assigned reading. 
+ 
+Week 2, Sept. 12 
+The State and Civil Society 
+ 
+•  Young, Crawford. 1988. "The African Colonial State and its Political Legacy," The 
+
+Precarious Balance: State and Society In Africa, ed. Donald Rothchild and Naomi Chazan, 
+25-66. 
+
+•  Barkey, Karen. 1994. Bandits and Bureaucrats: The Ottoman Route to State Centralization. 
+
+Ithaca, N.Y.: Cornell University Press, Chp 1 and Conclusion, 1-23, 229-242. 
+
+•  Migdal, Joel. 1997. "Studying the State," Comparative Politics: Rationality, Culture, and 
+
+Structure, ed. Mark I. Lichbach and Alan S. Zuckerman. Cambridge University Press, 208-
+36. 
+
+•  Ziblatt, Daniel. 2004. "Rethinking the Origins of Federalism: Puzzle, Theory, and Evidence 
+
+from Nineteenth-Century Europe," World Politics 57 (October), 70–98. 
+
+•  Ganev, Venelin I. 2005. "Post-communism as an Episode of State Building: A Reversed 
+Tillyan Perspective," Communist and Post-Communist Studies 38:4 (December), 425-45. 
+•  Thornton, P. M. 2007. Disciplining the State: Virtue, Violence and State-Making in Modern 
+
+China. Cambridge, Mass.: Harvard University Press, Chp 1 and 8, 1-21, 202-220. 
+
+ 
+•  Putnam, Robert D. 1995. "Bowling Alone: America's Declining Social Capital," Journal of 
+
+Democracy 6:1 (January), 65-78. 
+
+•  Carapico, Sheila. 1996. “Yemen Between Civility and Civil War.” In Augustus Richard 
+
+Norton, ed., Civil Society in the Middle East, vol. 2. New York: E. J. Brill, 287−316. 
+
+•  Berman, Sheri. 1997. "Civil Society and the Collapse of the Weimar Republic," World 
+
+ 
+
+ 
+ 
+
+ 
+
+Politics 49 (April), 401-439. 
+
+Press, Chp. 1, 1-38. 
+
+•  Keck, Margaret, and Kathryn Sikkink. 1998.  Activists Beyond Borders. Cornell University 
+
+•  Haddad, Mary Alice. 2006. "Civic Responsibility and Patterns of Voluntary Participation 
+
+Around the World," Comparative Political Studies 39:10 (December), 1220-1242. 
+
+•  Henderson, Sarah. 2002. "Selling Civil Society: Western Aid and the Nongovernmental 
+
+Organization Sector in Russia," Comparative Political Studies 35 (March), 136-167. 
+
+•  Kubik, Jan. 2005. "How to Study Civil Society: The State of the Art and What to Do Next," 
+
+East European Politics and Societies 19:1, 105-120. 
+
+ 
+
 6 
-1 
-2 
-1 
-3 
-2 
 
-The  abstracts  of  papers  submitted  to  ICSE  convey  a 
-sense of the kinds of research submitted to the conference. 
-Some abstracts were easier to read and (apparently) more 
-informative than others. Many of the clearest abstracts had 
-a common structure: 
-♦  Two or three sentences about the current state of the 
+Week 3, Sept. 19 
+Contentious Politics 
+ 
+•  Olson, Mancur. 1965.  The Logic of Collective Action: Public Goods and the Theory of 
 
-art, identifying a particular problem 
+Groups. Harvard University Press, Chp. 1-2, 1-65. 
 
-♦  One  or 
+•  Hirschman, Albert O. 1970. Exit, Voice and Loyalty. Cambridge, Mass.: Harvard University 
 
-two  sentences  about  what 
+Press, 1-20.  
 
-this  paper 
+•  Melucci, Alberto. 1994. "A Strange Kind of Newness: What's "New" in New Social 
 
-contributes to improving the situation 
+Movements," New Social Movements: From Ideology to Identity, ed. Enrique Laraña, et al. 
+Temple University Press, 101-130. 
 
-♦  One or two sentences about the specific result of the 
+•  Tarrow, Sidney. 1998.  Power in Movement: Social Movements and Contentious Politics. 
 
-paper and the main idea behind it 
+Cambridge University Press, Chp. 1, 1-25. 
 
-♦  A  sentence  about  how  the  result  is  demonstrated  or 
+•  Goldstone, Jack. 2001. “Toward a Fourth Generation of Revolutionary Theory.” Annual 
 
-defended 
+Review of Political Science, vol. 4: 139−187. 
 
-Abstracts  in  roughly  this  format  often  explained  clearly 
-what readers could expect in the paper. 
+•  McAdam, Doug, Sidney Tarrow, and Charles Tilly. 2001.  Dynamics of Contention. 
 
-Acceptance  rates  were  highest  for  papers  whose 
-abstracts  indicate  that  analysis  or  experience  provides 
-evidence in support of the work. Decisions on papers were 
-made on the basis of the whole papers, of course, not just 
-the  abstracts—but  it  is  reasonable  to  assume  that  the 
-abstracts reflect what's in the papers.  
+Cambridge University Press, Chp. 1-3, 3-88. 
 
-Whether you like it or not, people judge papers by their 
-abstracts and read the abstract in order to decide whether 
-to read the whole paper. It's important for the abstract to 
-tell the story. Don't assume, though, that simply adding a 
-sentence  about  analysis  or  experience  to  your  abstract is 
-sufficient;  the  paper  must  deliver  what  the  abstract 
-promises 
+•  Goodwin, Jeff, and James M. Jasper. 2004. "Caught in a Winding, Snarling Vine: The 
+Structural Bias of Political Process Theory," Rethinking social movements: Structure, 
+Meaning, and Emotion, ed. Jeff Goodwin and James M. Jasper. Rowman & Littlefield 
+Publishers, Chp. 1, 3-30. 
 
-7. Questions you might ask about this report 
+•  Gould, Deborah. 2004. "Passionate Political Processes: Bringing Emotions Back Into the 
 
-7.1. Is this a sure-fire recipe? 
+Study of Social Movements," Rethinking social movements: Structure, Meaning, and 
+Emotion, ed. Jeff Goodwin and James M. Jasper. Rowman & Littlefield Publishers, Chp. 11, 
+155-176. 
 
-No,  not  at  all.  First,  it's  not  a  recipe.  Second,  not  all 
-software engineers share the same views of interesting and 
-significant  research.  Even  if  your  paper  is  clear  about 
-what you’ve done and what you can conclude, members of 
-a  program  committee  may  not  agree  about  how  to 
-interpret  your  result.  These  are  usually  honest  technical 
-disagreements,  and  committee  members  will  try  hard  to 
-understand  what  you  have  done.  You  can  help  by 
-explaining your work clearly; this report should help you 
-do that. 
-7.2 Is ICSE different from other conferences? 
+ 
+Week 4, Sept. 26 
+Social Identities, Culture and Gender 
+ 
+•  Swidler, Ann. 1986. "Culture in Action: Symbols and Strategies," American Sociological 
 
-ICSE  recognizes  several  distinct  types  of  technical 
-papers  [6].  For  2002,  they  were  published  separately  in 
-the proceedings 
+Review 51 (April), 273-286. 
 
-Several other conferences offer "how to write a paper" 
+•  Ross, Mark H. 1997. “Culture and Identity in Comparative Political Analysis.” In Mark I. 
+Lichbach and Alan S. Zuckerman, eds., Comparative Politics: Rationality, Culture, and 
+Structure, 42−80. New York: Cambridge University Press. 
 
-advice: 
+•  Wright, Erik Olin. 2000.  Class Counts: Student Edition. Cambridge University Press, Chp. 6, 
 
-In 1993, several OOPSLA program committee veterans 
-gave  a  panel  on  "How  to  Get  a  Paper  Accepted  at 
-OOPSLA" [9]. This updated the 1991 advice for the same 
-conference [14] 
+115-124. 
 
-SIGSOFT  offers 
+•  Scott, Joan. 2001.  Gender and the Politics of History. Columbia University Press, Chp. 
 
-two  essays  on  getting  papers 
-accepted,  though  neither  was  actually  written  for  a 
-software  engineering  audience.  They  are  "How  to  Have 
-Your  Abstract  Rejected" 
-focuses  on 
-theoretical  papers)  and  "Advice  to  Authors  of  Extended 
-Abstracts", which was written for PLDI. [16]. 
+Introduction and 2, 1-11, 28-50. 
 
-(which 
+•  Tajfel, Henri, and John C. Turner. 2001. "The Social Psychology of Intergroup Relations " 
 
-[26] 
+Intergroup Relations: Essential Readings, ed. Michael A. Hogg and Dominic Abrams. 
+Psychology Press, 94-109. 
 
-Rather  older,  Levin  and  Reddell,  the  1983  SOSP 
-(operating  systems)  program  co-chairs  offered  advice  on 
+•  Wedeen, Lisa. 2002. "Conceptualizing Culture: Possibilities for Political Science," American 
+
+Political Science Review 96:4 (December), 713-738. 
+
+•  Wright, Erik Olin. 2005. "Introduction" and "Foundations of a Neo-Marxist Class Analysis," 
+Approaches to Class Analysis. Cambridge University Press, Chp. Introduction & 1, 1-30. 
+•  Abdelal, Rawi, Yoshiko M. Herrera, Alastair Iain Johnston, and Rose McDermott. 2006. 
+
+"Identity as a Variable," Perspectives on Politics 4:4 (December), 695-711. 
+
+•  Hancock, Ange-Marie. 2007. "When Multiplication Doesn’t Equal Quick Addition: Examining 
+Intersectionality as a Research Paradigm," Perspectives on Politics 5:1 (November), 63-79. 
+•  Baldez, Lisa. 2010. "The Gender Lacuna in Comparative Politics," Perspectives on Politics 
+
+8, 199-205. 
 
  
 
-writing a good systems paper [11]. USENIX now provides 
-this  advice  to  its  authors.  Also  in  the  systems  vein, 
-Partridge offers advice on "How to Increase the Chances 
-Your Paper is Accepted at ACM SIGCOMM" [15]. 
+7 
 
-SIGCHI  offers  a  "Guide 
+Week 5, Oct. 3 
+Ethnicity and Nationalism 
+•  Gellner, Ernest. 1983 1994. Nations and Nationalism. Cornell University Press. Chp. 1-7, 1-
 
-to  Successful  Papers 
-Submission"  that  includes  criteria  for  evaluation  and 
-discussion of common types of CHI results, together with 
-how different evaluation criteria apply for different types 
-of results [13]. A study [8] of regional factors that affect 
-acceptance  found  regional  differences  in  problems  with 
-novelty, significance, focus, and writing quality. 
+109. 
 
-In  1993,  the  SIGGRAPH  conference  program  chair 
-wrote a discussion of the selection process, "How to Get 
-Your  SIGGRAPH  Paper  Rejected"  [10].  The  2003 
-SIGGRAPH call for papers [21] has a description of the 
-review  process  and  a  frequently-asked  questions  section 
-with  an  extensive  set  of  questions  on  "Getting  a  Paper 
-Accepted". 
-7.3. What about this report itself? 
+•  Anderson, Benedict. 1983. Imagined Communities: Reflections on the Origin and Spread of 
 
-People  have  asked  me,  "what  would  happen  if  you 
-submitted  this  to  ICSE?"  Without  venturing  to  predict 
-what any given ICSE program committee would do, I note 
-that as a research result or technical paper (a "finding" in 
-Brooks' sense [3]) it falls short in a number of ways: 
-♦  There  is  no  attempt  to  show  that  anyone  else  can 
-apply the model. That is, there is no demonstration of 
-inter-rater  reliability,  or  for 
-that  matter  even 
-repeatability by the same rater. 
+Nationalism. Verso, Chp. 1-5, 10, 1-82, 163-185. 
 
-♦  The model is not justified by any principled analysis, 
-though  fragments,  such  as  the  types  of  models  that 
-can serve as results, are principled. In defense of the 
-model,  Bowker  and  Starr  [2]  show  that  useful 
-classifications  blend  principle 
-and  pragmatic 
-descriptive power. 
+•  Brubaker, Rogers. 1996. Nationalism Reframed: Nationhood and the National Question in 
 
-♦  Only  one  conference  and  one  program  committee  is 
+the New Europe. New York: Cambridge University Press. Part 1, pp. 1-78 
 
-reflected here.  
+•  Fearon, James D., and David D. Laitin. 2000. “Violence and the Social Construction of 
 
-suspect.  
+Ethnic Identity.” International Organization, vol. 54, no. 4: 845−77. 
 
-♦  The  use  of  abstracts  as  proxies  for  full  papers  is 
+•  Beissinger, Mark. 2002. Nationalist Mobilization and the Collapse of the Soviet State. New 
 
-♦  There  is  little  discussion  of  related  work  other  than 
-the  essays  about  writing  papers 
-for  other 
-conferences.  Although  discussion  of  related  work 
-does  appear  in  two  complementary  papers [19, 20], 
-this report does not stand alone. 
+York: Cambridge University Press. Chp. 1, pp. 1-46. 
 
-On the other hand, I believe that this report does meet 
-Brooks'  standard  for  "rules  of  thumb"  (generalizations, 
-signed by the author but perhaps incompletely supported 
-by data, judged by usefulness and freshness), and I offer it 
-in that sense. 
+•  Posner, Daniel. 2004. The Political Salience of Cultural Difference: Why Chewas and 
 
-8. Acknowledgements 
+Tumbukas Are Allies in Zambia and Adversaries in Malawi.” American Political Science 
+Review, vol. 98, no. 4: 529−545. 
 
-This  work  depended  critically  on  access  to  the  entire 
-body of submitted papers for the ICSE 2002 conference, 
+•  Hale, Henry. 2008. The Foundations of Ethnic Politics: Separatism in States and Nations of 
 
-ACM SIGCHI Human Factors in Computer Systems Conf 
-(CHI '94), pp.278-284.  
+Eurasia and the World. Cambridge University Press. Chp. 1-3, 1-56. 
 
-13. William Newman et al. Guide to Successful Papers 
+•  Shelef, Nadav G. 2010.  Evolving Nationalism: Homeland, Identity, and Religion in Israel 
 
-Submission at CHI 2001. http://acm.org/sigs/sigchi/ 
-chi2001/call/submissions/guide-papers.html 
+1925-2005. Cornell University Press, Chp. Introduction & Conclusion, 1-24, 189-210. 
 
-14.  OOPSLA '91 Program Committee. How to get your paper 
+•  Cederman, Lars-Erik, Andreas Wimmer, and Brian Min. 2010. “Why do ethnic groups rebel: 
 
-accepted at OOPSLA. Proc OOPSLA'91, pp.359-363. 
-http://acm.org/sigplan/oopsla/oopsla96/how91.html 
+New Data and Analysis.” World Politics, vol. 62, no. 1: 87−119. 
 
-15. Craig Partridge. How to Increase the Chances your Paper 
+•  Chandra, Kanchan, ed. 2012. Constructivist Theories of Ethnic Politics. New York: Oxford 
 
-is Accepted at ACM SIGCOMM. 
-http://www.acm.org/sigcomm/conference-misc/author-guide.html 
+University Press.  Introduction, pp. 1-47. 
 
-16. William Pugh and PDLI 1991 Program Committee. 
+ 
+ 
+Week 6, Oct. 10 
+Violence and Ethnic Conflict 
+ 
+•  Collier, Paul, and Anke Hoeffler. 1999. “Greed and Grievance in Civil War.” World Bank 
+Working Paper 2355. At http://elibrary.worldbank.org/content/workingpaper/10.1596/1813-
+9450-2355.  
 
-Advice to Authors of Extended Abstracts. 
-http://acm.org/sigsoft/conferences/pughadvice.html 
+•  Fearon, James D., and David D. Laitin. 2003. "Ethnicity, Insurgency, and Civil War," 
 
-17. Samuel Redwine, et al. DoD Related Software 
+American Political Science Review 97:1 (February). 
 
-Technology Requirements, Practices, and Prospects for 
-the Future. IDA Paper P-1788, June 1984. 
+•  Wood, Elisabeth Jean. 2003. Insurgent Collective Action and Civil War in El Salvador. New 
 
-18. S. Redwine & W. Riddle. Software technology 
+York: Cambridge University Press. Chp. 1-2, pp. 1-50. 
 
-maturation. Proceedings of the Eighth International 
-Conference on Software Engineering, May 1985, pp. 
-189-200.  
+•  Kalyvas, Stathis. 2006. The Logic of Violence in Civil War. New York: Cambridge University 
 
-19. Mary Shaw. The coming-of-age of software architecture 
-research. Proc. 23rd Int'l Conf on Software Engineering 
-(ICSE 2001), pp. 656-664a. 
+Press. Introduction, chps 1-4, pp. 1-86. 
 
-20. Mary Shaw. What makes good research in software 
-engineering? Presented at ETAPS 02, appeared in 
-Opinion Corner department,  Int'l Jour on Software Tools 
-for Tech Transfer, vol 4, DOI 10.1007/s10009-002-0083-
-4, June 2002. 
+•  Straus, Scott. 2006. The Order of Genocide: Race, Power, and War in Rwanda. Ithaca, 
 
-21. SigGraph 2003 Call for Papers. 
+N.Y.: Cornell University Press. Introduction, Chp. 1, 4-6, pp. 1-40, 95-175. 
 
-http://www.siggraph.org/s2003/cfp/papers/index.html 
+•  Weinstein, Jeremy. 2007. Inside Rebellion: The Politics of Insurgent Violence. Cambridge 
 
-22. W. F. Tichy, P. Lukowicz, L. Prechelt, & E. A. Heinz. 
+University Press, Chp. Introduction, 1, 1-60. 
 
-"Experimental evaluation in computer science: A 
-quantitative study." Journal of Systems Software, Vol. 
-28, No. 1, 1995, pp. 9-18. 
+•  Cederman, Lars-Erik, and Luc Girardin. 2010. “Beyond Fractionalization: Mapping Ethnicity 
+into Nationalist Insurgencies.” American Political Science Review, vol. 101, no. 1: 173−185. 
+•  Staniland, Paul. 2012. "States, Insurgents, and Wartime Political Orders," Perspectives on 
 
-23. Walter F. Tichy. "Should computer scientists experiment 
-
-more? 16 reasons to avoid experimentation." IEEE 
-Computer, Vol. 31, No. 5, May 1998 
-
-24. Marvin V. Zelkowitz and Delores Wallace. Experimental 
-
-validation in software engineering. Information and 
-Software Technology, Vol 39, no 11, 1997, pp. 735-744. 
-25. Marvin V. Zelkowitz and Delores Wallace. Experimental 
-models for validating technology. IEEE Computer, Vol. 
-31, No. 5, 1998, pp.23-31. 
-
-26.  Mary-Claire van Leunen and Richard Lipton. How to 
-
-have your abstract rejected. 
-http://acm.org/sigsoft/conferences/vanLeunenLipton.html 
-
-the 
-which  would  not  have  been  possible  without 
-cooperation  and  encouragement  of 
-the  ICSE  2002 
-program  committee.  The  development  of  these ideas has 
-also  benefited  from  discussion  with  the  ICSE  2002 
-program committee, with colleagues at Carnegie Mellon, 
-and at open discussion sessions at FSE Conferences. The 
-work  has  been  supported  by  the  A.  J.  Perlis  Chair  at 
-Carnegie Mellon University. 
-
-9. References 
-1.  Victor R. Basili. The experimental paradigm in software 
-
-engineering. In Experimental Software Engineering 
-Issues: Critical Assessment and Future Directives. Proc 
-of Dagstuhl-Workshop, H. Dieter Rombach, Victor R. 
-Basili, and Richard Selby (eds), published as Lecture 
-Notes in Computer Science #706, Springer-Verlag 1993. 
-2.  Geoffrey Bowker and Susan Leigh Star: Sorting Things 
-
-Out: Classification and Its Consequences. MIT Press, 
-1999 
-
-3.  Frederick P. Brooks, Jr. Grasping Reality Through 
-
-Illusion—Interactive Graphics Serving Science. Proc 
-1988 ACM SIGCHI Human Factors in Computer 
-Systems Conf (CHI '88) pp. 1-11. 
-
-4.  Rebecca Burnett. Technical Communication. Thomson 
-
-Heinle 2001. 
-
-5.  Thomas F. Gieryn. Cultural Boundaries of Science: 
-Credibility on the line. Univ of Chicago Press, 1999. 
-
-6.  ICSE 2002 Program Committee. Types of ICSE papers. 
-
-http://icse-conferences.org/2002/info/paperTypes.html 
-
-7.  Impact Project. "Determining the impact of software 
-engineering research upon practice. Panel summary, 
-Proc. 23rd International Conference on Software 
-Engineering (ICSE 2001), 2001  
-
-8.  Ellen Isaacs and John Tang. Why don't more non-North-
-
-American papers get accepted to CHI? 
-http://acm.org/sigchi/bulletin/1996.1/isaacs.html 
-
-9.  Ralph E. Johnson & panel. How to Get a Paper Accepted 
-
-at OOPSLA. Proc OOPSLA'93, pp. 429-436, 
-http://acm.org/sigplan/oopsla/oopsla96/how93.html 
-
-10. Jim Kajiya. How to Get Your SIGGRAPH Paper 
-
-Rejected. Mirrored at 
-http://www.cc.gatech.edu/student.services/phd/phd-advice/kajiya 
-11.  Roy Levin and David D. Redell. How (and How Not) to 
-Write a Good Systems Paper. ACM SIGOPS Operating 
-Systems Review, Vol. 17, No. 3 (July, 1983), pages 35-
-40. http://ftp.digital.com/pub/DEC/SRC/other/SOSPadvice.txt  
-
-12. William Newman. A preliminary analysis of the products 
-
-of HCI research, using pro forma abstracts. Proc 1994 
+Politics 10:2 (June), 243-264. 
 
  
  
 
  
+
+8 
+
+1-16. 
+
+Week 7, Oct. 17 
+Regime Types: Definition and Measurement 
+ 
+•  Dahl, Robert. 1971.  Polyarchy: Participation and Opposition. Yale University Press, Chp. 1, 
+
+•  Przeworski, Adam. 1991. Democracy and the Market: Political and Economic Reforms in 
+
+Eastern Europe and Latin America. Cambridge University Press. Chp. 1, 10-50. 
+
+•  Olson, Mancur. 1993. “Dictatorship, Democracy, and Development.” American Political 
+
+Science Review, vol. 87, no. 3: 567−576. 
+
+•  Huber, John D., and G. Bingham Powell. 1994. “Congruence between Citizens and 
+
+Policymakers in Two Visions of Liberal Democracy.” World Politics, vol. 49, no. 3: 291−326. 
+
+•  Wedeen, Lisa. 1999. Ambiguities of Domination: Politics, Rhetoric, and Symbols in 
+
+contemporary Syria. Chicago: University of Chicago Press.  Chp 1-2, pp. 1-66. 
+
+•  Levitsky, Steven and Lucan Way. 2002. "The Rise of Competitive Authoritarianism," Journal 
+
+of Democracy 13:2, 51-65. 
+
+•  Haber, Stephen. 2006. “Authoritarian Government.” In Barry R. Weingast and Donald A. 
+
+Wittman, eds., Oxford Handbook of Political Economy, 693−707. New York: Oxford 
+University Press. 
+
+•  Treir, Shawn, and Simon Jackman. 2008. "Democracy as a Latent Variable," American 
+
+Journal of Political Science 52:1, 201-207. 
+
+•  Svolik, Milan W. 2012. The Politics of Authoritarian Rule. New York: Cambridge University 
+
+Press. Chp. 1-2, pp. 1-52. Available from library as Ebook. 
+
+ 
+ 
+Week 8, Oct. 24 
+Regime Types: Explanations of Trajectories 
+ 
+•  Moore, Barrington. 1966. Social Origins of Dictatorship and Democracy. Boston: Beacon 
+
+Press. Forward, Preface, Chp. 7-9, Epilogue, pp. ix-xxv, 413-508. 
+
+•  Przeworski, Adam, Michael E. Alvarez, José Antonio Cheibub and Fernando Limongi. 2000. 
+Democracy and Development: Political Institutions and Well-Being in the World, 1950-1990.  
+New York: Cambridge University Press.  Introduction, Chp. 1-3 (minus appendices), pp. 1-
+54, 78-136, 142-178. 
+
+•  Carothers, Thomas. 2002. "The End of the Transition Paradigm," Journal of Democracy 13:1 
+
+(January), 5-21. 
+
+•  Acemoglu, Daron, and A. Robinson James. 2006.  Economic Origins of Dictatorship and 
+
+Democracy. Cambridge University Press, Chp. 1-3, 1-87. 
+
+•  Way, Lucan, and Steven Levitsky. 2007. "Linkage, Leverage and the Post-Communist 
+
+Divide," East European Politics and Societies 27:21, 48-66. 
+
+•  Waylen, Georgina. 2007. Engendering Transitions. New York: Oxford University Press. Part 
+
+1, pp. 1-48. 
+
+•  Cappocia, Giovanni, and Daniel Ziblatt. 2010. “The Historical Turn in Democratization 
+
+Studies: A New Research Agenda for Europe and Beyond.” Comparative Political Studies, 
+vol. 43, nos. 8−9: 931−968.  
+
+ 
+ 
+ 
+
+ 
+
+ 
+
+9 
+
+Week 9, Oct. 31 
+Institutions and Institutional Change 
+ 
+•  Meyer, John, and Brian Rowan. 1977. “Institutionalized Organizations: Formal Structure as 
+
+Myth and Ceremony.” American Journal of Sociology, vol. 83, no. 2: 340−363. 
+
+•  North, Douglass C. 1990.  Institutions, Institutional Change, and Economic Performance 
+
+Cambridge University Press, Chp. 1-4, 8, 3-35, 61-69. 
+
+•  Pierson, Paul. 1996. “The Path to European Integration: A Historical Institutionalist 
+
+Perspective.” Comparative Political Studies, vol. 29, no. 2: 123−163. 
+
+•  Hall, Peter A., and Rosemary C. R.  Taylor. 1998. "Political Science and the Three New 
+
+Institutionalisms," Institutions and Social Order, ed. Karol Soltan, et al. University of 
+Michigan Press. 
+
+•  Greif, Avner, and David Laitin. 2004. “A Theory of Endogenous Institutional Change.” 
+
+American Political Science Review, vol. 98, no. 4: 633−652. 
+
+•  Moe, Terry M. 2005. "Power and Political Institutions," Perspectives on Politics 3, 215-233. 
+•  March, James G., and Johan P. Olsen. 2006. "The Logic of Appropriateness," The Oxford 
+Handbook of Public Policy ed. Martin Rein Michael Moran, and Robert E. Goodin Oxford 
+University Press, 1-39. 
+
+•  Ringe, Nils, and Jennifer N. Victor. 2013. “Solutions to Informational Collective Action 
+
+Dilemmas: Theorizing the Benefits of Legislative Member Organizations.” In Nils Ringe and 
+Jennifer N. Victor (with Christopher J. Carman), Bridging the Information Gap: Legislative 
+Member Organizations as Social Networks in the United States and the European Union. 
+Ann Arbor: University of Michigan Press. Chp 2, 18-49. 
+
+ 
+ 
+Week 10, Nov. 7 
+Law, Courts, and Judicial Politics 
+ 
+•  Felstiner, William L.F., Richard L. Abel, and Austin Sarat. 1981. “The Emergence and 
+
+Transformation of Disputes: Naming, Blaming, Claiming.” Law & Society Review, vol. 15, 
+nos. 3−4: 631−54. 
+
+•  Bill Chavez, Rebecca. 2008.  “The Rule of Law and Courts in Democratizing Regimes.” In 
+Keith E. Whittington, R. Daniel Kelemen, Gregory A. Caldeira, eds., Oxford Handbook of 
+Law and Politics, 67−80. New York: Oxford University Press. 
+
+•  Hirschl, Ran. 2002. “Beyond the American Experience: The Global Expansion of Judicial 
+Review.” In Mark Graber and Michael Perhac, eds., Marbury Versus Madison: Documents 
+and Commentary, 129−153. Washington, D.C.: CQ Press. 
+
+•  Merryman, John H., and Rogelio Pérez-Perdomo. 2007. The Civil Law Tradition: An 
+
+Introduction to the Legal Systems of Europe and Latin America. Stanford University Press. 
+Chp. 1, 4-6, pp. 1-6, 20-38. 
+
+•  Quraishi, Asifa. 2008.  “Who Says Shari’a Demands the Stoning of Women? A Description 
+of Islamic Law and Constitutionalism.” Berkeley Journal of Middle Eastern & Islamic Law, 
+vol. 1: 163−177. 
+
+•  Merry, Sally Engle. 2009. Human Rights and Gender Violence: Translating International Law 
+
+into Local Justice. Chicago: University of Chicago Press. Chp 1-2, 1−71. 
+
+•  Ginsburg, Tom. 2011. “Pitfalls of Measuring the Rule of Law.” Hague Journal on the Rule of 
+
+•  Hilbink, Lisa. 2012. “The Origins of Positive Judicial Independence.” World Politics, vol. 64, 
+
+Law, vol. 3, no. 2: 269−280.  
+
+no. 4: 587−621. 
+
+ 
+
+10 
+
+Week 11, Friday Nov. 14 
+Parties, Voters and Elections 
+ 
+•  Mainwaring, Scott, and Timothy R. Scully. 1995. “Introduction: Party Systems in Latin 
+
+America.” In Scott Mainwaring and Timothy R. Scully, eds., Building Democratic Institutions: 
+Party Systems in Latin America, 1−34. Stanford, Cal.: Stanford University Press. 
+
+•  Aldrich, John. 1995.  Why Parties? The Origins and Transformation of Party Politics in 
+
+America University of Chicago Press, 3-61. 
+
+•  Cox, Gary W. 1997. Making Votes Count: Strategic Coordination in the World’s Electoral 
+
+Systems, 3−36. New York: Cambridge University Press. 
+
+•  Kitschelt, Herbert. 2000. "Linkages between Citizens and Politicians in Democratic Polities," 
+
+Comparative Political Studies 33:6/7, 845-879. 
+
+•  Dalton, Russell J., and Martin P. Wattenburg. 2002.  Parties without Partisans: Political 
+
+Change in Advanced Industrial Democracies. Oxford University Press, Chp. 1, 12, pp. 3-18, 
+261-285. 
+
+•  Meguid, Bonnie M. 2005. “Competition Between Unequals: The Role of Mainstream Party 
+
+Strategy in Niche Party Success.” American Political Science Review, vol. 99, no. 3: 
+347−359. 
+
+•  Magaloni, Beatriz. 2006. Voting for Autocracy: Hegemonic Party Survival and Its Demise in 
+
+Mexico. New York: Cambridge University Press. Introduction, pp. 1-43. 
+
+•  Duch, Raymond M., and Randolph T. Stevenson. 2008. The Economic Vote: How Political 
+
+and Economic Institutions Condition Election Results. Cambridge University Press. Chp. 
+Introduction and Conclusion, 1-36, 337-358. 
+
+ 
+ 
+Week 12, Nov. 21 
+Development and Inequality 
+ 
+•  Gerschenkron, Alexander. 1962.  Economic Backwardness in Historical Perspective 
+
+Harvard University Press, 5-30. 
+
+•  Fearon, James. 1999. “Electoral Accountability and the Control of Politicians: Selecting 
+
+Good Types versus Sanctioning Poor Performance.” In Bernard Manin, Adam Przeworski 
+and Susan Stokes, eds., Democracy, Accountability, and Representation, 55−97. New York: 
+Cambridge University Press. 
+
+•  Acemoglu, Daron, Simon Johnson, and James A. Robinson. 2001. “The Colonial Origins of 
+
+Comparative Development: An Empirical Investigation.” American Economic Review, vol. 
+91, no. 5: 1369−1401. 
+
+•  Bates, Robert H. 2001. Prosperity and Violence: The Political Economy of Development. 1st 
+
+ed. New York: Norton. Chp 1, 4, 6, pp. 17-29, 70-83, 101-116.  
+
+•  Chattopadhyay, Raghabendra, and Esther Duflo. 2004. “Women as Policy Makers: 
+
+Evidence from a Randomized Policy Experiment in India.” Econometrica, vol. 72, no. 5: 36. 
+•  Kohli, Atul. 2005. State-Directed Development. Cambridge University Press. Chp. 1 & 6-9, 
+
+1-26, 221-426. 
+
+•  Banerjee, Abhijit, and Lakshmi Iyer. 2005. “History, Institutions and Economic Performance: 
+
+The Legacy of Colonial Land Tenure Systems in India.” American Economic Review, vol. 
+95, no. 4: 119−213. 
+
+•  Haber, Stephen, and Victor Menaldo. 2011. “Do Natural Resources Fuel Authoritarianism? 
+A Reappraisal of the Resource Curse.” American Political Science Review, vol. 105, no. 1: 
+1−26. 
+
+ 
+
+11 
+
+November 28th, Thanksgiving, no class 
+
+ 
+Week 13, Dec. 5 
+Economic Reform and Transition 
+ 
+•  Bates, Robert H. 1981. "Commonalities & Variations," Markets and States in Tropical Africa: 
+
+The Political Basis of Agricultural Policies. University of California Press, Chp. 5-7, 1-8, 81-
+132. 
+
+•  Kornai, Janos. 1992. The Socialist System: The Political Economy of Communism. 
+
+Princeton, N.J.: Princeton University Press. Chp 1-2, 15, pp. 3-32, 360-379. 
+
+•  Rodrik, Dani. 1996. "Understanding Economic Policy Reform," Journal of Economic 
+
+Literature 34 (March), 9-41. 
+
+•  Hellman, Joel. 1998. "Winners Take All: The Politics of Partial Reform in Postcommunist 
+
+Transitions," World Politics 50:2 (February). 
+
+•  Stokes, Susan C. 2001. Mandates and Democracy: Neoliberalism by Surprise in Latin 
+
+America. New York: Cambridge University Press. Chp 1, 3, pp. 1-24, 60-101. 
+
+•  Melanie Manion. 2004. Corruption by Design: Building Clean Government in Mainland China 
+
+and Hong Kong. Cambridge, Mass.: Harvard University Press. Chp 1, pp. 1-26. 
+
+•  Denisova, Irina, Markus Eller, Timothy Frye, and Ekaterina V. Zhuravskaya. 2009. “Who 
+
+Wants to Revise Privatization? The Complementarity of Market Skills and Institutions.” 
+American Political Science Review, vol. 103, no. 2: 284–304. 
+
+•  Gehlbach, Scott, and Edmund J. Malesky. Forthcoming in 2013. “The Grand Experiment 
+
+That Wasn’t? New Institutional Economics and the Postcommunist Experience.” In 
+Sebastian Galiani and Itai Sened, eds., Institutions, Property Rights, and Economic Growth: 
+The Legacy of Douglass North. New York: Cambridge University Press.  
+
+ 
+ 
+Week 14, Dec. 12 
+Political Economy of Developed Democracies 
+ 
+•  Canes-Wrone, Bradice and Jee-Kwang Park.  2012. "Electoral Business Cycles in OECD 
+
+Countries" American Political Science Review vol. 106, no. 01 (February): 103-122. 
+•  Hall, Peter A., and Soskice David. 2001. "An Introduction to Varieties of Capitalism," 
+
+Varieties of Capitalism: The Institutional Foundations of Comparative Advantage. Oxford 
+University Press, Chp. 1, pp. 1-68. 
+Iversen, Torben, and David Soskice. 2001. “An Asset Theory of Social Policy Preferences.” 
+American Political Science Review, vol. 95, no. 4: 875−93.  
+
+•  Huber John D., and Charles R. Shipan. 2002. Deliberate Discretion: The Institutional 
+
+Foundations of Bureaucratic Autonomy. New York: Cambridge University Press. Chp. 1-4, 
+pp. 1-108. 
+
+• 
+
+•  Moene, Karl O. and Michael Wallerstein. 2001. "Inequality, Social Insurance, and 
+
+Redistribution." American Political Science Review, vol. 95, no. 4: 859-874. 
+
+•  Rogowski, Ronald and Mark Andreas Kayser. 2002. "Majoritarian Electoral Systems and 
+Consumer Power: Price-Level Evidence from the OECD Countries." American Journal of 
+Political Science, vol. 46, no. 3 (July): 526-539. 
+ 
+
+ 
+
+12 
 
 
