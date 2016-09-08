@@ -55,32 +55,50 @@ def get_human_names(text):
 
     return (person_list)
 
-test= {}
-test1={}
+test= []
+test1=[]
 def quotes_name(r):
     quoted1 = re.compile('(.+)"[^"]+" ')
     quoted = re.compile('(.+)"[^"]+",')
     quoted2 = re.compile('(.+)"[^"]+".')
 
     for value in (quoted.findall(r) or quoted1.findall(r) or (quoted2.findall(r))):
-        test1['name'] = value
-        print test1
+        test1.append(value)
+    return test1[38]
+    # print len(test1)
 
 def quotes(x):
     quoted = re.compile('"[^"]*"')
     for value in (quoted.findall(x)):
         l= len(value)
         if l> 50:
-            test['title']= value
-            print test
+            test.append(value)
+    return test[23]
+        # print len(test)
 
+
+def remove_numbers(string):
+    result = ''.join([i for i in string if not i.isdigit()])
+    result = re.sub(r'[^\w\s]', '', result)
+    return result
 
 def extract():
     string = convert_pdf_to_txt("/Users/dipit/Documents/RA/RA/test.pdf")
     # print string
-    quotes(string)
-    # print "\n"
-    quotes_name(string)
+    title=quotes(string)
+    print title
+    print "\n"
+    name= quotes_name(string)
+    name = remove_numbers(name)
+    scholar = "python scholar.py -c 1 --author " + str(name) + "--phrase  " + str(title) + " --citation bt"
+    print scholar
+    os.system(scholar)
+
+
+
+
+
+
 
 
 
