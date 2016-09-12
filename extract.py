@@ -52,12 +52,88 @@
 #
 # # for i, j in range(0,4):
 # #     print  z[i][j]
-import re
-from string import digits
-import string
-identity = string.maketrans("", "")
-t = ['\xe2\x80\xa2  Migdal, Joel. 1997. ', '\xe2\x80\xa2  Ziblatt, Daniel. 2004. ', '\xe2\x80\xa2  Ganev, Venelin I. 2005. ', '\xe2\x80\xa2  Putnam, Robert D. 1995. ', '\xe2\x80\xa2  Berman, Sheri. 1997. ', '\xe2\x80\xa2  Haddad, Mary Alice. 2006. ', '\xe2\x80\xa2  Henderson, Sarah. 2002. ', '\xe2\x80\xa2  Kubik, Jan. 2005. ', '\xe2\x80\xa2  Melucci, Alberto. 1994. "A Strange Kind of Newness: What\'s "New', '\xe2\x80\xa2  Goodwin, Jeff, and James M. Jasper. 2004. ', '\xe2\x80\xa2  Gould, Deborah. 2004. ', '\xe2\x80\xa2  Swidler, Ann. 1986. ', '\xe2\x80\xa2  Tajfel, Henri, and John C. Turner. 2001. ', '\xe2\x80\xa2  Wedeen, Lisa. 2002. ', '\xe2\x80\xa2  Wright, Erik Olin. 2005. "Introduction" and ', '\xe2\x80\xa2  Hancock, Ange-Marie. 2007. ', '\xe2\x80\xa2  Baldez, Lisa. 2010. ', '\xe2\x80\xa2  Fearon, James D., and David D. Laitin. 2003. ', '\xe2\x80\xa2  Staniland, Paul. 2012. ', '\xe2\x80\xa2  Levitsky, Steven and Lucan Way. 2002. ', '\xe2\x80\xa2  Treir, Shawn, and Simon Jackman. 2008. ', '\xe2\x80\xa2  Carothers, Thomas. 2002. ', '\xe2\x80\xa2  Way, Lucan, and Steven Levitsky. 2007. ', '\xe2\x80\xa2  Hall, Peter A., and Rosemary C. R.  Taylor. 1998. ', '\xe2\x80\xa2  Moe, Terry M. 2005. ', '\xe2\x80\xa2  March, James G., and Johan P. Olsen. 2006. ', '\xe2\x80\xa2  Kitschelt, Herbert. 2000. ', '\xe2\x80\xa2  Bates, Robert H. 1981. ', '\xe2\x80\xa2  Rodrik, Dani. 1996. ', '\xe2\x80\xa2  Hellman, Joel. 1998. ', '\xe2\x80\xa2  Canes-Wrone, Bradice and Jee-Kwang Park.  2012. ', '\xe2\x80\xa2  Hall, Peter A., and Soskice David. 2001. ', '\xe2\x80\xa2  Moene, Karl O. and Michael Wallerstein. 2001. ', '\xe2\x80\xa2  Rogowski, Ronald and Mark Andreas Kayser. 2002. ']
 
-p =['Migdal Joel1997', 'test+']
-y = [s.translate(identity, "0123456789") for s in p]
-print y
+
+
+
+
+
+
+
+
+
+
+
+
+from itertools import tee, islice, chain, izip
+
+from nameparser.parser import HumanName
+import nltk
+import re
+def get_human_names(text):
+    tokens = nltk.tokenize.word_tokenize(text)
+    pos = nltk.pos_tag(tokens)
+    sentt = nltk.ne_chunk(pos, binary = False)
+    person_list = []
+    person = []
+    name = ""
+    for subtree in sentt.subtrees(filter=lambda t: t.label() == 'PERSON'):
+        for leaf in subtree.leaves():
+            person.append(leaf[0])
+        if len(person) > 1: #avoid grabbing lone surnames
+            for part in person:
+                name += part + ' '
+            if name[:-1] not in person_list:
+                person_list.append(name[:-1])
+            name = ''
+        person = []
+
+    return (person_list)
+def remove_punctuation(result):
+    #
+    r = ["".join(c for c in result if c not in (','))]
+    # rem_numbers= [''.join([i for i in r if not i.isdigit()])]
+    return r
+def previous_and_next(some_iterable):
+    prevs, items, nexts = tee(some_iterable, 3)
+    prevs = chain([None], prevs)
+    nexts = chain(islice(nexts, 1, None), [None])
+    return izip(prevs, items, nexts)
+
+def uni(mylist):
+    t = [(el.strip()) for el in mylist]
+    x = [item.encode('utf-8') for item in t]
+
+    return x
+
+from bs4 import BeautifulSoup
+soup = BeautifulSoup(open("/Users/dipit/Documents/RA/RA/RA/myfile.html"))
+
+bTags = []
+
+for i in soup.find_all('span', style=lambda x: x and 'Italic' in x):
+
+
+    bTags.append(i.text)
+
+
+# print bTags
+
+test = []
+
+
+def extract_italics(inp):
+    for previous, item, nxt in previous_and_next(inp):
+        if item[-1] == ".":
+            test.append(previous + item)
+
+    return uni(test)
+
+print extract_italics(bTags)
+
+
+# for i in range(len(x)):
+#     scholar = "python scholar.py -c 1 --author " '" "' + "--phrase" + "'{}'".format(str(x[i]))
+#     print scholar
+#     if os.system(scholar):
+#         os.system(scholar)
