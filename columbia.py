@@ -16,50 +16,24 @@ from openpy import between
 from openpy import get_name
 from openpy import after
 from convert_2_excel import remove_numbers
+from openpy import plain2txt
+from italics import get_italic_titles
+import string
+import re
+identity = string.maketrans("", "")
 from bs4 import BeautifulSoup
+from italics import in_quotes
 
-bTags1=[]
-bTags = []
-fTags=[]
-fTags1=[]
-res=[]
-test1=[]
-bTags2=[]
 months= ['January ','February ','March ','April ', 'May ','June ','July ', 'August ', 'September ','October ','November ','December ','nd','ed','K','L','',' ','J','nd ', 'May/June ','July/ August ','Winter ', 'Spring ', 'Autumn ','ed ']
 names=[]
+title=[]
+bTags2=[]
+fTags1=[]
 soup = BeautifulSoup(open("/Users/dipit/Documents/RA/RA/Columbia/200051/200051.html"))
-soup1 = convert_pdf_to_txt("/Users/dipit/Documents/RA/RA/Columbia/200041/200041.pdf")
+soup1 = convert_pdf_to_txt("/Users/dipit/Documents/RA/RA/Columbia/200051/200051.pdf")
 # print soup1
-
-# def in_period(string):
-#     for i in string:
-#         print between(i,'. ','. ')
-#
-# in_period(soup1)
-
-def in_quotes(string):
-    sp= string.split('\n')
-    # print sp
-    for i in sp:
-        bTags1.append(after(i, '“'))
-    return get_name(remove_numbers(bTags1))
-
-q_titles= in_quotes(soup1)
-print q_titles
-
-
-def quotes_name(r):
-
-    quoted1 = re.compile('(.+)"[^"]+" ')
-    quoted = re.compile('(.+)"[^"]+",')
-    quoted2 = re.compile('(.+)"[^"]+".')
-
-    for value in (quoted.findall(r) or quoted1.findall(r) or (quoted2.findall(r))):
-        test1.append(value)
-    return test1
-
-q_name= quotes_name(soup1)
-
+# title.append(soup1)
+# print title
 def get_italic_titles():
     for i in soup.find_all('span', style=lambda x: x and 'Italic' in x):
         bTags2.append(i.text)
@@ -80,37 +54,45 @@ def get_italic_titles():
     return remove_num
 
 
-def get_author_names():
-    for i in soup.find_all('span', style=lambda x: x and 'PSMT' in x):
-        bTags.append(i.text)
-    # print bTags
-    for i in bTags:
-        fTags.append(i.encode('utf-8'))
-    # print fTags
-    remove_num = remove_numbers(fTags)
-    for i in remove_num:
-        res.append(i.split(','))
-    for i in range(len(res)):
-        names.append(res[i][0])
-    # print names
-    for i in names:
-        if len(i) <= 3:
-            names.remove(i)
-    for i in names:
-        if i in months:
-            names.remove(i)
-    for i in q_name:
-        names.append(i)
-    print len(names)
-    return names
+def in_period(string):
+    s=string.split('\n')
+    # return s
+    for i in s:
+        title.append(between(i,'. ','. '))
+        title.append(between(i,'. ',' '))
+    return title
 
-print get_italic_titles()
-# print get_author_names()
-# print "\n\n\n"
+after_pdf= in_period(soup1)
+
+def remove_numbers(string):
+    y = [s.translate(identity, "0123456789:-") for s in string]
+    y = [s.translate(identity, "\n.\xe2\x80\x9c()") for s in y]
+
+    for i in y[:]:
+    	if len(i)<10:
+    		y.remove(i)
+    return  y
+after_edit= remove_numbers(after_pdf)
+
+def extract_columbia(t):
+	for i in t:
+		if i[0]==' ':
+			names.append(i)
+	return names
+
+def line_continued(t):
+	for i in t:
+		return re.findall('\d*\D+',i)
+
+print "\n\n\n\n"
+
+quotes2txt(in_quotes(soup1))
+# plain2txt(extract_columbia(after_edit))
+italics2txt(get_italic_titles())
 
 
-
-x=get_italic_titles()
+# title.append(extract_columbia(in_period(remove_numbers(title))))
+# print title
 
 # italics2txt(x)
 # quotes2txt(q_titles)
