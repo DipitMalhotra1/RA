@@ -1,6 +1,9 @@
 import urllib, json
+import time
 from sortedcontainers import SortedDict
-
+from os import path
+from glob import glob
+from openpy import get_name
 from pprint import pprint
 from pdf import convert_pdf_to_txt
 from openpy import get_name
@@ -19,6 +22,7 @@ info2={}
 a_name=[]
 names=[]
 count=5
+titles=[]
 csv.register_dialect(
     'mydialect',
     delimiter = ',',
@@ -80,7 +84,7 @@ def make_csv(mydict):
     with open('mydata.csv', 'a') as f:
         writer = csv.writer(f)
         # writer.writerow(['author','year','title','author1_firstname','author1_lastname','author2_firstname','author2_lastname','author3_firstname','author3_lastname','author4_firstname','author4_lastname','author5_firstname','author5_lastname'])
-        writer = csv.DictWriter(f, fieldnames=['year','title','author1_firstname','author1_lastname','author2_firstname','author2_lastname','author3_firstname','author3_lastname','author4_firstname','author4_lastname','author5_firstname','author5_lastname','Journal'])
+        writer = csv.DictWriter(f, fieldnames=['year','title','author1_firstname','author1_lastname','author2_firstname','author2_lastname','author3_firstname','author3_lastname','author4_firstname','author4_lastname','author5_firstname','author5_lastname','Journal','volume','number','pages'])
         writer.writerow(dict_to_utf(mydict))
 
 
@@ -91,9 +95,23 @@ def remove_spaces(string):
     u= [s.replace('\xe2\x80\x9d ', "", 1) for s in p]
     return u
 
+def find_ext(dr, ext):
+    return glob(path.join("/Users/dipit/Documents/RA/RA/American Politics","*.{}".format(ext)))
+
+
+def get_multiple_pdf(test):
+    for i in test:
+        pdf=convert_pdf_to_txt(i)
+        split_string = pdf.split(" \n\n")
+        titles.extend (get_name(split_string))
+    return titles
+
+titi = get_multiple_pdf(find_ext('.','pdf'))
+
+
 def get_pdf():
-	pdf = convert_pdf_to_txt("/Users/dipit/Documents/RA/RA/13300001.pdf")
-	split_string= pdf.split("\n")
+	pdf = convert_pdf_to_txt("/Users/dipit/Documents/RA/RA/American Politics/13300002.pdf")
+	split_string= pdf.split(" \n\n")
 	titles=get_name(split_string)
 	return titles
 
@@ -161,11 +179,11 @@ def get_authors(lst):
     #     return get_author_details(names1)
     # return get_author_details(names1)
 
-tit=get_pdf()
+# titi=get_pdf()
 t=[]
-for i in tit:
+for i in titi:
 	t.append(a(i))
-titi= remove_spaces(t)
+titles_1= remove_spaces(t)
 aut=[]
 names=[]
 dic={}
@@ -185,6 +203,14 @@ def author_details(lst):
 
 # print author_details(titi)
 
+def after(value, a):
+    # Find and validate first part.
+    pos_a = value.rfind(a)
+    if pos_a == -1: return ""
+    # Returns chars after the found string.
+    adjusted_pos_a = pos_a + len(a)
+    if adjusted_pos_a >= len(value): return ""
+    return value[adjusted_pos_a:]
 
 def between(value, a, b):
     # Find and validate before-part.
@@ -201,19 +227,49 @@ test={}
 def make_dict(lst):
     for i in lst:
         url="http://search.crossref.org/dois?q=" + i + "&rows=3"
-        response = urllib.urlopen(url)
+        print url
+        try:
+            response = urllib.urlopen(url)
+        except SocketError as e:
+            if e.errno != errno.ECONNRESET:
+                raise # Not error we are looking for
+            pass 
         try:
             data = json.loads(response.read())
         except ValueError:
             data=" "
-        info['year'] = (data[1]['year'])
-        info['title'] = (data[1]['title'])
-        dic['authors'] =(data[1]['fullCitation']).split("'")[0]
-        # print dic
+        try:
+            info['year'] = (data[1]['year'])
+        except IndexError:
+            info['year']= "NULL"
+
+        try:
+
+            info['title'] = (data[1]['title'])
+        except IndexError:
+            info['title'] = "NULL"
+
+        try:
+            dic['authors'] =(data[1]['fullCitation']).split("'")[0]
+        except IndexError:
+            dic['authors']= "NULL"        # print dic
 
 
-        x= (data[1]['fullCitation'])
-        journal= (between(x,'<i>','</i>'))
+        try:
+            x= (data[1]['fullCitation'])
+        except IndexError:
+            x= "NULL"
+        try:
+            journal= (between(x,'<i>','</i>'))
+        except IndexError:
+            journal ="NULL"
+
+        try:
+            journal_page= after(x,"</i>").split(",")
+        except IndexError:
+            journal_page="NULL"
+
+
         # aut =(data[1]['fullCitation']).split("'")[0]
         check= (get_authors(dic.values()))
         info['author1_firstname'] = check[0]
@@ -228,9 +284,27 @@ def make_dict(lst):
         info['author5_lastname'] = check[9]
 
         info['Journal']= journal
+        try:
+            info['volume']= journal_page[-3]
+        except IndexError:
+            info['volume'] = " "
+        try:
+            info['number']= journal_page[-2]
+        except IndexError:
+            info['number'] = " "
+
+        
+        try:
+            info['pages']= journal_page[-1]
+        except IndexError:
+            info['pages']= " "
+       
+   
+        # info['Journal_info'] = journal_page
 
 
         pprint (info)
+        time.sleep(7) 
         make_csv(info)
 
-make_dict(titi)
+make_dict(titles_1)
