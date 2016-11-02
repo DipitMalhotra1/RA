@@ -1,4 +1,7 @@
+#-- coding: UTF-8 --
 import urllib, json
+from socket import error as SocketError
+import errno
 import time
 from sortedcontainers import SortedDict
 from os import path
@@ -9,10 +12,14 @@ from pdf import convert_pdf_to_txt
 from openpy import get_name
 import scholarly
 import csv
+from bs4 import BeautifulSoup
 import numpy as np
 import openpyxl as pyxl
 import string
 import re
+import sys
+reload(sys)
+sys.setdefaultencoding('utf-8')
 from genderize import Genderize
 first_name=[]
 last_name=[]
@@ -23,6 +30,7 @@ a_name=[]
 names=[]
 count=5
 titles=[]
+bTags2=[]
 csv.register_dialect(
     'mydialect',
     delimiter = ',',
@@ -81,10 +89,17 @@ def dict_to_utf(d):
 
 
 def make_csv(mydict):
+    with open('out.csv', 'a') as f:
+        writer = csv.writer(f)
+        # writer.writerow(['author','year','title','author1_firstname','author1_lastname','author2_firstname','author2_lastname','author3_firstname','author3_lastname','author4_firstname','author4_lastname','author5_firstname','author5_lastname'])
+        writer = csv.DictWriter(f, fieldnames=['syllabus_number','publisher','year','title','author1_firstname','author1_lastname','author2_firstname','author2_lastname','author3_firstname','author3_lastname','author4_firstname','author4_lastname','author5_firstname','author5_lastname','Journal','volume','number','pages'])
+        writer.writerow(dict_to_utf(mydict))
+
+def make_csv1(mydict):
     with open('mydata.csv', 'a') as f:
         writer = csv.writer(f)
         # writer.writerow(['author','year','title','author1_firstname','author1_lastname','author2_firstname','author2_lastname','author3_firstname','author3_lastname','author4_firstname','author4_lastname','author5_firstname','author5_lastname'])
-        writer = csv.DictWriter(f, fieldnames=['year','title','author1_firstname','author1_lastname','author2_firstname','author2_lastname','author3_firstname','author3_lastname','author4_firstname','author4_lastname','author5_firstname','author5_lastname','Journal','volume','number','pages'])
+        writer = csv.DictWriter(f, fieldnames=['syllabus_number','publisher','year','title','author1_firstname','author1_lastname','author2_firstname','author2_lastname','author3_firstname','author3_lastname','author4_firstname','author4_lastname','author5_firstname','author5_lastname','Journal','volume','number','pages'])
         writer.writerow(dict_to_utf(mydict))
 
 
@@ -96,7 +111,7 @@ def remove_spaces(string):
     return u
 
 def find_ext(dr, ext):
-    return glob(path.join("/Users/dipit/Documents/RA/RA/American Politics","*.{}".format(ext)))
+    return glob(path.join("/Users/dipit/Documents/RA/RA/AmericanPolitics","*.{}".format(ext)))
 
 
 def get_multiple_pdf(test):
@@ -106,14 +121,78 @@ def get_multiple_pdf(test):
         titles.extend (get_name(split_string))
     return titles
 
-titi = get_multiple_pdf(find_ext('.','pdf'))
+# titi = get_multiple_pdf(find_ext('.','pdf'))
+# print titi
 
+new_list=[]
+mylist = []
+def get_article_Citations(lst):
+    for l in lst:
+        match = re.match(r'.*([1-3][0-9]{3})', l)
+        if match is not None:
+            new_list.append(l)
+
+    return new_list
+
+def get_book_Citations(lst):
+    for l in lst:
+        match = re.match(r'.*([1-3][0-9]{3})', l)
+        if match is None:
+            mylist.append(l)
+    return mylist
 
 def get_pdf():
-	pdf = convert_pdf_to_txt("/Users/dipit/Documents/RA/RA/American Politics/13300002.pdf")
-	split_string= pdf.split(" \n\n")
+	pdf = convert_pdf_to_txt("/Users/dipit/Documents/RA/RA/AmericanPolitics/13700001.pdf")
+	split_string= pdf.split("\n\n")
 	titles=get_name(split_string)
 	return titles
+
+g=[]
+fTags=[]
+def get_italic_titles(soup):
+    for i in soup.find_all('span', style=lambda x: x and 'Italic' in x):
+        bTags2.append(i.text)
+    for i in bTags2:
+        fTags.append(i.encode('utf-8'))
+    for i in fTags:
+        g.append(re.sub(r'\s', ' ', i))
+
+    for i in g[:]:
+        if "APSR"  in i:
+            g.remove(i)
+        elif "AJPS"  in i:
+            g.remove(i)
+        elif "Journal" in i:
+            g.remove((i))
+        elif "Review" in  i:
+            g.remove(i)
+        elif "Quarterly" in i:
+            g.remove(i)
+    # print journal
+    return g
+
+itatics_titles= get_italic_titles(BeautifulSoup(open("/Users/dipit/Documents/RA/RA/PoliticalTheory/13600003.html")))
+
+# titles_articles=get_article_Citations(get_pdf())
+titiles_books=get_pdf()
+
+n=[]
+def quotes_from_pdf():
+    string= convert_pdf_to_txt("/Users/dipit/Documents/RA/RA/PoliticalTheory/13600003.pdf")
+    split_string = string.split("\n")
+    for i in split_string:
+        if "\xe2\x80\x9d".decode("utf-8") in i:
+            n.append(i)
+        elif '"' in i:
+            n.append(i)
+    # for i in new[:]:
+    #     if i==' ':
+    #         new.remove(i)
+    return n
+
+titles_articles= quotes_from_pdf()
+# print titles_articles
+
 
 def get_first_name(fullname):
     firstname = ''
@@ -180,10 +259,10 @@ def get_authors(lst):
     # return get_author_details(names1)
 
 # titi=get_pdf()
-t=[]
-for i in titi:
-	t.append(a(i))
-titles_1= remove_spaces(t)
+# t=[]
+# for i in titi:
+# 	t.append(a(i))
+# titles_1= remove_spaces(t)
 aut=[]
 names=[]
 dic={}
@@ -238,19 +317,20 @@ def make_dict(lst):
             data = json.loads(response.read())
         except ValueError:
             data=" "
+        info["syllabus_number"] ="13600003"
+        info['publisher'] = "NULL"
         try:
-            info['year'] = (data[1]['year'])
+            info['year'] = (data[0]['year'])
         except IndexError:
             info['year']= "NULL"
-
         try:
 
-            info['title'] = (data[1]['title'])
+            info['title'] = (data[0]['title'])
         except IndexError:
             info['title'] = "NULL"
 
         try:
-            dic['authors'] =(data[1]['fullCitation']).split("'")[0]
+            dic['authors'] =(data[0]['fullCitation']).split("'")[0]
         except IndexError:
             dic['authors']= "NULL"        # print dic
 
@@ -298,13 +378,91 @@ def make_dict(lst):
             info['pages']= journal_page[-1]
         except IndexError:
             info['pages']= " "
+
        
    
         # info['Journal_info'] = journal_page
 
 
         pprint (info)
-        time.sleep(7) 
+        time.sleep(5)
         make_csv(info)
+info3={}
+dic1={}
+def get_from_google_books(lst):
+    # print len(lst[6])
+    for i in lst[:]:
+        if len(i)>1:
+            url = "https://www.googleapis.com/books/v1/volumes?q=" + i + "&maxResults=1&AIzaSyA6aHpgIfl7qV9zg7cratTtQgTFx2NOQhM"
+            print url
+            response = urllib.urlopen(url)
+            data = json.loads(response.read())
 
-make_dict(titles_1)
+            info3["syllabus_number"]="13600003"
+            try:
+
+                info3['publisher'] = (data['items'][0]['volumeInfo']['publisher'])
+            except KeyError:
+                info3['publisher'] = "NULL"
+            try:
+                info3['year']=(data['items'][0]['volumeInfo']['publishedDate'])
+            except KeyError:
+                info3['year']= "NULL"
+            try:
+                dic1['author'] = (data['items'][0]['volumeInfo']['authors'])
+            # except KeyError:
+                # dic1['author'] = (data['items'][1]['volumeInfo']['authors'])
+            except KeyError:
+                dic1['author']= "NULL"
+
+            try:
+                info3['pages'] = (data['items'][0]['volumeInfo']['pageCount'])
+            except KeyError:
+                info['pages'] = "NULL"
+
+            try:
+                info3['title'] = (data['items'][0]['volumeInfo']['title'])
+            except KeyError:
+                info3['title']= "NULL"
+
+
+
+
+            x= (dic1['author'])
+            print x
+            length = len(x)
+            d = count - length
+        #
+            if len(x) < count:
+                try:
+                    x.extend(["NULL"] * d)
+                except AttributeError:
+                    x=["NULL" * count]
+
+            check= get_author_details(x)
+            info3['author1_firstname'] = check[0]
+            info3['author1_lastname'] = check[1]
+            info3['author2_firstname'] = check[2]
+            info3['author2_lastname'] = check[3]
+            info3['author3_firstname'] = check[4]
+            info3['author3_lastname'] = check[5]
+            info3['author4_firstname'] = check[6]
+            info3['author4_lastname'] = check[7]
+            info3['author5_firstname'] = check[8]
+            info3['author5_lastname'] = check[9]
+            info3['Journal']= "NULL"
+            info3['volume']= "NULL"
+            info3['number']="NULL"
+            try:
+                info3['pages'] = (data['items'][0]['volumeInfo']['pageCount'])
+            except KeyError:
+                info3['pages'] ="NULL"
+
+            pprint (info3)
+            time.sleep(5)
+            make_csv1(info3)
+
+# print titles_articles
+# make_dict(titles_articles)
+# get_from_google_books(titiles_books)
+get_from_google_books(itatics_titles)
