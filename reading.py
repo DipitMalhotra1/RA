@@ -30,6 +30,7 @@ a_name=[]
 names=[]
 count=5
 titles=[]
+undecode=[]
 bTags2=[]
 csv.register_dialect(
     'mydialect',
@@ -171,15 +172,15 @@ def get_italic_titles(soup):
     # print journal
     return g
 
-itatics_titles= get_italic_titles(BeautifulSoup(open("/Users/dipit/Documents/RA/RA/PoliticalTheory/13600003.html")))
+itatics_titles= get_italic_titles(BeautifulSoup(open("/Users/dipit/Documents/RA/RA/PoliticalTheory/13900003.html")))
 
 # titles_articles=get_article_Citations(get_pdf())
 titiles_books=get_pdf()
 
 n=[]
 def quotes_from_pdf():
-    string= convert_pdf_to_txt("/Users/dipit/Documents/RA/RA/PoliticalTheory/13600003.pdf")
-    split_string = string.split("\n")
+    string= convert_pdf_to_txt("/Users/dipit/Documents/RA/RA/Comparative/13900002.pdf")
+    split_string = string.split("\n\n")
     for i in split_string:
         if "\xe2\x80\x9d".decode("utf-8") in i:
             n.append(i)
@@ -317,7 +318,7 @@ def make_dict(lst):
             data = json.loads(response.read())
         except ValueError:
             data=" "
-        info["syllabus_number"] ="13600003"
+        info["syllabus_number"] ="13900002"
         info['publisher'] = "NULL"
         try:
             info['year'] = (data[0]['year'])
@@ -398,7 +399,7 @@ def get_from_google_books(lst):
             response = urllib.urlopen(url)
             data = json.loads(response.read())
 
-            info3["syllabus_number"]="13600003"
+            info3["syllabus_number"]="13900003"
             try:
 
                 info3['publisher'] = (data['items'][0]['volumeInfo']['publisher'])
@@ -458,11 +459,14 @@ def get_from_google_books(lst):
             except KeyError:
                 info3['pages'] ="NULL"
 
+            if info3["title"] =="NULL":
+                undecode.append(info3)
+
             pprint (info3)
             time.sleep(5)
             make_csv1(info3)
 
 # print titles_articles
-# make_dict(titles_articles)
+make_dict(titles_articles)
 # get_from_google_books(titiles_books)
-get_from_google_books(itatics_titles)
+# get_from_google_books(itatics_titles)
