@@ -18,6 +18,11 @@ import openpyxl as pyxl
 import string
 import re
 import sys
+from genderize import Genderize
+genderize = Genderize(
+    user_agent='GenderizeDocs/0.0',
+    api_key='975a684e9aa098d9ef7224b8c28eeb96')
+
 reload(sys)
 sys.setdefaultencoding('utf-8')
 from genderize import Genderize
@@ -46,16 +51,15 @@ def get_author_details(lst):
     first_name= get_Name(lst)[0]
     second_name=get_Name(lst)[1]
     # print first_name,second_name
-    # probability= compute_gender(first_name)
+    probability= compute_gender(first_name)
     for x in range(len(lst)):
         info2["author{0}_firstname".format(x)]= first_name[x]
         info2["author{0}_lastname".format(x)]=  second_name[x]
-        # info2["author{0}_gender".format(x)]=  probability[x]['gender']
-        # try:
-        #     info2["author{0}_maleprob".format(x)]=  probability[x]['probability']
-        # except KeyError:
-        #     info2["author{0}_maleprob".format(x)]= 0.0
-        # info2["author{0}_femaleprob".format(x)] = float("{0:.2f}".format(1.0 - info2["author{0}_maleprob".format(x)]))
+        info2["author{0}_gender".format(x)]=  probability[x]['gender']
+        try:
+            info2["author{0}_prob".format(x)]=  probability[x]['probability']
+        except KeyError:
+            info2["author{0}_prob".format(x)]= 0.0
 
     s = SortedDict(info2)
     return s.values()
@@ -93,14 +97,14 @@ def make_csv(mydict):
     with open('out.csv', 'a') as f:
         writer = csv.writer(f)
         # writer.writerow(['author','year','title','author1_firstname','author1_lastname','author2_firstname','author2_lastname','author3_firstname','author3_lastname','author4_firstname','author4_lastname','author5_firstname','author5_lastname'])
-        writer = csv.DictWriter(f, fieldnames=['syllabus_number','publisher','year','title','author1_firstname','author1_lastname','author2_firstname','author2_lastname','author3_firstname','author3_lastname','author4_firstname','author4_lastname','author5_firstname','author5_lastname','Journal','volume','number','pages'])
+        writer = csv.DictWriter(f, fieldnames=['syllabus_number','publisher','year','title','author1_firstname','author1_lastname','author1_gender','author1_gender_prob','author2_firstname','author2_lastname','author2_gender','author2_gender_prob','author3_firstname','author3_lastname','author3_gender','author3_gender_prob','author4_firstname','author4_lastname','author4_gender','author4_gender_prob','author5_firstname','author5_lastname','author5_gender','author5_gender_prob','Journal','volume','number','pages'])
         writer.writerow(dict_to_utf(mydict))
 
 def make_csv1(mydict):
     with open('mydata.csv', 'a') as f:
         writer = csv.writer(f)
         # writer.writerow(['author','year','title','author1_firstname','author1_lastname','author2_firstname','author2_lastname','author3_firstname','author3_lastname','author4_firstname','author4_lastname','author5_firstname','author5_lastname'])
-        writer = csv.DictWriter(f, fieldnames=['syllabus_number','publisher','year','title','author1_firstname','author1_lastname','author2_firstname','author2_lastname','author3_firstname','author3_lastname','author4_firstname','author4_lastname','author5_firstname','author5_lastname','Journal','volume','number','pages'])
+        writer = csv.DictWriter(f, fieldnames=['syllabus_number','publisher','year','title','author1_firstname','author1_lastname','author1_gender','author1_gender_prob','author2_firstname','author2_lastname','author2_gender','author2_gender_prob','author3_firstname','author3_lastname','author3_gender','author3_gender_prob','author4_firstname','author4_lastname','author4_gender','author4_gender_prob','author5_firstname','author5_lastname','author5_gender','author5_gender_prob','Journal','volume','number','pages'])
         writer.writerow(dict_to_utf(mydict))
 
 
@@ -172,7 +176,7 @@ def get_italic_titles(soup):
     # print journal
     return g
 
-itatics_titles= get_italic_titles(BeautifulSoup(open("/Users/dipit/Documents/RA/RA/PoliticalTheory/13900003.html")))
+itatics_titles= get_italic_titles(BeautifulSoup(open("/Users/dipit/Documents/RA/RA/Comparative/13200001.html")))
 
 # titles_articles=get_article_Citations(get_pdf())
 titiles_books=get_pdf()
@@ -218,10 +222,10 @@ def get_Name(lst):
 		l_n.append(get_last_word(i))
 	return f_n,l_n
 
-# def compute_gender(lst):
-# 	return (Genderize().get(lst))
+def compute_gender(lst):
+	return (Genderize().get(lst))
 
-
+# print compute_gender(['john', 'Harry'])
 def a(test_str):
     ret = ''
     skip1c = 0
@@ -399,7 +403,7 @@ def get_from_google_books(lst):
             response = urllib.urlopen(url)
             data = json.loads(response.read())
 
-            info3["syllabus_number"]="13900003"
+            info3["syllabus_number"]="13200001"
             try:
 
                 info3['publisher'] = (data['items'][0]['volumeInfo']['publisher'])
@@ -441,16 +445,28 @@ def get_from_google_books(lst):
                     x=["NULL" * count]
 
             check= get_author_details(x)
+            print check
             info3['author1_firstname'] = check[0]
-            info3['author1_lastname'] = check[1]
-            info3['author2_firstname'] = check[2]
-            info3['author2_lastname'] = check[3]
-            info3['author3_firstname'] = check[4]
-            info3['author3_lastname'] = check[5]
-            info3['author4_firstname'] = check[6]
-            info3['author4_lastname'] = check[7]
-            info3['author5_firstname'] = check[8]
-            info3['author5_lastname'] = check[9]
+            info3['author1_lastname'] = check[2]
+            info3['author1_gender'] = check[1]
+            info3['author1_gender_prob']=check[3]
+            info3['author2_firstname'] = check[4]
+            info3['author2_lastname'] = check[6]
+            info3['author2_gender'] = check[5]
+            info3['author2_gender_prob'] = check[7]
+            info3['author3_firstname'] = check[8]
+            info3['author3_lastname'] = check[10]
+            info3['author3_gender'] = check[9]
+            info3['author3_gender_prob'] = check[11]
+            info3['author4_firstname'] = check[12]
+            info3['author4_lastname'] = check[14]
+            info3['author4_gender'] = check[13]
+            info3['author4_gender_prob'] = check[15]
+            info3['author5_firstname'] = check[16]
+            info3['author5_lastname'] = check[18]
+            info3['author5_gender'] = check[17]
+            info3['author5_gender_prob'] = check[19]
+
             info3['Journal']= "NULL"
             info3['volume']= "NULL"
             info3['number']="NULL"
@@ -462,11 +478,11 @@ def get_from_google_books(lst):
             if info3["title"] =="NULL":
                 undecode.append(info3)
 
-            pprint (info3)
+            # pprint (info3)
             time.sleep(5)
             make_csv1(info3)
 
 # print titles_articles
-make_dict(titles_articles)
-# get_from_google_books(titiles_books)
-# get_from_google_books(itatics_titles)
+# make_dict(titles_articles)
+# get_from_google_books(titles_books)
+get_from_google_books(itatics_titles)
