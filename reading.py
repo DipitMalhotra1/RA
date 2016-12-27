@@ -1,6 +1,10 @@
 #-- coding: UTF-8 --
 import urllib, json
+from itertools import tee, islice, chain, izip
+from difflib import SequenceMatcher
+from genderPredictor import genderPredictor
 from socket import error as SocketError
+import dateutil.parser as parser
 import errno
 import time
 from sortedcontainers import SortedDict
@@ -18,7 +22,10 @@ import openpyxl as pyxl
 import string
 import re
 import sys
-from genderize import Genderize
+from nltk.corpus import names
+from gp import get_gender
+import random
+from genderize import Genderize, GenderizeException
 genderize = Genderize(
     user_agent='GenderizeDocs/0.0',
     api_key='975a684e9aa098d9ef7224b8c28eeb96')
@@ -37,6 +44,8 @@ count=5
 titles=[]
 undecode=[]
 bTags2=[]
+remove=['International Organization International Organization','JOP','AJPS  JOP','AJPS  APSR  ','International Organization','Journal of Democracy','Political Economics','Journal of Economic History, ','-','American Political Science Review','International Studies Quarterly',"APSR","AJPS","Journal","Quarterly", "Review",'Political Analysis',"World Politics",'American Journal of Political  Science',"Comparative Political Studies" ,"Political Analysis" ,". ","American Political Science","Perspectives on Politics",' '," Comparative Politics","Political Psychology" ]
+
 csv.register_dialect(
     'mydialect',
     delimiter = ',',
@@ -46,18 +55,55 @@ csv.register_dialect(
     lineterminator = '\r\n',
     quoting = csv.QUOTE_MINIMAL)
 
+
+
+def gender_list(f):
+    list1 = []
+    for i in f:
+        if i=="NULL":
+            list1.append("NULL")
+        else:
+            list1.append(get_gender(i)[0])
+    return list1
+
+def gender_list_prob(f):
+    list2 = []
+    for i in f:
+        if i=="NULL":
+            list2.append("NULL")
+        else:
+            list2.append(get_gender(i)[1])
+    return list2
+
+# flag=[]
+# prob_flag=[]
 def get_author_details(lst):
 
     first_name= get_Name(lst)[0]
+
     second_name=get_Name(lst)[1]
     # print first_name,second_name
-    probability= compute_gender(first_name)
+    # probability= compute_gender(first_name)
+    try:
+        flag= gender_list(first_name)
+    except IndexError:
+        flag=" "
+
+    try:
+        prob_flag= gender_list_prob(first_name)
+    except IndexError:
+        prob_flag = " "
+    # print first_name
+    # print flag
+    # print prob_flag
+    # probability= flag[0]
     for x in range(len(lst)):
         info2["author{0}_firstname".format(x)]= first_name[x]
         info2["author{0}_lastname".format(x)]=  second_name[x]
-        info2["author{0}_gender".format(x)]=  probability[x]['gender']
+        info2["author{0}_gender".format(x)]=  flag[x]
+
         try:
-            info2["author{0}_prob".format(x)]=  probability[x]['probability']
+            info2["author{0}_prob".format(x)]= prob_flag[x]
         except KeyError:
             info2["author{0}_prob".format(x)]= 0.0
 
@@ -107,6 +153,10 @@ def make_csv1(mydict):
         writer = csv.DictWriter(f, fieldnames=['syllabus_number','publisher','year','title','author1_firstname','author1_lastname','author1_gender','author1_gender_prob','author2_firstname','author2_lastname','author2_gender','author2_gender_prob','author3_firstname','author3_lastname','author3_gender','author3_gender_prob','author4_firstname','author4_lastname','author4_gender','author4_gender_prob','author5_firstname','author5_lastname','author5_gender','author5_gender_prob','Journal','volume','number','pages'])
         writer.writerow(dict_to_utf(mydict))
 
+def make_csv_undecode(string):
+    resultFile = open("undecode.csv", 'a')
+    wr = csv.writer(resultFile, dialect='excel')
+    wr.writerow(string)
 
 def remove_spaces(string):
     y = [s.replace('\n', "", 1) for s in string]
@@ -147,13 +197,23 @@ def get_book_Citations(lst):
     return mylist
 
 def get_pdf():
-	pdf = convert_pdf_to_txt("/Users/dipit/Documents/RA/RA/AmericanPolitics/13700001.pdf")
+	pdf = convert_pdf_to_txt("/Users/dipit/Documents/RA/RA/CitationsNickHasty/2600901.pdf")
 	split_string= pdf.split("\n\n")
 	titles=get_name(split_string)
 	return titles
 
 g=[]
 fTags=[]
+def similar(a, b):
+    return SequenceMatcher(None, a, b).ratio()
+
+new=[]
+def previous_and_next(some_iterable):
+    prevs, items, nexts = tee(some_iterable, 3)
+    prevs = chain([None], prevs)
+    nexts = chain(islice(nexts, 1, None), [None])
+    return izip(prevs, items, nexts)
+
 def get_italic_titles(soup):
     for i in soup.find_all('span', style=lambda x: x and 'Italic' in x):
         bTags2.append(i.text)
@@ -162,33 +222,95 @@ def get_italic_titles(soup):
     for i in fTags:
         g.append(re.sub(r'\s', ' ', i))
 
-    for i in g[:]:
-        if "APSR"  in i:
-            g.remove(i)
-        elif "AJPS"  in i:
-            g.remove(i)
-        elif "Journal" in i:
-            g.remove((i))
-        elif "Review" in  i:
-            g.remove(i)
-        elif "Quarterly" in i:
-            g.remove(i)
-    # print journal
+    for i in g:
+        for s in remove[:]:
+            if similar(i,s)>0.90:
+                try:
+                    g.remove(i)
+                except ValueError:
+                    pass
+
+    for j in g[:]:
+        if j.startswith('Journal') or j.endswith('Science'):
+            g.remove(j)
+        elif 'Journal' in j:
+            g.remove(j)
+        elif j[0].isdigit():
+            g.pop(g.index(j))
+        elif len(j)<=2:
+            g.remove(j)
+        elif "Review" in j:
+            g.pop(g.index(j))
+        elif j.endswith("Analysis"):
+            g.remove(j)
+            # g.remove(len(g)-1)
+
+    # return g
+    for previous, item, nxt in previous_and_next(g):
+        # print item[-1],previous
+        if item[-1] == ","  or item[-1]=='--' or item[-1]==' ':
+            try:
+                new.append (item + nxt)
+            except TypeError:
+                pass
+        elif item[0] == "," or item[0]==' ':
+            try:
+                new.append(previous + item)
+            except TypeError:
+                pass
+        else:
+            new.append(item)
+
+    return new
+
+def only_italic_titles(soup):
+    for i in soup.find_all('span', style=lambda x: x and 'Italic' in x):
+        bTags2.append(i.text)
+    for i in bTags2:
+        fTags.append(i.encode('utf-8'))
+    for i in fTags:
+        g.append(re.sub(r'\s', ' ', i))
+
+    for i in g:
+        for s in remove[:]:
+            if similar(i,s)>0.90:
+                try:
+                    g.remove(i)
+                except ValueError:
+                    pass
+
+    for j in g[:]:
+        if j.startswith('Journal') or j.endswith('Science'):
+            g.remove(j)
+        elif 'Journal' in j:
+            g.remove(j)
+        elif j[0].isdigit():
+            g.pop(g.index(j))
+        elif len(j)<=2:
+            g.remove(j)
+        elif "Review" in j:
+            g.pop(g.index(j))
+        elif j.endswith("Analysis"):
+            g.remove(j)
+            # g.remove(len(g)-1)
+
     return g
 
-itatics_titles= get_italic_titles(BeautifulSoup(open("/Users/dipit/Documents/RA/RA/Comparative/13200001.html")))
-
+itatics_titles= get_italic_titles(BeautifulSoup(open("/Users/dipit/Documents/RA/RA/CitationsProjectAffiliates/Princeton/1200301.html")))
 # titles_articles=get_article_Citations(get_pdf())
 titiles_books=get_pdf()
+# only_italics=only_italic_titles(BeautifulSoup(open("/Users/dipit/Documents/RA/RA/PoliticalTheory/13600009.html")))
 
 n=[]
 def quotes_from_pdf():
-    string= convert_pdf_to_txt("/Users/dipit/Documents/RA/RA/Comparative/13900002.pdf")
-    split_string = string.split("\n\n")
+    string= convert_pdf_to_txt("/Users/dipit/Documents/RA/RA/CitationsProjectAffiliates/Binghamton/9704681.pdf")
+    split_string = string.split("\n \n")
     for i in split_string:
         if "\xe2\x80\x9d".decode("utf-8") in i:
             n.append(i)
         elif '"' in i:
+            n.append(i)
+        elif "‘" in i:
             n.append(i)
     # for i in new[:]:
     #     if i==' ':
@@ -223,9 +345,12 @@ def get_Name(lst):
 	return f_n,l_n
 
 def compute_gender(lst):
-	return (Genderize().get(lst))
+    # try:
+    #     return (genderize.get(lst))
+    # except GenderizeException:
+    return (Genderize().get(lst))
 
-# print compute_gender(['john', 'Harry'])
+
 def a(test_str):
     ret = ''
     skip1c = 0
@@ -322,12 +447,12 @@ def make_dict(lst):
             data = json.loads(response.read())
         except ValueError:
             data=" "
-        info["syllabus_number"] ="13900002"
+        info["syllabus_number"] ="9704681"
         info['publisher'] = "NULL"
         try:
             info['year'] = (data[0]['year'])
         except IndexError:
-            info['year']= "NULL"
+            info['year']= " "
         try:
 
             info['title'] = (data[0]['title'])
@@ -357,16 +482,27 @@ def make_dict(lst):
 
         # aut =(data[1]['fullCitation']).split("'")[0]
         check= (get_authors(dic.values()))
+        print check
         info['author1_firstname'] = check[0]
-        info['author1_lastname'] = check[1]
-        info['author2_firstname'] = check[2]
-        info['author2_lastname'] = check[3]
-        info['author3_firstname'] = check[4]
-        info['author3_lastname'] = check[5]
-        info['author4_firstname'] = check[6]
-        info['author4_lastname'] = check[7]
-        info['author5_firstname'] = check[8]
-        info['author5_lastname'] = check[9]
+        info['author1_lastname'] = check[2]
+        info['author1_gender'] = check[1]
+        info['author1_gender_prob'] = check[3]
+        info['author2_firstname'] = check[4]
+        info['author2_lastname'] = check[6]
+        info['author2_gender'] = check[5]
+        info['author2_gender_prob'] = check[7]
+        info['author3_firstname'] = check[8]
+        info['author3_lastname'] = check[10]
+        info['author3_gender'] = check[9]
+        info['author3_gender_prob'] = check[11]
+        info['author4_firstname'] = check[12]
+        info['author4_lastname'] = check[14]
+        info['author4_gender'] = check[13]
+        info['author4_gender_prob'] = check[15]
+        info['author5_firstname'] = check[16]
+        info['author5_lastname'] = check[18]
+        info['author5_gender'] = check[17]
+        info['author5_gender_prob'] = check[19]
 
         info['Journal']= journal
         try:
@@ -390,7 +526,7 @@ def make_dict(lst):
 
 
         pprint (info)
-        time.sleep(5)
+        # time.sleep(5)
         make_csv(info)
 info3={}
 dic1={}
@@ -398,32 +534,39 @@ def get_from_google_books(lst):
     # print len(lst[6])
     for i in lst[:]:
         if len(i)>1:
-            url = "https://www.googleapis.com/books/v1/volumes?q=" + i + "&maxResults=1&AIzaSyA6aHpgIfl7qV9zg7cratTtQgTFx2NOQhM"
+            url = "https://www.googleapis.com/books/v1/volumes?q=" + i + "&maxResults=1&key=AIzaSyBADXkcoLOBG2UsddOpliFOq-JzEbbJ7_0"
             print url
             response = urllib.urlopen(url)
             data = json.loads(response.read())
 
-            info3["syllabus_number"]="13200001"
+            info3["syllabus_number"]="1200301"
             try:
 
                 info3['publisher'] = (data['items'][0]['volumeInfo']['publisher'])
             except KeyError:
-                info3['publisher'] = "NULL"
+                info3['publisher'] = " "
+            except IndexError:
+                info3['publisher'] = " "
+
             try:
-                info3['year']=(data['items'][0]['volumeInfo']['publishedDate'])
+                info3['year']= parser.parse(data['items'][0]['volumeInfo']['publishedDate']).year
+            except ValueError:
+                info3['year']= " "
             except KeyError:
-                info3['year']= "NULL"
+                info3['year'] = " "
+
             try:
                 dic1['author'] = (data['items'][0]['volumeInfo']['authors'])
             # except KeyError:
                 # dic1['author'] = (data['items'][1]['volumeInfo']['authors'])
             except KeyError:
                 dic1['author']= "NULL"
+            pprint (dic1['author'])
 
             try:
                 info3['pages'] = (data['items'][0]['volumeInfo']['pageCount'])
             except KeyError:
-                info['pages'] = "NULL"
+                info['pages'] = " "
 
             try:
                 info3['title'] = (data['items'][0]['volumeInfo']['title'])
@@ -442,8 +585,9 @@ def get_from_google_books(lst):
                 try:
                     x.extend(["NULL"] * d)
                 except AttributeError:
-                    x=["NULL" * count]
-
+                    x=" "
+            else:
+                pass
             check= get_author_details(x)
             print check
             info3['author1_firstname'] = check[0]
@@ -476,13 +620,19 @@ def get_from_google_books(lst):
                 info3['pages'] ="NULL"
 
             if info3["title"] =="NULL":
-                undecode.append(info3)
+                make_csv_undecode([info3["syllabus_number"],i])
 
-            # pprint (info3)
-            time.sleep(5)
+            pprint (info3)
+            time.sleep(6)
             make_csv1(info3)
 
+            # print undecode
+
 # print titles_articles
-# make_dict(titles_articles)
 # get_from_google_books(titles_books)
+# make_dict(titles_articles)
+# get_from_google_books(only_italics)
+# make_dict(titiles_books)
 get_from_google_books(itatics_titles)
+# print titles
+# get_from_google_books(titiles_books)
