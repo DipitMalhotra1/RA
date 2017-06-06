@@ -65,8 +65,6 @@ def quotes_name(r):
     quoted = re.compile('(.+)"[^"]+",')
     quoted2 = re.compile('(.+)"[^"]+".')
 
-
-
     for value in (quoted.findall(r) or quoted1.findall(r) or (quoted2.findall(r))):
         test1.append(value)
     print len(test1)
@@ -97,53 +95,29 @@ def remove_numbers(string):
     return z
 
 def extract():
-    string = convert_pdf_to_txt("/Users/dipit/Documents/RA/RA/test.pdf")
+    string = convert_pdf_to_txt("/Users/dipit/Documents/RA/RA/100021.pdf")
     # print string
     title = quotes(string)
-    print title
+    # print title
     print "\n"
     name = quotes_name(string)
     removed = remove_numbers(name)
     pun=remove_numbers(removed)
-    print remove_punctuation(pun);
+    rem_punc= remove_punctuation(pun)
     print "\n"
 
 
-    zipped = zip(removed, title)
+    zipped = zip(rem_punc, title)
     print zipped
-    print len(zipped)
-    #
+    # print len(zipped)
+
     # for i in range(len(zipped)):
-    #
-    #     scholar = "python scholar.py -c 1 --author " + (zipped[i][0]) + "--phrase  " + zipped[i][1]
-    #     print scholar
-    # # os.system(scholar)
 
+        # scholar = "python scholar.py -c 1 --author " + (zipped[i][0]) + "--phrase  " + zipped[i][1]
+        # print scholar
 
+        # os.system(scholar)
 
-
-
-
-
-
-
-    # lines = list(filter(bool, string.split('"')))
-    # Data = {}
-    # for i in range(len(lines)):
-    #     if 'References' in lines[i]:
-    #         Data = (lines[i + 1])
-    #         d = Data.split('  ')
-    #         names = get_human_names(str(d))
-    #         print d
-    #         print "LAST, FIRST"
-    #         for name in names:
-    #             last_first = HumanName(name).last + ', ' + HumanName(name).first
-    #             print last_first
-    #
-    #         for r in range(4):
-    #             x= "INSERT INTO Reference (NAME) \
-    #                VALUES" + '(' + '"{}"'.format(d[r]) + ')'
-    #             data(x)
 
 
 def data(sql):

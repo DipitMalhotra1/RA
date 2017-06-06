@@ -1,3 +1,8 @@
+import subprocess
+from os import path
+from glob import glob
+import os
+
 def between(value, a, b):
     # Find and validate before-part.
     pos_a = value.find(a)
@@ -20,9 +25,16 @@ def after(value, a):
     if adjusted_pos_a >= len(value): return ""
     return value[adjusted_pos_a:]
 
+def before(value, a):
+    # Find first part and return slice before it.
+    pos_a = value.find(a)
+    if pos_a == -1: return ""
+    return value[0:pos_a]
+
+
 def get_name(lst):
     for i in lst[:]:
-        if i=='':
+        if i=='' or i==' ' or i=='  ' or len(i)==1:
             lst.remove(i)
     return lst
 
@@ -39,12 +51,22 @@ def plain2txt(data):
     with open ('/Users/dipit/Documents/RA/RA/Columbia/200071/titles.txt', 'a') as f:
         f.write('{}'.format(data))
 
-# with open('output.txt', 'r+') as fp:
-# 	for i in fp:
-# 		# print i
-# 		print between(i,"author", ',')
-# 		# user=i[i.find("author")+i[1:8]:].split()[1]
-# 		# print(user)
-# 		# d = dict(regex.findall(i))
-# 		# print d	
-# # dict
+rootdir = '/Users/dipit/Documents/RA/RA/CitationsProjectAffiliates'
+x=[]
+y=[]
+def get_pdf_h(lst):
+    pdf = []
+    html = []
+    for i in lst:
+        pdf.append(i.split("/")[-1])
+    for i in pdf:
+        html.append(i.split(".")[0] + ".html")
+    return pdf
+
+def get_all_folder():
+	for subdir, dirs, files in os.walk(rootdir):
+	    for file in files:
+			x.append(os.path.join(subdir,file))
+			y.append(os.path.join(subdir))
+	return x[1:-1],y[1:-1]
+folder= get_all_folder()
