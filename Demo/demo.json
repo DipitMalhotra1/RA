@@ -1,5 +1,5 @@
 {
-    "Author1Probability": 0.754, 
+    "Author1Probability": 0.766, 
     "Title": "A net practice for software project management", 
     "SyllabusNumber": "1002", 
     "Author5Gender": "NULL", 
@@ -10,7 +10,7 @@
     "Journal": "Software Development and Professional Practice", 
     "Author3Probability": "NULL", 
     "Volume": " ", 
-    "Author2Probability": 0.716, 
+    "Author2Probability": 0.764, 
     "Author4Gender": "NULL", 
     "Publisher": "NULL", 
     "Author4Probability": "NULL", 
@@ -24,12 +24,12 @@
     "Author2Firstname": "M.", 
     "Number": "", 
     "Pages": " pp. 27-36", 
-    "Author1Gender": "male", 
+    "Author1Gender": "female", 
     "Author2Gender": "male", 
     "Year": "1999"
 }
 {
-    "Author1Probability": 0.76, 
+    "Author1Probability": 0.764, 
     "Title": "An Algorithm for Optimal Project Scheduling under Multiple Resource Constraints", 
     "SyllabusNumber": "1002", 
     "Author5Gender": "NULL", 
@@ -40,7 +40,7 @@
     "Journal": "Advances in Project Scheduling", 
     "Author3Probability": "NULL", 
     "Volume": " ", 
-    "Author2Probability": 0.79, 
+    "Author2Probability": 0.774, 
     "Author4Gender": "NULL", 
     "Publisher": "NULL", 
     "Author4Probability": "NULL", 
@@ -59,7 +59,7 @@
     "Year": "1971"
 }
 {
-    "Author1Probability": 0.774, 
+    "Author1Probability": 0.786, 
     "Title": "MULTIOBJECTIVE PROJECT SCHEDULING UNDER MULTIPLE - CATEGORY RESOURCE CONSTRAINTS", 
     "SyllabusNumber": "1002", 
     "Author5Gender": "NULL", 
@@ -84,12 +84,12 @@
     "Author2Firstname": "NULL", 
     "Number": " no. 12", 
     "Pages": " pp. B-803-B-816", 
-    "Author1Gender": "male", 
+    "Author1Gender": "female", 
     "Author2Gender": "NULL", 
     "Year": "1989"
 }
 {
-    "Author1Probability": 0.748, 
+    "Author1Probability": 0.77, 
     "Title": "Genetic algorithms: principles of natural selection applied to computation", 
     "SyllabusNumber": "1002", 
     "Author5Gender": "NULL", 
@@ -119,7 +119,7 @@
     "Year": "1993"
 }
 {
-    "Author1Probability": 0.788, 
+    "Author1Probability": 0.78, 
     "Title": "Genetic algorithms: An evolution from Monte Carlo Methods for strongly non-linear geophysical optimization problems", 
     "SyllabusNumber": "1002", 
     "Author5Gender": "NULL", 
@@ -128,9 +128,9 @@
     "Author4Firstname": "NULL", 
     "Author5Firstname": "NULL", 
     "Journal": "Optimization Algorithms in Physics", 
-    "Author3Probability": 0.736, 
+    "Author3Probability": 0.762, 
     "Volume": " ", 
-    "Author2Probability": 0.742, 
+    "Author2Probability": 0.756, 
     "Author4Gender": "NULL", 
     "Publisher": "NULL", 
     "Author4Probability": "NULL", 
@@ -149,7 +149,7 @@
     "Year": "1991"
 }
 {
-    "Author1Probability": 0.752, 
+    "Author1Probability": 0.75, 
     "Title": "Tanzmusik aus der Hallertau. Schottisch, Zwiefache, Landler, Walzer, Polkas und Galopps, aus den Notenbuchern des Schranner Anderl (1881-1947)", 
     "SyllabusNumber": "1002", 
     "Author5Gender": "NULL", 
@@ -158,39 +158,9 @@
     "Author4Firstname": "NULL", 
     "Author5Firstname": "NULL", 
     "Journal": "Encapsulation and Controlled Release", 
-    "Author3Probability": 0.764, 
+    "Author3Probability": 0.756, 
     "Volume": " ", 
-    "Author2Probability": 0.774, 
-    "Author4Gender": "NULL", 
-    "Publisher": "NULL", 
-    "Author4Probability": "NULL", 
-    "Author3Firstname": "Maximilian", 
-    "Author5Lastname": "NULL", 
-    "Author3Gender": "male", 
-    "Author1Lastname": "Schlottermuller", 
-    "Author1Firstname": "Uwe", 
-    "Author2Lastname": "Reindl", 
-    "Author3Lastname": "Seefelder", 
-    "Author2Firstname": "Georg", 
-    "Number": "", 
-    "Pages": " p. v", 
-    "Author1Gender": "female", 
-    "Author2Gender": "male", 
-    "Year": "1992"
-}
-{
-    "Author1Probability": 0.744, 
-    "Title": "Tanzmusik aus der Hallertau. Schottisch, Zwiefache, Landler, Walzer, Polkas und Galopps, aus den Notenbuchern des Schranner Anderl (1881-1947)", 
-    "SyllabusNumber": "1002", 
-    "Author5Gender": "NULL", 
-    "Author5Probability": "NULL", 
-    "Author4Lastname": "NULL", 
-    "Author4Firstname": "NULL", 
-    "Author5Firstname": "NULL", 
-    "Journal": "Encapsulation and Controlled Release", 
-    "Author3Probability": 0.76, 
-    "Volume": " ", 
-    "Author2Probability": 0.756, 
+    "Author2Probability": 0.754, 
     "Author4Gender": "NULL", 
     "Publisher": "NULL", 
     "Author4Probability": "NULL", 
@@ -210,6 +180,36 @@
 }
 {
     "Author1Probability": 0.772, 
+    "Title": "Tanzmusik aus der Hallertau. Schottisch, Zwiefache, Landler, Walzer, Polkas und Galopps, aus den Notenbuchern des Schranner Anderl (1881-1947)", 
+    "SyllabusNumber": "1002", 
+    "Author5Gender": "NULL", 
+    "Author5Probability": "NULL", 
+    "Author4Lastname": "NULL", 
+    "Author4Firstname": "NULL", 
+    "Author5Firstname": "NULL", 
+    "Journal": "Encapsulation and Controlled Release", 
+    "Author3Probability": 0.706, 
+    "Volume": " ", 
+    "Author2Probability": 0.716, 
+    "Author4Gender": "NULL", 
+    "Publisher": "NULL", 
+    "Author4Probability": "NULL", 
+    "Author3Firstname": "Maximilian", 
+    "Author5Lastname": "NULL", 
+    "Author3Gender": "male", 
+    "Author1Lastname": "Schlottermuller", 
+    "Author1Firstname": "Uwe", 
+    "Author2Lastname": "Reindl", 
+    "Author3Lastname": "Seefelder", 
+    "Author2Firstname": "Georg", 
+    "Number": "", 
+    "Pages": " p. v", 
+    "Author1Gender": "female", 
+    "Author2Gender": "male", 
+    "Year": "1992"
+}
+{
+    "Author1Probability": 0.738, 
     "Title": "Optimization of Genetic Algorithms by Genetic Algorithms", 
     "SyllabusNumber": "1002", 
     "Author5Gender": "NULL", 
@@ -220,7 +220,7 @@
     "Journal": "Genetic Algorithms and Evolutionary Computation", 
     "Author3Probability": "NULL", 
     "Volume": " ", 
-    "Author2Probability": 0.754, 
+    "Author2Probability": 0.766, 
     "Author4Gender": "NULL", 
     "Publisher": "NULL", 
     "Author4Probability": "NULL", 
@@ -239,7 +239,7 @@
     "Year": "1993"
 }
 {
-    "Author1Probability": 0.748, 
+    "Author1Probability": 0.736, 
     "Title": "Development of the Ordering Messy Genetic Algorithm", 
     "SyllabusNumber": "1002", 
     "Author5Gender": "NULL", 
@@ -269,7 +269,7 @@
     "Year": "2002"
 }
 {
-    "Author1Probability": 0.756, 
+    "Author1Probability": 0.786, 
     "Title": "The Resource-Constrained Project Scheduling Problem", 
     "SyllabusNumber": "1002", 
     "Author5Gender": "NULL", 
@@ -299,7 +299,7 @@
     "Year": null
 }
 {
-    "Author1Probability": 0.73, 
+    "Author1Probability": 0.766, 
     "Title": "The Resource-Constrained Project Scheduling Problem", 
     "SyllabusNumber": "1002", 
     "Author5Gender": "NULL", 
@@ -389,7 +389,7 @@
     "Year": "2016"
 }
 {
-    "Author1Probability": 0.762, 
+    "Author1Probability": 0.788, 
     "Title": "Genetic Algorithms", 
     "SyllabusNumber": "xxxxxxx", 
     "Author5Gender": "NULL", 

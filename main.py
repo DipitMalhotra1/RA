@@ -130,11 +130,7 @@ def extract_books():  #Works for column type citations#
         bTags.append(i.text.strip())
     test = filter(None, bTags)
     test=[item.encode('ascii', 'ignore') for item in test]
-    print test
-    print "\n\n"
     for i in range(len(test)):
-
-
         try:
             if re.findall("\.\d{4}", test[i]) and test[i][-5:-1].isdigit():
                 test2.append(test[i+1])
@@ -145,7 +141,6 @@ def extract_books():  #Works for column type citations#
 
         except IndexError:
             pass
-
     return test2
 
 
@@ -238,8 +233,6 @@ def crossRef(lst):
             fp.write("{}\n".format(json_text))
 
 
-
-
 def googleBooks(lst):
     for i in lst[:]:
         if len(i)>1:
@@ -323,7 +316,6 @@ def googleBooks(lst):
             with open('/Users/dipit/Documents/RA/RA/Demo/demo.json', 'a') as fp:
                 json_text = json.dumps(info3, indent=4)
                 fp.write("{}\n".format(json_text))
-
 
 
 def write2json(doc):

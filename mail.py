@@ -49,18 +49,3 @@ print test1
 os.chdir("/Users/dipit/Desktop/pdf/")
 string= "pdf2txt.py -O /Users/dipit/Desktop/pdf/Book1-split.pdf  -o " + 'Book1-split.pdf' + " -t html " + 'Book1-split.pdf'
 os.system(string)
-#
-# for i in range(len(test1)):
-#
-#     string= "pdf2txt.py -O /Users/dipit/Desktop/pdf/Book1-split.pdf  -o " + (test[i]) + " -t html " +(test1[i])
-#     # print string
-#     # print os.getcwd()
-#     os.chdir("/Users/dipit/Desktop/pdf/")
-#     # print os.getcwd()
-#     # with cd("/Users/dipit/Documents/RA/RA/Comparative"):
-#     #     # we are in ~/Library
-#     #     subprocess.call(string)
-#
-#
-#     # os.system("cd /Users/dipit/Documents/RA/RA/Comparative")
-#     os.system(string)
