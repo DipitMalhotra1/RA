@@ -13,7 +13,7 @@ def count_pages(filename):
 
 
 
-pages= count_pages("/Users/dipit/Desktop/pdf/Mining.pdf")
+pages= count_pages("/Users/dipit/Desktop/pdf/neu.pdf")
 print pages
 
 
@@ -27,4 +27,4 @@ import pdfx
 os.chdir("/Users/dipit/Desktop/pdf")
 # os.system(hard_code)
 
-splitPages("/users/dipit/desktop/pdf/Mining.pdf", [slice(518, 536, None)])    # i.e. [0]
+splitPages("/users/dipit/desktop/pdf/political.pdf", [slice(12,14, None)])    # i.e. [0]

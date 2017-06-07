@@ -92,7 +92,6 @@ def get_author_details(lst):
             info2["author{0}_prob".format(x)]= 0.0
 
     s = SortedDict(info2)
-    print s.values()
     return s.values()
 
 def array_to_utf(a):
@@ -148,9 +147,6 @@ def get_Name(lst):
         else:
             f_n.append(get_first_name("NULL"))
             l_n.append(get_last_word("NULL"))
-
-
-    print f_n, l_n
     return f_n,l_n
 
 def compute_gender(lst):
@@ -159,6 +155,12 @@ def compute_gender(lst):
     # except GenderizeException:
     return (Genderize().get(lst))
 
+
+def previous_and_next(some_iterable):
+    prevs, items, nexts = tee(some_iterable, 3)
+    prevs = chain([None], prevs)
+    nexts = chain(islice(nexts, 1, None), [None])
+    return izip(prevs, items, nexts)
 
 def a(test_str):
     ret = ''
@@ -190,8 +192,6 @@ def get_authors(lst):
     d=count-length
     if len(names1) < count:
         names1.extend(["NULL"] * d)
-    print "names1:", names1
-
     return get_author_details(names1)
 
 
@@ -204,8 +204,6 @@ def author_details(lst):
         except ValueError:
             data=" "
         dic['authors'] =(data[1]['fullCitation']).split("'")[0]
-        pprint (get_authors(dic.values()))
-
 
 def between(value, a, b):
     # Find and validate before-part.
