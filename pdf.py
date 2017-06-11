@@ -48,7 +48,7 @@ def quotes_name(r):
 
     for value in (quoted.findall(r) or quoted1.findall(r) or (quoted2.findall(r))):
         test1.append(value)
-    print len(test1)
+    # print len(test1)
 
     return test1[5:39]
 
@@ -58,7 +58,7 @@ def quotes(x):
         l= len(value)
         if l>29:
             test.append(value)
-    print len(test)
+    # print len(test)
 
     return test[4:38]
         # print len(test)
@@ -80,14 +80,14 @@ def extract():
     # print string
     title = quotes(string)
     # print title
-    print "\n"
+    # print "\n"
     name = quotes_name(string)
     removed = remove_numbers(name)
     pun=remove_numbers(removed)
     rem_punc= remove_punctuation(pun)
-    print "\n"
+    # print "\n"
     zipped = zip(rem_punc, title)
-    print zipped
+    return zipped
 
 
 if __name__ == "__main__":

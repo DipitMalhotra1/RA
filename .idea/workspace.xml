@@ -2,17 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="12374726-bb92-4580-a88a-aefe8da8cf54" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/demo.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/mydata.csv" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/reading.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/spark.csv" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/spark.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/spark1.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/titles.py" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/gender.py" afterPath="$PROJECT_DIR$/main.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Demo/demo.json" afterPath="$PROJECT_DIR$/Demo/demo.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/count_pages.py" afterPath="$PROJECT_DIR$/count_pages.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/genderPredictor.py" afterPath="$PROJECT_DIR$/genderPredictor.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gp.py" afterPath="$PROJECT_DIR$/gp.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mail.py" afterPath="$PROJECT_DIR$/mail.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main.py" afterPath="$PROJECT_DIR$/main.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pdf.py" afterPath="$PROJECT_DIR$/pdf.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/result.json" afterPath="$PROJECT_DIR$/result.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/utility.py" afterPath="$PROJECT_DIR$/utility.py" />
     </list>
     <ignored path="RA.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -32,11 +31,23 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="main.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/main.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2160">
+              <caret line="242" column="16" selection-start-line="242" selection-start-column="16" selection-end-line="242" selection-end-column="16" />
+              <folding>
+                <element signature="e#24#43#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="utility.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/utility.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="147">
-              <caret line="129" column="13" selection-start-line="129" selection-start-column="8" selection-end-line="129" selection-end-column="13" />
+            <state relative-caret-position="397">
+              <caret line="237" column="0" selection-start-line="237" selection-start-column="0" selection-end-line="237" selection-end-column="0" />
               <folding>
                 <element signature="e#21#40#0" expanded="true" />
               </folding>
@@ -44,11 +55,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="main.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/main.py">
+      <file leaf-file-name="covertHtml.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/covertHtml.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2130">
-              <caret line="318" column="0" selection-start-line="318" selection-start-column="0" selection-end-line="318" selection-end-column="0" />
+            <state relative-caret-position="265">
+              <caret line="313" column="32" selection-start-line="313" selection-start-column="32" selection-end-line="313" selection-end-column="32" />
               <folding>
                 <element signature="e#24#43#0" expanded="true" />
               </folding>
@@ -59,43 +70,21 @@
       <file leaf-file-name="demo.json" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Demo/demo.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="output3.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Demo/output3.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="7" column="189" selection-start-line="7" selection-start-column="184" selection-end-line="7" selection-end-column="189" />
+            <state relative-caret-position="23880">
+              <caret line="1784" column="0" selection-start-line="1784" selection-start-column="0" selection-end-line="1784" selection-end-column="0" />
               <folding>
-                <element signature="n#style#0;n#span#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <marker date="1497163490000" expanded="true" signature="0:971" ph="{&quot;Author1Probability&quot;: 0.778...}" />
+                <marker date="1497163490000" expanded="true" signature="972:1936" ph="{&quot;Author1Probability&quot;: &quot;NULL&quot;...}" />
+                <marker date="1497163490000" expanded="true" signature="1937:2872" ph="{&quot;Author1Probability&quot;: 0.766...}" />
+                <marker date="1497163490000" expanded="true" signature="2873:3861" ph="{&quot;Author1Probability&quot;: 0.786...}" />
+                <marker date="1497163490000" expanded="true" signature="3862:4831" ph="{&quot;Author1Probability&quot;: 0.778...}" />
+                <marker date="1497163490000" expanded="true" signature="4832:5784" ph="{&quot;Author1Probability&quot;: 0.716...}" />
+                <marker date="1497163490000" expanded="true" signature="5785:6739" ph="{&quot;Author1Probability&quot;: &quot;NULL&quot;...}" />
+                <marker date="1497163490000" expanded="true" signature="6740:7672" ph="{&quot;Author1Probability&quot;: 0.726...}" />
+                <marker date="1497163490000" expanded="true" signature="7673:8632" ph="{&quot;Author1Probability&quot;: 0.746...}" />
+                <marker date="1497163490000" expanded="true" signature="8633:9564" ph="{&quot;Author1Probability&quot;: 0.76...}" />
+                <marker date="1497163490000" expanded="true" signature="9565:10501" ph="{&quot;Author1Probability&quot;: 0.748...}" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="count_pages.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/count_pages.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="435">
-              <caret line="29" column="62" selection-start-line="29" selection-start-column="62" selection-end-line="29" selection-end-column="62" />
-              <folding>
-                <element signature="e#22#31#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="mail.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mail.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="314">
-              <caret line="51" column="0" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -103,31 +92,21 @@
       <file leaf-file-name="result.json" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/result.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="107">
-              <caret line="22862" column="14" selection-start-line="22862" selection-start-column="14" selection-end-line="22862" selection-end-column="44" />
+            <state relative-caret-position="165">
+              <caret line="11" column="196" selection-start-line="11" selection-start-column="196" selection-end-line="11" selection-end-column="196" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="openpy.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/openpy.py">
+      <file leaf-file-name="count_pages.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/count_pages.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-686">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="15">
+              <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
               <folding>
-                <element signature="e#0#17#0" expanded="true" />
+                <element signature="e#21#30#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="pdf.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pdf.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="274">
-              <caret line="90" column="0" selection-start-line="90" selection-start-column="0" selection-end-line="90" selection-end-column="0" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -183,20 +162,24 @@
         <option value="$PROJECT_DIR$/italics.py" />
         <option value="$PROJECT_DIR$/mydata.csv" />
         <option value="$PROJECT_DIR$/reading.py" />
-        <option value="$PROJECT_DIR$/count_pages.py" />
-        <option value="$PROJECT_DIR$/result.json" />
-        <option value="$PROJECT_DIR$/utility.py" />
-        <option value="$PROJECT_DIR$/pdf.py" />
         <option value="$PROJECT_DIR$/gender.py" />
+        <option value="$PROJECT_DIR$/gp.py" />
+        <option value="$PROJECT_DIR$/api.py" />
+        <option value="$PROJECT_DIR$/genderPredictor.py" />
+        <option value="$PROJECT_DIR$/pdf.py" />
         <option value="$PROJECT_DIR$/mail.py" />
-        <option value="$PROJECT_DIR$/Demo/demo.json" />
+        <option value="$PROJECT_DIR$/result.json" />
         <option value="$PROJECT_DIR$/main.py" />
+        <option value="$PROJECT_DIR$/count_pages.py" />
+        <option value="$PROJECT_DIR$/utility.py" />
+        <option value="$PROJECT_DIR$/Demo/demo.json" />
+        <option value="$PROJECT_DIR$/covertHtml.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="44" />
-    <option name="y" value="22" />
+    <option name="x" value="43" />
+    <option name="y" value="23" />
     <option name="width" value="1236" />
     <option name="height" value="778" />
   </component>
@@ -243,45 +226,65 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="RA" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="RA" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Docs" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PDF" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="RA" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="RA" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Docs" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$USER_HOME$/PycharmProjects/Learning_apache_spark" />
+    <property name="last_opened_file_path" value="$USER_HOME$/PycharmProjects/Learning_apache_spark/coding-data-exam" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="last.edited.regexp" value="cjcjdc&quot; cdjbcdbc.&quot;" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/Demo" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/Docs" />
+      <recent name="$PROJECT_DIR$/Demo" />
       <recent name="$PROJECT_DIR$/Berkeley" />
       <recent name="$PROJECT_DIR$/Database" />
     </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/Docs" />
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/Demo" />
+    </key>
   </component>
-  <component name="RunManager" selected="Python.gender">
-    <configuration default="false" name="reading" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="RA" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/reading.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <method />
-    </configuration>
+  <component name="RunManager" selected="Python.covertHtml">
     <configuration default="false" name="mail" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -295,23 +298,6 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="RA" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/mail.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <method />
-    </configuration>
-    <configuration default="false" name="italics" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="RA" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/italics.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
@@ -346,6 +332,40 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="RA" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="api" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="RA" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/api.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="covertHtml" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="RA" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/covertHtml.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
@@ -485,19 +505,19 @@
       <method />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Python.reading" />
-      <item index="1" class="java.lang.String" itemvalue="Python.mail" />
-      <item index="2" class="java.lang.String" itemvalue="Python.italics" />
-      <item index="3" class="java.lang.String" itemvalue="Python.count_pages" />
-      <item index="4" class="java.lang.String" itemvalue="Python.gender" />
+      <item index="0" class="java.lang.String" itemvalue="Python.mail" />
+      <item index="1" class="java.lang.String" itemvalue="Python.count_pages" />
+      <item index="2" class="java.lang.String" itemvalue="Python.gender" />
+      <item index="3" class="java.lang.String" itemvalue="Python.api" />
+      <item index="4" class="java.lang.String" itemvalue="Python.covertHtml" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.gender" />
-        <item index="1" class="java.lang.String" itemvalue="Python.count_pages" />
-        <item index="2" class="java.lang.String" itemvalue="Python.mail" />
-        <item index="3" class="java.lang.String" itemvalue="Python.reading" />
-        <item index="4" class="java.lang.String" itemvalue="Python.italics" />
+        <item index="0" class="java.lang.String" itemvalue="Python.covertHtml" />
+        <item index="1" class="java.lang.String" itemvalue="Python.gender" />
+        <item index="2" class="java.lang.String" itemvalue="Python.api" />
+        <item index="3" class="java.lang.String" itemvalue="Python.count_pages" />
+        <item index="4" class="java.lang.String" itemvalue="Python.mail" />
       </list>
     </recent_temporary>
   </component>
@@ -518,16 +538,16 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="44" y="22" width="1236" height="778" extended-state="6" />
+    <frame x="43" y="23" width="1236" height="778" extended-state="6" />
     <editor active="false" />
     <layout>
       <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18683128" sideWeight="0.5703276" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.34273624" sideWeight="0.5065789" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32863188" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32798833" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.37026238" sideWeight="0.49342105" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3148688" sideWeight="0.49342105" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32863188" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.18689321" sideWeight="0.42967245" order="2" side_tool="true" content_ui="tabs" />
@@ -549,15 +569,16 @@
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33145276" sideWeight="0.49342105" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3148688" sideWeight="0.49342105" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Thumbnails" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32863188" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32863188" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18996711" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.18683128" sideWeight="0.5703276" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32863188" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32798833" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3977433" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.18689321" sideWeight="0.42967245" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39650145" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout-to-restore>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -583,19 +604,11 @@
           </properties>
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="4" />
+      <option name="time" value="5" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Columbia/200041/titles.txt" />
-    <entry file="file://$PROJECT_DIR$/Columbia/200042/titles.txt" />
-    <entry file="file://$PROJECT_DIR$/Columbia/200043/titles.txt" />
-    <entry file="file://$PROJECT_DIR$/Columbia/200051/titles.txt" />
-    <entry file="file://$PROJECT_DIR$/Columbia/200052/titles.txt" />
-    <entry file="file://$PROJECT_DIR$/Columbia/200061/titles.txt" />
-    <entry file="file://$PROJECT_DIR$/Columbia/200062/titles.txt" />
-    <entry file="file://$PROJECT_DIR$/Columbia/200071/titles.txt" />
     <entry file="file://$PROJECT_DIR$/Columbia/200071/quotes.txt" />
     <entry file="file://$PROJECT_DIR$/Columbia/200051/quotes.txt" />
     <entry file="file://$PROJECT_DIR$/Columbia/200051/italics.txt" />
@@ -609,13 +622,7 @@
     <entry file="file://$PROJECT_DIR$/italics.txt" />
     <entry file="file://$PROJECT_DIR$/output.txt" />
     <entry file="file://$PROJECT_DIR$/out.csv" />
-    <entry file="file://$PROJECT_DIR$/mydata.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="535" column="0" selection-start-line="535" selection-start-column="0" selection-end-line="535" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/mydata.csv" />
     <entry file="file://$PROJECT_DIR$/USSSALoader.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-602">
@@ -638,22 +645,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/genderPredictor.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/convert.py" />
     <entry file="file://$PROJECT_DIR$/doc2pdf.py" />
-    <entry file="file://$PROJECT_DIR$/gp.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/output.py" />
     <entry file="file://$PROJECT_DIR$/scholar.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -662,57 +655,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/reading.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="274" column="20" selection-start-line="271" selection-start-column="12" selection-end-line="274" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/italics.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/count_pages.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
-          <caret line="29" column="62" selection-start-line="29" selection-start-column="62" selection-end-line="29" selection-end-column="62" />
-          <folding>
-            <element signature="e#22#31#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/utility.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="147">
-          <caret line="129" column="13" selection-start-line="129" selection-start-column="8" selection-end-line="129" selection-end-column="13" />
-          <folding>
-            <element signature="e#21#40#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/reading.py" />
     <entry file="file://$PROJECT_DIR$/openpy.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-686">
+        <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#17#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pdf.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="274">
-          <caret line="90" column="0" selection-start-line="90" selection-start-column="0" selection-end-line="90" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -720,21 +667,54 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
           <caret line="7" column="189" selection-start-line="7" selection-start-column="184" selection-end-line="7" selection-end-column="189" />
-          <folding>
-            <element signature="n#style#0;n#span#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/result.json">
+    <entry file="file://$PROJECT_DIR$/titles.py" />
+    <entry file="file://$PROJECT_DIR$/demo.json" />
+    <entry file="file://$PROJECT_DIR$/gp.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="107">
-          <caret line="22862" column="14" selection-start-line="22862" selection-start-column="14" selection-end-line="22862" selection-end-column="44" />
-          <folding />
+        <state relative-caret-position="343">
+          <caret line="39" column="8" selection-start-line="39" selection-start-column="4" selection-end-line="39" selection-end-column="8" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/titles.py">
+    <entry file="file://$PROJECT_DIR$/genderPredictor.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="460">
+          <caret line="93" column="3" selection-start-line="93" selection-start-column="3" selection-end-line="93" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/italics.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pdf.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1155">
+          <caret line="89" column="10" selection-start-line="89" selection-start-column="10" selection-end-line="89" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mail.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="630">
+          <caret line="47" column="0" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="340" column="45" selection-start-line="340" selection-start-column="45" selection-end-line="340" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Demo/sample.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -742,23 +722,41 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/demo.json">
+    <entry file="file://$PROJECT_DIR$/Demo/IEEE.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1960">
+        <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mail.py">
+    <entry file="file://$PROJECT_DIR$/Demo/IEEE-split.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="314">
-          <caret line="51" column="0" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Demo/demo.json">
+    <entry file="file://$PROJECT_DIR$/result.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="196" selection-start-line="11" selection-start-column="196" selection-end-line="11" selection-end-column="196" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/count_pages.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+          <folding>
+            <element signature="e#21#30#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Docs/IEEE2.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -768,8 +766,64 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2130">
-          <caret line="318" column="0" selection-start-line="318" selection-start-column="0" selection-end-line="318" selection-end-column="0" />
+        <state relative-caret-position="2160">
+          <caret line="242" column="16" selection-start-line="242" selection-start-column="16" selection-end-line="242" selection-end-column="16" />
+          <folding>
+            <element signature="e#24#43#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Docs/PDF/Dimensional.pdf.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="276" selection-start-line="5" selection-start-column="276" selection-end-line="5" selection-end-column="276" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Docs/PDF/sample.pdf.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/utility.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="397">
+          <caret line="237" column="0" selection-start-line="237" selection-start-column="0" selection-end-line="237" selection-end-column="0" />
+          <folding>
+            <element signature="e#21#40#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Demo/demo.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="23880">
+          <caret line="1784" column="0" selection-start-line="1784" selection-start-column="0" selection-end-line="1784" selection-end-column="0" />
+          <folding>
+            <marker date="1497163490000" expanded="true" signature="0:971" ph="{&quot;Author1Probability&quot;: 0.778...}" />
+            <marker date="1497163490000" expanded="true" signature="972:1936" ph="{&quot;Author1Probability&quot;: &quot;NULL&quot;...}" />
+            <marker date="1497163490000" expanded="true" signature="1937:2872" ph="{&quot;Author1Probability&quot;: 0.766...}" />
+            <marker date="1497163490000" expanded="true" signature="2873:3861" ph="{&quot;Author1Probability&quot;: 0.786...}" />
+            <marker date="1497163490000" expanded="true" signature="3862:4831" ph="{&quot;Author1Probability&quot;: 0.778...}" />
+            <marker date="1497163490000" expanded="true" signature="4832:5784" ph="{&quot;Author1Probability&quot;: 0.716...}" />
+            <marker date="1497163490000" expanded="true" signature="5785:6739" ph="{&quot;Author1Probability&quot;: &quot;NULL&quot;...}" />
+            <marker date="1497163490000" expanded="true" signature="6740:7672" ph="{&quot;Author1Probability&quot;: 0.726...}" />
+            <marker date="1497163490000" expanded="true" signature="7673:8632" ph="{&quot;Author1Probability&quot;: 0.746...}" />
+            <marker date="1497163490000" expanded="true" signature="8633:9564" ph="{&quot;Author1Probability&quot;: 0.76...}" />
+            <marker date="1497163490000" expanded="true" signature="9565:10501" ph="{&quot;Author1Probability&quot;: 0.748...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/covertHtml.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="265">
+          <caret line="313" column="32" selection-start-line="313" selection-start-column="32" selection-end-line="313" selection-end-column="32" />
           <folding>
             <element signature="e#24#43#0" expanded="true" />
           </folding>

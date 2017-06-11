@@ -4,7 +4,7 @@ from nltk.corpus import names
 # For shuffling
 import random
 
-
+import sexmachine.detector as gender
 def gender_features(word):
     """ feature extractor for the name classifier
     The feature evaluated here is the last letter of a name

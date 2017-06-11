@@ -45,7 +45,6 @@ def get_pdf_h(lst):
     return pdf
 test1= get_pdf_h(find_ext('.','pdf'))
 
-print test1
 os.chdir("/Users/dipit/Desktop/pdf/")
 string= "pdf2txt.py -O /Users/dipit/Desktop/pdf/Book1-split.pdf  -o " + 'Book1-split.pdf' + " -t html " + 'Book1-split.pdf'
 os.system(string)

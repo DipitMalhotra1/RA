@@ -1,6 +1,7 @@
 # # -- coding: UTF-8 --
 import urllib, json
 import os
+import glob
 from itertools import tee, islice, chain, izip
 from difflib import SequenceMatcher
 from genderPredictor import genderPredictor
@@ -20,64 +21,71 @@ import csv
 from bs4 import BeautifulSoup
 import html
 import re
-import re
 import sys
 from nltk.corpus import names
 from gp import get_gender
 import random
 reload(sys)
-sys.setdefaultencoding('utf-8')
 
-
-soup = BeautifulSoup(open("/Users/dipit/Documents/RA/RA/Demo/output3.html"))
 from utility import *
-bTags = []
+from pdfsplit import splitPages
+from itertools import islice
+file=[]
+bTags=[]
+page=[]
+a=[]
 fTags=[]
-new=[]
-test=[]
-info3={}
-dic1={}
-aut=[]
-names=[]
-dic={}
-info={}
 z=[]
-bTags2=[]
+new=[]
+info={}
+dic1={}
+joinbook=[]
+test2=[]
+info3={}
+rxcountpages = re.compile(r"/Type\s*/Page([^s]|$)", re.MULTILINE|re.DOTALL)
+def count_pages(filename):
+    data = file(filename,"rb").read()
+    return len(rxcountpages.findall(data))
+def get_pages(pdf):
+    with open(pdf) as f:
+        for line in f:
+            if 'Page' in line:
+                a.append(''.join(islice(f, 100)))
+        for i in range(len(a)):
+            if "References" in a[i] or 'REFERENCES' in a[i] or 'EFERENCES' in a[i]:
+                return i
+# print get_pages("/Users/dipit/Documents/RA/RA/Docs/PDF/Dimensional.pdf.html")
+# print get_pages("/Users/dipit/Documents/RA/RA/Docs/PDF/sample.pdf.html")
+
 def extract_articles():
-    #CMR9# Font style
-    # for i in soup.find_all('span', style=lambda x: x and 'Regular' in x): #font style: regular#
-    # for i in soup.find_all('span', style=lambda x: x and 'TIM5;' in x):  #font style: Regu;#
-    for i in soup.find_all('span', style=lambda x: x and 'Times-Roman' in x):  #font style: times-roman#
-
+    for i in soup.find_all('span', style=lambda x: x and 'Regu;' in x):
         fTags.append(i.text)
-    fTags1=[item.encode('ascii', 'ignore') for item in fTags]
+    for i in soup.find_all('span', style=lambda x: x and 'Antiqua;' in x):
+        fTags.append(i.text)
+    for i in soup.find_all('span', style=lambda x: x and 'Times-Roman;' in x):
+        fTags.append(i.text)
+
+    fTags1=[item.encode('utf-8') for item in fTags]
+    fTags1=[item.replace('\n','') for item in fTags1]
+
+    # print fTags1
+    print "\n\n"
     for previous, item, nxt in previous_and_next(fTags1):
-        if item[-1]=='\n':
-            try:
-                z.append (item + nxt)
-            except TypeError:
-                pass
-    for i in range(len(z)-1):
+        try:
+            if item[-1]=='\n':
+                try:
+                    z.append(''.join(item,next))
+                except TypeError:
+                    pass
+        except IndexError:
+            pass
+        z.append(item)
+    # print z
+    for i in range(len(z)):
+        new.extend(re.findall("\“(.+)\”", z[i]))
 
-        # new.extend(re.findall("\(\d{4}\)\s.([^\.]*).*",z[i]))    #Year in paranthesis followed by space#
-
-
-        #new.extend(re.findall("(,)([^\.]*)(,)", z[i]))   #Different Citation style year at end#
-
-        # new.extend(re.findall("\.\s\d{4}\.([^\.]*).*", fTags[i]))   #Year not in paranthesis preceeded by white space
-        # new.extend(re.findall("\.\d{4}\.([^\.]*).*", fTags[i]))  #Year not in paranthesis#
-        new.extend(re.findall("\(\d{4}\).([^\.]*).*",z[i]))    #Year in paranthesis#
-
-    l = [item.encode('ascii', 'ignore') for item in new]
-    l = [x.strip() for x in l if x.strip()]
-    return l
-
-
-# Works for column type citations#
-
-joinbook = []
-test2 = []
-
+    return new
+# print extract_articles()
 
 def extract_books1():
     result=[]
@@ -85,61 +93,32 @@ def extract_books1():
     # for i in soup.find_all('span', style=lambda x: x):    #if column wise cited#
     for i in soup.find_all('span', style=lambda x: x):
 
-        bTags.append(i.text.strip())
-    # print bTags
+        bTags.append(i.text)
     filtered = filter(None, bTags)
     filtered=[x.strip() for x in filtered if x.strip()]
+    filtered=[item.replace('\n','') for item in filtered]
+
     print filtered
-    print "\n\n"
+    print"\n\n"
 
     for previous,item,nxt in previous_and_next(filtered):
-        if item[-7:-3].isdigit():     #(year) .#
-
-        # if item[-5:-1].isdigit():    #(year)
+        if item[-1]==',':
             try:
-                joinbook.append (item + nxt)
+                joinbook.append (''.join(item + nxt))
             except TypeError:
                 pass
+
     for i in range(len(joinbook)):
-        test2.extend(re.findall("\(\d{4}\).*", joinbook[i]))
-        # try:
-        #     # if re.findall("\.\d{4}", joinbook[i]) and joinbook[i][-5:-1].isdigit():
-        #     #     test2.append(joinbook[i + 1])
-        #     # elif re.findall("\(\d{4}\)", test[i])  and joinbook[i][-6:-2].isdigit():
-        #     #     test2.append(joinbook[i+1])
-        #     test2.append(re.findall("\(\d{4}\).*", joinbook[i])):
-        #         # test2.append(joinbook[i])
-        #
-        # except IndexError:
-        #     pass
-    result=[item.encode('ascii', 'ignore') for item in test2]
-    return result
+        # test2.extend(re.findall(",\s*([^,]+)$", joinbook[i]))
+        test2.extend(re.findall("\,.*", joinbook[i]))
+
+    test3=[x for x in test2 if not any(c.isdigit() for c in x)]
+    test3=[x for x in test3 if '“' not in x]
+
+    return test3
 
 
 
-def extract_books():  #Works for column type citations#
-    test2 = []
-    # for i in soup.find_all('span', style=lambda x: x):    #if column wise cited#
-    for i in soup.find_all('span', style=lambda x: x):
-
-        bTags.append(i.text.strip())
-    test = filter(None, bTags)
-    test=[item.encode('ascii', 'ignore') for item in test]
-    for i in range(len(test)):
-        try:
-            if re.findall("\.\d{4}", test[i]) and test[i][-5:-1].isdigit():
-                test2.append(test[i+1])
-            elif re.findall("\(\d{4}\)", test[i]) and test[i][-6:-2].isdigit() and test[i][-2]==')':
-                test2.append(test[i+1])
-            # elif re.findall("\d{4}\)\,\s.*", test[i])  and test[i][-6:-2].isdigit():
-            #     test2.append(test[i+1])
-
-        except IndexError:
-            pass
-    return test2
-
-
-write_list=[]
 def crossRef(lst):
     i=0
     for i in lst:
@@ -155,7 +134,6 @@ def crossRef(lst):
             data = json.loads(response.read())
         except ValueError:
             data = " "
-
         info['URL']= data[0]['doi']
         info['Publisher'] = "Not Available"
         try:
@@ -228,10 +206,9 @@ def crossRef(lst):
             json_text = json.dumps(info, indent=4)
             fp.write("{}\n".format(json_text))
 
-
 def googleBooks(lst):
     for i in lst[:]:
-        if len(i)>1:
+        if len(i) > 1:
             url = "https://www.googleapis.com/books/v1/volumes?q=" + i + "&maxResults=1&key=AIzaSyBADXkcoLOBG2UsddOpliFOq-JzEbbJ7_0"
             print url
             response = urllib.urlopen(url)
@@ -239,16 +216,16 @@ def googleBooks(lst):
             try:
                 info3['URL'] = (data['items'][0]['volumeInfo']['previewLink'])
             except KeyError:
-                info['URL']= 'No Url Available'
+                info['URL'] = 'No Url Available'
             try:
                 info3['Description'] = (data['items'][0]['volumeInfo']['description'])
             except KeyError:
-                info['Description']= 'Not Available'
+                info['Description'] = 'Not Available'
 
             try:
                 info3['ISBN'] = (data['items'][0]['volumeInfo']['industryIdentifiers'][0]['identifier'])
             except KeyError:
-                info['Description']= 'Not Available'
+                info['Description'] = 'Not Available'
             try:
 
                 info3['Publisher'] = (data['items'][0]['volumeInfo']['publisher'])
@@ -258,18 +235,18 @@ def googleBooks(lst):
                 info3['Publisher'] = "Not Available"
 
             try:
-                info3['Year']= parser.parse(data['items'][0]['volumeInfo']['publishedDate']).year
+                info3['Year'] = parser.parse(data['items'][0]['volumeInfo']['publishedDate']).year
             except ValueError:
-                info3['Year']= "Not Available"
+                info3['Year'] = "Not Available"
             except KeyError:
                 info3['Year'] = "Not Available"
 
             try:
                 dic1['author'] = (data['items'][0]['volumeInfo']['authors'])
-            # except KeyError:
+                # except KeyError:
                 # dic1['author'] = (data['items'][1]['volumeInfo']['authors'])
             except KeyError:
-                dic1['author']= "Not Available"
+                dic1['author'] = "Not Available"
             try:
                 info3['Pages'] = (data['items'][0]['volumeInfo']['pageCount'])
             except KeyError:
@@ -278,23 +255,23 @@ def googleBooks(lst):
             try:
                 info3['Title'] = (data['items'][0]['volumeInfo']['title'])
             except KeyError:
-                info3['Title']= "Not Available"
+                info3['Title'] = "Not Available"
 
-            x= (dic1['author'])
+            x = (dic1['author'])
             length = len(x)
             d = count - length
             if len(x) < count:
                 try:
                     x.extend(["NULL"] * d)
                 except AttributeError:
-                    x=" "
+                    x = " "
             else:
                 pass
-            check= get_author_details(x)
+            check = get_author_details(x)
             info3['Author1Firstname'] = check[0].encode('ascii', 'ignore')
             info3['Author1Lastname'] = check[2].encode('ascii', 'ignore')
             info3['Author1Gender'] = check[1]
-            info3['Author1Probability']=check[3]
+            info3['Author1Probability'] = check[3]
             info3['Author2Firstname'] = check[4].encode('ascii', 'ignore')
             info3['Author2Lastname'] = check[6].encode('ascii', 'ignore')
             info3['Author2Gender'] = check[5]
@@ -311,14 +288,14 @@ def googleBooks(lst):
             info3['Author5Lastname'] = check[18].encode('ascii', 'ignore')
             info3['Author5Gender'] = check[17]
             info3['Author5Probability'] = check[19]
-            info3['Journal']= "Not Available"
-            info3['Volume']= "Not Available"
-            info3['Number']="Not Available"
+            info3['Journal'] = "Not Available"
+            info3['Volume'] = "Not Available"
+            info3['Number'] = "Not Available"
             try:
                 info3['Pages'] = (data['items'][0]['volumeInfo']['pageCount'])
             except KeyError:
-                info3['Pages'] ="Not Available"
-            pprint (info3)
+                info3['Pages'] = "Not Available"
+            pprint(info3)
             time.sleep(6)
             with open('/Users/dipit/Documents/RA/RA/Demo/demo.json', 'a') as fp:
                 json_text = json.dumps(info3, indent=4)
@@ -327,15 +304,17 @@ def googleBooks(lst):
 
 
 
-# print extract_articles()
-# print extract_books()
-
-# print extract_books1()
-books= extract_books()
-# print books
-articles= extract_articles()
-crossRef(articles)
-googleBooks(books)
+path= os.path.dirname(os.getcwd()+"/Docs")
 
 
-os.system("mongoimport --db sql2md --collection records2 --drop --file /Users/dipit/Documents/RA/RA/Demo/demo.json")
+for i in traverse(os.path.dirname(os.getcwd()) + "/RA/Docs/PDF"):
+
+    soup = BeautifulSoup(open(i))
+    crossRef(extract_articles())
+    googleBooks(extract_books1())
+
+
+#
+# splitPages("/Users/dipit/Documents/RA/RA/Docs/sample.pdf", [slice(get_pages("/Users/dipit/Documents/RA/RA/Docs/sample.html"),count_pages("/Users/dipit/Documents/RA/RA/Dimensional.pdf"), None)])    # i.e. [0]
+
+# os.system("pdf2txt.py -O /Users/dipit/Documents/RA/RA/ -o IEEE-split.html /Users/dipit/Documents/RA/RA/sample.pdf")

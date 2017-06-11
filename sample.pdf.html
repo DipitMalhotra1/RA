@@ -1,0 +1,1437 @@
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head><body>
+<span style="position:absolute; border: gray 1px solid; left:0px; top:50px; width:612px; height:792px;"></span>
+<div style="position:absolute; top:50px;"><a name="1">Page 1</a></div>
+<div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:110px; top:120px; width:390px; height:18px;"><span style="font-family: HOCLLN+IMOAUO+Times-Bold; font-size:18px">WS-Net: A Petri-net Based Specification Model for Web Services
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:155px; top:152px; width:38px; height:12px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">Jia Zhang
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:105px; top:164px; width:133px; height:11px;"><span style="font-family: HOCLPN+UKEBUO+Times-Italic; font-size:11px">Department of Computer Science
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:115px; top:176px; width:111px; height:11px;"><span style="font-family: HOCLPN+UKEBUO+Times-Italic; font-size:11px">Northern Illinois University
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:125px; top:187px; width:84px; height:23px;"><span style="font-family: HOCLPN+UKEBUO+Times-Italic; font-size:11px">DeKalb, IL 60115
+<br>jiazhang@cs.niu.edu
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:398px; top:152px; width:57px; height:12px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">Carl K. Chang
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:360px; top:164px; width:133px; height:11px;"><span style="font-family: HOCLPN+UKEBUO+Times-Italic; font-size:11px">Department of Computer Science
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:386px; top:176px; width:86px; height:11px;"><span style="font-family: HOCLPN+UKEBUO+Times-Italic; font-size:11px">Iowa State University
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:392px; top:187px; width:63px; height:11px;"><span style="font-family: HOCLPN+UKEBUO+Times-Italic; font-size:11px">Ames, IA 50011
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:379px; top:199px; width:88px; height:11px;"><span style="font-family: HOCLPN+UKEBUO+Times-Italic; font-size:11px">chang@cs.iastate.edu
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:136px; top:222px; width:62px; height:12px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">Jen-Yao Chung
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:115px; top:234px; width:107px; height:11px;"><span style="font-family: HOCLPN+UKEBUO+Times-Italic; font-size:11px">IBM T.J. Watson Research
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:95px; top:246px; width:143px; height:11px;"><span style="font-family: HOCLPN+UKEBUO+Times-Italic; font-size:11px">Yorktown Heights, New York 10598
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:123px; top:258px; width:86px; height:11px;"><span style="font-family: HOCLPN+UKEBUO+Times-Italic; font-size:11px">jychung@us.ibm.com
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:397px; top:222px; width:59px; height:12px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">Seong W. Kim
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:339px; top:234px; width:173px; height:11px;"><span style="font-family: HOCLPN+UKEBUO+Times-Italic; font-size:11px">Samsung Advanced Institute of Technology
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:347px; top:246px; width:149px; height:11px;"><span style="font-family: HOCLPN+UKEBUO+Times-Italic; font-size:11px">P.O. Box 111, Suwon 440-600 Korea
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:358px; top:258px; width:125px; height:11px;"><span style="font-family: HOCLPN+UKEBUO+Times-Italic; font-size:11px">seongwoon.kim@samsung.com
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:155px; top:292px; width:44px; height:15px;"><span style="font-family: HOCLLN+IMOAUO+Times-Bold; font-size:15px">Abstract
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:116px; top:354px; width:56px; height:11px;"><span style="font-family: HOCLPN+UKEBUO+Times-Italic; font-size:11px">independently
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:184px; top:354px; width:66px; height:11px;"><span style="font-family: HOCLPN+UKEBUO+Times-Italic; font-size:11px">published web
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:60px; top:319px; width:234px; height:235px;"><span style="font-family: HOCLPN+UKEBUO+Times-Italic; font-size:11px">The emerging paradigm of web services opens a new
+<br></span><span style="font-family: HOCLPN+UKEBUO+Times-Italic; font-size:11px">way of web application design and development
+<br>to
+<br>quickly develop and deploy web applications by
+<br>integrating
+<br>services
+<br>components to conduct new business transactions. As
+<br>research aiming at facilitating web services integration
+<br>and verification, WS-Net is an executable architectural
+<br>description language incorporating the semantics of
+<br>Colored Petri-net with the style and understandability of
+<br>object-oriented concepts. WS-Net describes each web
+<br>services component in three layers: interface net declares
+<br>the services
+<br>to other
+<br>components; interconnection net specifies the services
+<br>that the component acquires to accomplish its mission;
+<br>and interoperation net describes the internal operational
+<br>behaviors of the component. As an architectural model
+<br>that formalizes the architectural topology and behaviors
+<br>of each web services component as well as the entire
+<br>system, WS-Net facilitates the verification and monitoring
+<br>of web services integration.
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:143px; top:448px; width:106px; height:11px;"><span style="font-family: HOCLPN+UKEBUO+Times-Italic; font-size:11px">the component provides
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:120px; top:448px; width:15px; height:11px;"><span style="font-family: HOCLPN+UKEBUO+Times-Italic; font-size:11px">that
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:60px; top:565px; width:77px; height:15px;"><span style="font-family: HOCLLN+IMOAUO+Times-Bold; font-size:15px">1. Introduction
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:183px; top:615px; width:66px; height:12px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">published web
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:115px; top:615px; width:119px; height:23px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">independently
+<br>to conduct new business
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:60px; top:580px; width:234px; height:188px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">The emerging paradigm of web services opens a new
+<br></span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">way of web application design and development
+<br>to
+<br>quickly develop and deploy web applications by
+<br>integrating
+<br>services
+<br>components
+<br>transactions.
+<br>Accordingly, a web services-oriented system refers to a
+<br>system that integrates multiple web services components.
+<br>Just as other software systems, software architecture is
+<br>critical to decide the success of a web services-oriented
+<br>system. According to the American Heritage Dictionary,
+<br>architecture is “the art and science of designing and
+<br>erecting buildings, a structure of structures collectively, a
+<br></span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">style and method of design and construction” [4]. In other
+<br>words, software architecture plays an essential role in
+<br>providing the right insights, triggering the right questions,
+<br>and offering general tools for thoughts. Because software
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:20px; top:806px; width:280px; height:20px;"><span style="font-family: HGCGIJ+Arial; font-size:10px">Proceedings of the IEEE International Conference on Web Services (ICWS’04) 
+<br></span><span style="font-family: HGCGIJ+Arial; font-size:10px">0-7695-2167-3/04 $ 20.00 IEEE 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:485px; top:293px; width:4px; height:12px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">a
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:375px; top:293px; width:6px; height:12px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">is
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:467px; top:293px; width:8px; height:12px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">as
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:438px; top:293px; width:18px; height:12px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">used
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:392px; top:293px; width:35px; height:12px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">normally
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:477px; top:293px; width:52px; height:23px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">vehicle
+<br>stakeholders,
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:317px; top:293px; width:234px; height:258px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">for
+<br>architecture
+<br>communications between different
+<br>the
+<br>architecture specification that represents a complex web
+<br>services-oriented system at a high level abstraction should
+<br></span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">capture: (1) the structural properties and web services
+<br>component interactions, (2) the behavioral functionality of
+<br>each major high level web services component, and (3)
+<br>the behavioral functionality of the entire system. In recent
+<br>years, researchers from both industry and academia have
+<br>been developing a number of web services-oriented
+<br>Architecture Description Languages (ADL),
+<br>typically
+<br>Web Services Description Language (WSDL) [17], Web
+<br>Services Flow Language (WSFL) [8], Business Process
+<br>Execution Language for Web Services (BPEL4WS) [6],
+<br>Web Service Choreography Interface (WSCI)
+<br>[13],
+<br>XLANG [14], etc. However, these ADLs either merely
+<br>focus on static functional descriptions of web services
+<br>component as a whole, or concentrate only on the
+<br>behavioral integration between web services components.
+<br>Furthermore, none of
+<br>support
+<br>dynamic verification and monitoring of the integrated
+<br>system.
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:423px; top:516px; width:89px; height:12px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">these current ADLs
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:329px; top:552px; width:10px; height:12px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">As
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:349px; top:552px; width:85px; height:12px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">research aiming at
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:317px; top:552px; width:234px; height:188px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">facilitating web services
+<br>integration, this paper presents an architectural description
+<br>language called Web Service Net (WS-Net) to overcome
+<br></span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">the drawbacks of current web services-oriented ADLs.
+<br>WS-Net is an executable specification language based on
+<br>the Colored Petri Net (CPN) [7] semantics with the style
+<br>and understandability of the object-oriented paradigm.
+<br>Supporting modern software engineering philosophies
+<br>equipped with component-based notations, WS-Net
+<br>provides an approach to verify and monitor the dynamic
+<br>integration of a web services-oriented software system.
+<br>The remainder of this paper is organized as follows. In
+<br>Section 2, related work is discussed. In Section 3, we
+<br>review CPN for high-level design. In Section 4, we
+<br></span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">present three-layer WS-Net specification. In Section 5, we
+<br>draw conclusions and describe future work.
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:317px; top:751px; width:84px; height:15px;"><span style="font-family: HOCLLN+IMOAUO+Times-Bold; font-size:15px">2. Related Work
+<br></span></div><div style="position:absolute; border: figure 1px solid; writing-mode:False; left:528px; top:786px; width:65px; height:50px;"><img src="Im8.8.275x212.img" border="1" style="position:absolute; left:528px; top:786px;" width="65" height="50" />
+</div><span style="position:absolute; border: black 1px solid; left:537px; top:458px; width:14px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:438px; top:623px; width:11px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:155px; top:164px; width:38px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:398px; top:164px; width:57px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:136px; top:234px; width:62px; height:0px;"></span>
+<span style="position:absolute; border: gray 1px solid; left:0px; top:892px; width:612px; height:792px;"></span>
+<div style="position:absolute; top:892px;"><a name="2">Page 2</a></div>
+<div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:147px; top:1034px; width:16px; height:12px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">[17]
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:188px; top:987px; width:67px; height:12px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">services-oriented
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:91px; top:987px; width:85px; height:12px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">on modeling web
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:60px; top:975px; width:234px; height:188px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">In recent years, researchers have been doing much
+<br>work
+<br>system
+<br>architecture. Generally, all of the proliferating work is
+<br>built upon eXtensible Markup Language (XML) [18]
+<br>technology. Among them, Web Services Description
+<br>Language (WSDL)
+<br>is the basis of other work.
+<br>Intending to formally and precisely define a web service,
+<br>WSDL from W3C (</span><span style="font-family: HOCLLN+IMOAUO+Times-Bold; font-size:12px">http://www.w3c.org</span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">) is becoming the
+<br></span><span style="font-family: HOCLPN+UKEBUO+Times-Italic; font-size:11px">ad hoc </span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">standard for web service publication. However,
+<br>WSDL can only specify limited information of a web
+<br>service, such as the function names and limited input and
+<br>output information [3]. In recognition of this problem,
+<br>researchers from both academia and industry have been
+<br>developing other description languages to extend the
+<br>power of WSDL to depict system architecture. The
+<br>following are some outstanding examples:
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:257px; top:1176px; width:11px; height:12px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">[8]
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:116px; top:1341px; width:12px; height:12px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">the
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:230px; top:1341px; width:42px; height:12px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">to define
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:60px; top:1172px; width:190px; height:15px;"><span style="font-family: HOCMIL+EPAAUO+Symbol; font-size:12px">•  </span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">Web Services Flow Language (WSFL)
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:78px; top:1176px; width:216px; height:82px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">is a
+<br>WSDL-based language focusing on describing the
+<br>interactions between web services
+<br>components.
+<br>WSFL defines the interaction pattern of a collection
+<br>of web services, as well as the usage pattern of a
+<br>collection of web services in order to achieve a
+<br>specific business goal.
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:60px; top:1255px; width:234px; height:74px;"><span style="font-family: HOCMIL+EPAAUO+Symbol; font-size:12px">•  </span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">The Business Process Execution Language for Web
+<br>Services (BPEL4WS) [6] specifies an interoperable
+<br>integration model aiming at facilitating the automatic
+<br>integration of web services components. BPEL4WS
+<br>formally defines a business process and process
+<br>integration.
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:138px; top:1341px; width:82px; height:12px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">flow of messages
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:60px; top:1326px; width:234px; height:85px;"><span style="font-family: HOCMIL+EPAAUO+Symbol; font-size:12px">•  </span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">Web Service Choreography Interface (WSCI) [13]
+<br>utilizes
+<br>the
+<br>relationship and interactions between web services
+<br>components. According to WSCI, a web services
+<br>component has both a static interface and a dynamic
+<br>interface when it participates in a message exchange
+<br>with other web services components.
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:60px; top:1409px; width:234px; height:85px;"><span style="font-family: HOCMIL+EPAAUO+Symbol; font-size:12px">•  </span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">XLANG [14] considers the behavior of a system as
+<br>an aggregation of the behavior of each web services
+<br></span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">the
+<br>component. Therefore, XLANG specifies
+<br>behavior
+<br>component
+<br>independently. The interactions between web services
+<br>are
+<br>conducted via message passing, which is
+<br>expressed as the operations in WSDL.
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:60px; top:1492px; width:234px; height:109px;"><span style="font-family: HOCMIL+EPAAUO+Symbol; font-size:12px">•  </span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">Web Service Capability Description Language
+<br>(SCDL) is built upon the method of an abstract finite-
+<br>state machine,
+<br>aiming at precisely describing,
+<br>advertising, requesting, and matching web service
+<br>capabilities. Defining four
+<br>types of atomic web
+<br></span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">service capability matches as exact match, plug-in
+<br>match,
+<br>relevant, SCDL
+<br>provides a theoretical basis to define web service
+<br>capability matching.
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:112px; top:1566px; width:106px; height:12px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">relaxed match, and not
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:146px; top:1448px; width:47px; height:12px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">each web
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:205px; top:1448px; width:32px; height:12px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">services
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:125px; top:1448px; width:8px; height:12px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">of
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:20px; top:1648px; width:280px; height:20px;"><span style="font-family: HGCGIJ+Arial; font-size:10px">Proceedings of the IEEE International Conference on Web Services (ICWS’04) 
+<br></span><span style="font-family: HGCGIJ+Arial; font-size:10px">0-7695-2167-3/04 $ 20.00 IEEE 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:331px; top:975px; width:38px; height:12px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">However,
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:378px; top:975px; width:52px; height:12px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">these ADLs
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:317px; top:975px; width:234px; height:129px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">focus on the topological
+<br>description and concentrate on describing interactions
+<br>between web services
+<br>components. They lack the
+<br>capability to describe the hierarchical functionality of the
+<br>components. There is little concern about expressing
+<br>dynamic behaviors of the defined system. SCDL and its
+<br>previous version SDL [5] are still at early development
+<br>stages [16]. Therefore, the usage of SCDL in web service
+<br>applications is still unclear. Furthermore, none of these
+<br>current ADLs
+<br>and
+<br>monitoring of the system integrated.
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:479px; top:1081px; width:46px; height:12px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">verification
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:434px; top:1081px; width:33px; height:12px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">dynamic
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:392px; top:1081px; width:29px; height:12px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">support
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:317px; top:1115px; width:234px; height:29px;"><span style="font-family: HOCLLN+IMOAUO+Times-Bold; font-size:15px">3. Petri Nets for High-Level Architectural
+<br>Design
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:317px; top:1156px; width:234px; height:317px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">Petri nets [7] is a well-known and tested abstract and
+<br></span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">formal model of data and control flow in a system that
+<br>exhibits synchronous and asynchronous behaviors. With a
+<br>strong theoretical foundation, the mature hierarchical Petri
+<br>nets is able to manage the complexity of large-scale
+<br>systems, and possesses powerful analysis capability.
+<br>Colored Petri Net (CPN) [7] extends the Petri nets to
+<br>model both the static and dynamic properties of a system.
+<br>The graphical part of CPN depicts the static architectural
+<br>structure of a system. Combined with other powerful
+<br>elements such as colored tokens and simulation rules,
+<br>CPN is very powerful in modeling dynamic behaviors of a
+<br>system.Earlier researchers have conducted a large amount
+<br>of work to utilize CPN to model the system architecture.
+<br>EDDA [15] combines Petri nets and SADT technology for
+<br>high-level
+<br>system specifications. Although EDDA
+<br>successfully combines the semantics of Petri-nets with the
+<br>syntax of SADT, it lacks the ability to specify modern
+<br>software systems, as EDDA does not embody the object-
+<br>oriented
+<br>component-engineering
+<br>concept [1]. Pinci and Shapiro present an automatic
+<br>mechanism to translate SADT diagrams into Hierarchical
+<br>CP-nets (HCP-nets), and in turn to convert HCP-nets into
+<br>Standard ML executable code [9]. This similar SADT-like
+<br></span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">Petri-net based system specification suffers the same
+<br>problems as faced by EDDA due to the rigid structural
+<br>nature of SADT and its lack of object-oriented concepts.
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:361px; top:1380px; width:62px; height:12px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">paradigm and
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:317px; top:1472px; width:234px; height:130px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">Our previous work released an I</span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:7px">3 </span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">[1] layered executable
+<br>is based upon the
+<br>architectural model. However,
+<br>Structural Analysis and Design Technology (SADT) [10],
+<br>which is a traditional functional decomposition and data
+<br>flow-centered methodology. Here we aim at integrating
+<br>CPN with the style and understandability of the object-
+<br>oriented paradigm. In addition, I</span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:7px">3 </span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">intends to present a
+<br></span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">generic
+<br>generic
+<br>component-based software systems. Our work reported
+<br>here focuses on web services-oriented system architecture
+<br>and seamlessly integrates with WSDL and XML
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:358px; top:1556px; width:87px; height:12px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">specification model
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:458px; top:1556px; width:32px; height:12px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">oriented
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:434px; top:1380px; width:12px; height:12px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">the
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:502px; top:1556px; width:7px; height:12px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">to
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:455px; top:1484px; width:6px; height:13px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">I</span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:7px">3
+<br></span></div><span style="position:absolute; border: black 1px solid; left:140px; top:1068px; width:84px; height:0px;"></span>
+<div style="position:absolute; border: figure 1px solid; writing-mode:False; left:528px; top:1628px; width:65px; height:50px;"><img src="Im10.8.275x212.img" border="1" style="position:absolute; left:528px; top:1628px;" width="65" height="50" />
+</div><span style="position:absolute; border: black 1px solid; left:172px; top:1282px; width:11px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:412px; top:1058px; width:11px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:373px; top:1168px; width:11px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:429px; top:1239px; width:11px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:143px; top:1116px; width:10px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:355px; top:1403px; width:10px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:462px; top:1486px; width:11px; height:0px;"></span>
+<span style="position:absolute; border: gray 1px solid; left:0px; top:1734px; width:612px; height:792px;"></span>
+<div style="position:absolute; top:1734px;"><a name="3">Page 3</a></div>
+<div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:60px; top:1805px; width:46px; height:12px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">technology.
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:72px; top:1817px; width:57px; height:12px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">In summary,
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:139px; top:1817px; width:112px; height:12px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">although our work was
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:60px; top:1817px; width:234px; height:82px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">strongly
+<br>influenced by EDDA and I</span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:7px">3</span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">, we have enhanced the state
+<br>of the art by supporting modern software engineering
+<br>philosophies
+<br>and
+<br>component-based notations and applied to web services-
+<br>oriented systems, as well as integrated with WSDL and
+<br>XML.
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:124px; top:1852px; width:67px; height:12px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">equipped with
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:205px; top:1852px; width:60px; height:12px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">object-oriented
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:60px; top:1910px; width:121px; height:15px;"><span style="font-family: HOCLLN+IMOAUO+Times-Bold; font-size:15px">4. WS-Net Specification
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:72px; top:1937px; width:36px; height:12px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">In order
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:60px; top:1937px; width:234px; height:247px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">to specify both the static and dynamic
+<br>architectural features of a web services-oriented system,
+<br>we present Web Service Net (WS-Net) as an executable
+<br>architectural specification language. WS-Net specifies a
+<br>web services-oriented software architecture as a set of
+<br>connected architectural components described as nets.
+<br>The architectural components correspond to functional
+<br></span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">units in the system, and one architectural component may
+<br>in turn be composed of several smaller architectural
+<br>components. The entire system can be viewed as a
+<br>highest-level architectural component. Each architectural
+<br>component is either statically or dynamically realized by a
+<br>web services component. Architectural components are
+<br>connected to each other via XML message passing
+<br>through Simple Object Access Protocol (SOAP) [12], the
+<br></span><span style="font-family: HOCLPN+UKEBUO+Times-Italic; font-size:11px">ad hoc </span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">transportation standard in the realm of web
+<br>services. The message passing mediates the interactions
+<br>between architectural components via the rules that
+<br>regulate the component interactions. In our model, we will
+<br>use the concept of connector [11] in CPN to model the
+<br>message passing.
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:107px; top:2266px; width:12px; height:12px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">the
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:228px; top:2243px; width:47px; height:12px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">components
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:169px; top:2196px; width:55px; height:12px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">interface net,
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:129px; top:2266px; width:68px; height:12px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">functionality of
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:104px; top:2243px; width:114px; height:12px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">from other web service
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:74px; top:2184px; width:196px; height:12px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">WS-Net defines each architectural component
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:60px; top:2184px; width:234px; height:258px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">in a
+<br>three-layer specification:
+<br>interconnection
+<br>net, and interoperation net. The interface net declares the
+<br>services to be provided by each web service component.
+<br>The interconnection net specifies the web services to be
+<br>acquired
+<br>to
+<br>accomplish its own mission. The interoperation net
+<br>describes
+<br>each web services
+<br></span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">component and the entire system in terms of data flow.
+<br>Each component has an interface net definition and it is
+<br>accessed only via the interface. The definition of the
+<br>interface net follows that of WSDL. The interconnection
+<br>net specifies the operations to be acquired from other
+<br>components
+<br>the
+<br>Interconnection net, each operation required is further
+<br>specified by a set of foreign transitions, which represents
+<br>the operations of other components. Therefore,
+<br>the
+<br>interface net identifies each component in the system as a
+<br></span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">unique functional object, and the interconnection net
+<br>specifies the relationships between components. As a
+<br>result, we can visualize the entire topological view of a
+<br>system by interconnecting each of the interconnection nets
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:141px; top:2337px; width:54px; height:12px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">perform its
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:207px; top:2337px; width:41px; height:12px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">execution.
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:261px; top:2337px; width:8px; height:12px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">In
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:121px; top:2337px; width:7px; height:12px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">to
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:317px; top:1805px; width:234px; height:141px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">component-interconnection
+<br>according to our unique
+<br>technique, which will be discussed in the later sections.
+<br>The interoperation net describes the dynamic behaviors of
+<br>a component by focusing on its internal operational
+<br>nature. The goal of the interoperation net is to dissect each
+<br>operation into fundamental process units, which, taken
+<br>together, define the required functional content of the
+<br>operation. Each transition representing an operation of the
+<br>component will be decomposed into sub-transitions
+<br>representing fundamental process units. Control flow and
+<br>data flow are used for describing intercommunication
+<br>between process units.
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:419px; top:1993px; width:29px; height:12px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">that is,
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:317px; top:1946px; width:234px; height:164px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">A simplified user commit model is used as an example
+<br>to elucidate the fundamental idea of WS-Net throughout
+<br>this paper. This example illuminates a system whose
+<br>service is to provide a channel for users to communicate
+<br>with a central storage,
+<br>to commit data to the
+<br></span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">storage and retrieve data from the storage. Three
+<br>distributed web services components are identified in the
+<br>system: a queue, a commit engine, and an integrator. The
+<br>queue component is the central storage place that accepts
+<br>user commitment and provides information requested; the
+<br>commit engine assists users to commit requests to the
+<br>queue; and the integrator conducts continuous integration
+<br>from the queue. We assume that different components
+<br>interact with each other via SOAP.
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:317px; top:2122px; width:79px; height:14px;"><span style="font-family: HOCLLN+IMOAUO+Times-Bold; font-size:14px">4.1 Interface Net
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:510px; top:2147px; width:20px; height:12px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">starts
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:453px; top:2171px; width:12px; height:23px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">net
+<br>of
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:391px; top:2147px; width:47px; height:12px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">a WS-Net
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:449px; top:2147px; width:50px; height:12px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">specification
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:329px; top:2147px; width:51px; height:12px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">Constructing
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:473px; top:2171px; width:32px; height:23px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">defines
+<br>each
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:408px; top:2171px; width:35px; height:23px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">interface
+<br>features,
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:317px; top:2147px; width:234px; height:223px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">by
+<br>identifying the architectural components from the system
+<br>expected
+<br>specification. The
+<br>responsibilities,
+<br>or
+<br>architectural
+<br>component by specifying the interface of a set of
+<br>semantically related operations provided by a component.
+<br>The interface here denotes the name of
+<br>the service
+<br>provided and the signature information in order to invoke
+<br>the service. An architectural component can be accessed
+<br>only through its interface. In the interface net, each service
+<br>is modeled as a transition of Petri net. Therefore a
+<br></span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">transition is called a service transition. The name of the
+<br>service transition refers to the service to be provided by
+<br>the component. Each service transition has an input place
+<br>called input port, where the service received the
+<br>invocation, and an output place called output port, where
+<br>the result of a service is placed before being returned to
+<br>the service caller. The interface net can be implemented
+<br>via WSDL.
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:317px; top:2371px; width:234px; height:59px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">A WS-Net specification of an architectural component
+<br>can be denoted as C</span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:7px">i </span><span style="font-family: HOCMIL+EPAAUO+Symbol; font-size:12px">∈ </span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">C, where C is the set of all web
+<br>services
+<br>software
+<br></span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">architecture. The interface net of the component C</span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:7px">i </span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">can be
+<br>informally represented as:
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:362px; top:2395px; width:48px; height:12px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">components
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:422px; top:2395px; width:38px; height:12px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">identified
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:492px; top:2395px; width:12px; height:12px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">the
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:472px; top:2395px; width:7px; height:12px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">in
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:20px; top:2490px; width:280px; height:20px;"><span style="font-family: HGCGIJ+Arial; font-size:10px">Proceedings of the IEEE International Conference on Web Services (ICWS’04) 
+<br></span><span style="font-family: HGCGIJ+Arial; font-size:10px">0-7695-2167-3/04 $ 20.00 IEEE 
+<br></span></div><div style="position:absolute; border: figure 1px solid; writing-mode:False; left:528px; top:2470px; width:65px; height:50px;"><img src="Im6.8.275x212.img" border="1" style="position:absolute; left:528px; top:2470px;" width="65" height="50" />
+</div><span style="position:absolute; border: gray 1px solid; left:0px; top:2576px; width:612px; height:792px;"></span>
+<div style="position:absolute; top:2576px;"><a name="4">Page 4</a></div>
+<div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:72px; top:2647px; width:75px; height:19px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">C</span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:7px">i </span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">= </span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:19px">U </span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">S</span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:7px">ij</span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">, S</span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:7px">ij </span><span style="font-family: HOCMIL+EPAAUO+Symbol; font-size:12px">∈ </span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">S</span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:7px">i
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:95px; top:2666px; width:2px; height:11px;"><span style="font-family: HOCLPN+UKEBUO+Times-Italic; font-size:11px">j
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:60px; top:2678px; width:233px; height:25px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">where S</span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:7px">i </span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">is a set of services provided by C</span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:7px">i</span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">. Each service
+<br>S</span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:7px">ij </span><span style="font-family: HOCMIL+EPAAUO+Symbol; font-size:12px">∈ </span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">S</span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:7px">i </span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">is represented by a tuple
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:72px; top:2702px; width:103px; height:12px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">S</span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:7px">ij </span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">= (PI</span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:7px">ij</span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">, PO</span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:7px">ij</span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">, T</span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:7px">ij</span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">, A</span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:7px">ij</span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">, c),
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:60px; top:2714px; width:234px; height:70px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">where PI</span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:7px">ij </span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">and PO</span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:7px">ij </span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">are the input port and the output port
+<br>of S</span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:7px">ij</span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">, respectively; T</span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:7px">ij </span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">represents the service S</span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:7px">ij </span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">as a
+<br>transition; A</span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:7px">ij </span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">represents the input and out arcs for the
+<br>transition T</span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:7px">ij</span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">, and the color inscriptions of the places
+<br>represent the signature information of the operation as in
+<br>CPN; and, c is a color function for the places.
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:60px; top:2784px; width:234px; height:235px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">The goal of the interface net is to define the services
+<br>that must be provided by the component. The names
+<br>attached to the service transition inscription represent the
+<br>names of the services. As in Design/CPN [2], names of
+<br>the places and transitions are the labels to identify the
+<br>places and transitions, and they are not considered as
+<br></span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">semantic inscriptions of Petri net. In Colored Petri Nets
+<br>[2,7],
+<br>they are used to help designers understand the
+<br>specification and to support hierarchical composition of
+<br>pages, such as transition substitution and place fusion. The
+<br>signature information of each service can be described by
+<br>color
+<br>inscription on input and output ports (places).
+<br>However, it is unimportant to specify the detailed data
+<br>structure at this stage of the design. The main purpose of
+<br>coloring places is to help people understand the usage of a
+<br>component at the architectural level. Therefore, the only
+<br>imperative information here is what kind of information
+<br>needs to be provided to invoke the service of
+<br>the
+<br>component. The interface net specification of the </span><span style="font-family: HOCLPN+UKEBUO+Times-Italic; font-size:11px">queue
+<br></span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">component is illustrated in Figure 1.
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:221px; top:3043px; width:36px; height:12px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">In order
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:264px; top:3043px; width:11px; height:12px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">for
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:125px; top:3043px; width:89px; height:12px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">requests respectively.
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:60px; top:3019px; width:234px; height:270px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">As shown in Figure 1, </span><span style="font-family: HOCLPN+UKEBUO+Times-Italic; font-size:11px">queue </span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">provides two services
+<br></span><span style="font-family: HOCLPN+UKEBUO+Times-Italic; font-size:11px">enqueue </span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">and </span><span style="font-family: HOCLPN+UKEBUO+Times-Italic; font-size:11px">dequeue</span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">, which accept user commitment and
+<br>reply to user
+<br>the
+<br>services to be invoked, the input ports of the services must
+<br>receive proper tokens. </span><span style="font-family: HOCLPN+UKEBUO+Times-Italic; font-size:11px">Enqueue </span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">receives an </span><span style="font-family: HOCLPN+UKEBUO+Times-Italic; font-size:11px">item </span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">token
+<br>and returns a Boolean </span><span style="font-family: HOCLPN+UKEBUO+Times-Italic; font-size:11px">result </span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">as either success or fail;
+<br></span><span style="font-family: HOCLPN+UKEBUO+Times-Italic; font-size:11px">Dequeue </span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">receives a </span><span style="font-family: HOCLPN+UKEBUO+Times-Italic; font-size:11px">request </span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">as a unit token and returns a
+<br></span><span style="font-family: HOCLPN+UKEBUO+Times-Italic; font-size:11px">dq_rslt </span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">in case of success, or </span><span style="font-family: HOCLPN+UKEBUO+Times-Italic; font-size:11px">err </span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">in case of failure caused
+<br></span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">by empty buffer. The unit color set has no predefined
+<br>service that uses it, but is very useful as a placeholder [7].
+<br>In addition to the inscription for places, transitions, and
+<br>arcs as used in Colored Petri Nets, WS-Net provides
+<br>additional inscriptions for components and each service in
+<br>the
+<br>inscription,
+<br>component name is provided to identify the component.
+<br>For a service inscription, service name and connector type
+<br>information are provided. Connector type implies the
+<br>possible protocols to be used when the service is invoked.
+<br>Since multiple protocols are commonly used , connector
+<br></span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">type can have multiple entries. In our example, both
+<br></span><span style="font-family: HOCLPN+UKEBUO+Times-Italic; font-size:11px">enqueue </span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">and </span><span style="font-family: HOCLPN+UKEBUO+Times-Italic; font-size:11px">dequeue </span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">services are invoked via the SOAP
+<br>protocol. Similar to the name inscription for places and
+<br>transitions, these inscriptions for components and services
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:83px; top:3172px; width:50px; height:12px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">components.
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:194px; top:3172px; width:44px; height:12px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">component
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:145px; top:3172px; width:13px; height:12px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">For
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:170px; top:3172px; width:12px; height:12px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">the
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:389px; top:2664px; width:61px; height:10px;"><span style="font-family: HOCLLN+IMOAUO+Times-Bold; font-size:10px">Component Name
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:465px; top:2664px; width:26px; height:10px;"><span style="font-family: HOCLLN+IMOAUO+Times-Bold; font-size:10px">: Queue
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:385px; top:2694px; width:45px; height:19px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:9px">Service Name
+<br>Connector
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:463px; top:2694px; width:32px; height:19px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:9px">: Enqueue
+<br>: SOAP
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:420px; top:2724px; width:31px; height:10px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:10px">Enqueue
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:385px; top:2754px; width:45px; height:19px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:9px">Service Name
+<br>Connector
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:463px; top:2754px; width:32px; height:19px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:9px">: Dequeue
+<br>: SOAP
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:420px; top:2783px; width:32px; height:10px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:10px">Dequeue
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:517px; top:2716px; width:17px; height:20px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:9px">result
+<br>oport
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:517px; top:2776px; width:22px; height:20px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:9px">dq rslt
+<br>oport
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:337px; top:2716px; width:15px; height:20px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:9px">item
+<br>iport
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:332px; top:2776px; width:23px; height:20px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:9px">request
+<br>iport
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:372px; top:2813px; width:116px; height:38px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:9px">color item = int;
+<br>color request = unit;
+<br>color result with success | fail;
+<br>color dq result = record result * int;
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:339px; top:2855px; width:194px; height:12px;"><span style="font-family: HOCOIP+VNSAUO+Helvetica; font-size:12px">Figure 1. Interface net for component </span><span style="font-family: HOCOKA+DHRZTO+Helvetica-Oblique; font-size:12px">queue
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:317px; top:2872px; width:234px; height:35px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">are not considered as Petri-Net
+<br>inscriptions. These
+<br>inscriptions will be used to interconnect architectural
+<br>components.
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:317px; top:2908px; width:234px; height:200px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">In our example, the </span><span style="font-family: HOCLPN+UKEBUO+Times-Italic; font-size:11px">commit engine </span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">and the </span><span style="font-family: HOCLPN+UKEBUO+Times-Italic; font-size:11px">integrator
+<br></span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">components will use the </span><span style="font-family: HOCLPN+UKEBUO+Times-Italic; font-size:11px">enqueue </span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">and </span><span style="font-family: HOCLPN+UKEBUO+Times-Italic; font-size:11px">dequeue </span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">services
+<br>from the </span><span style="font-family: HOCLPN+UKEBUO+Times-Italic; font-size:11px">queue </span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">component. Therefore, the </span><span style="font-family: HOCLPN+UKEBUO+Times-Italic; font-size:11px">commit engine
+<br></span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">and </span><span style="font-family: HOCLPN+UKEBUO+Times-Italic; font-size:11px">integrator </span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">will be client components for the </span><span style="font-family: HOCLPN+UKEBUO+Times-Italic; font-size:11px">queue
+<br></span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">component. Figure 2 shows the interface net of the </span><span style="font-family: HOCLPN+UKEBUO+Times-Italic; font-size:11px">commit
+<br>engine</span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">, which provides one service called </span><span style="font-family: HOCLPN+UKEBUO+Times-Italic; font-size:11px">commit</span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">. The
+<br></span><span style="font-family: HOCLPN+UKEBUO+Times-Italic; font-size:11px">commit engine </span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">will send some </span><span style="font-family: HOCLPN+UKEBUO+Times-Italic; font-size:11px">data </span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">as parameters to the
+<br></span><span style="font-family: HOCLPN+UKEBUO+Times-Italic; font-size:11px">queue </span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">and receive an acknowledgement </span><span style="font-family: HOCLPN+UKEBUO+Times-Italic; font-size:11px">msg</span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">. Similarly, as
+<br>shown in Figure 3, the </span><span style="font-family: HOCLPN+UKEBUO+Times-Italic; font-size:11px">integrator </span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">provides one service
+<br>called </span><span style="font-family: HOCLPN+UKEBUO+Times-Italic; font-size:11px">retrieve, </span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">and will send a request </span><span style="font-family: HOCLPN+UKEBUO+Times-Italic; font-size:11px">rqst </span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">to the </span><span style="font-family: HOCLPN+UKEBUO+Times-Italic; font-size:11px">queue
+<br></span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">and receive some </span><span style="font-family: HOCLPN+UKEBUO+Times-Italic; font-size:11px">data </span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">as reply. As we explained
+<br>previously, the color of token is used here. We assume
+<br>that the SOAP protocol will be used when the </span><span style="font-family: HOCLPN+UKEBUO+Times-Italic; font-size:11px">commit
+<br>engine </span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">and the </span><span style="font-family: HOCLPN+UKEBUO+Times-Italic; font-size:11px">integrator </span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">components communicate with
+<br>the </span><span style="font-family: HOCLPN+UKEBUO+Times-Italic; font-size:11px">queue</span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">. Since an interface net specifies only the
+<br>services provided by the component, it does not specify
+<br>connections between the components.
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:317px; top:3118px; width:110px; height:14px;"><span style="font-family: HOCLLN+IMOAUO+Times-Bold; font-size:14px">4.2 Interconnection Net
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:374px; top:3158px; width:122px; height:10px;"><span style="font-family: HOCLLN+IMOAUO+Times-Bold; font-size:10px">Component Name : Commit Engine
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:380px; top:3187px; width:45px; height:19px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:9px">Service Name
+<br></span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:9px">Connector
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:458px; top:3187px; width:30px; height:19px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:9px">: Commit
+<br></span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:9px">: SOAP
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:332px; top:3208px; width:15px; height:20px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:9px">data
+<br></span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:9px">iport
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:416px; top:3216px; width:29px; height:10px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:10px">Commit
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:512px; top:3208px; width:16px; height:20px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:9px">msg
+<br></span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:9px">oport
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:371px; top:3244px; width:78px; height:19px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:9px">color data = Data_Type;
+<br>color msg = String;
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:340px; top:3269px; width:182px; height:12px;"><span style="font-family: HOCOIP+VNSAUO+Helvetica; font-size:12px">Figure 2. Interface net for </span><span style="font-family: HOCOKA+DHRZTO+Helvetica-Oblique; font-size:12px">Commit Engine
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:20px; top:3332px; width:280px; height:20px;"><span style="font-family: HGCGIJ+Arial; font-size:10px">Proceedings of the IEEE International Conference on Web Services (ICWS’04) 
+<br></span><span style="font-family: HGCGIJ+Arial; font-size:10px">0-7695-2167-3/04 $ 20.00 IEEE 
+<br></span></div><span style="position:absolute; border: black 1px solid; left:314px; top:2657px; width:242px; height:215px;"></span>
+<span style="position:absolute; border: black 1px solid; left:377px; top:2664px; width:125px; height:14px;"></span>
+<span style="position:absolute; border: black 1px solid; left:377px; top:2694px; width:125px; height:22px;"></span>
+<span style="position:absolute; border: black 1px solid; left:332px; top:2724px; width:26px; height:14px;"></span>
+<span style="position:absolute; border: black 1px solid; left:386px; top:2724px; width:98px; height:14px;"></span>
+<span style="position:absolute; border: black 1px solid; left:485px; top:2731px; width:19px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:505px; top:2727px; width:7px; height:7px;"></span>
+<span style="position:absolute; border: black 1px solid; left:512px; top:2724px; width:26px; height:14px;"></span>
+<span style="position:absolute; border: black 1px solid; left:359px; top:2731px; width:19px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:379px; top:2727px; width:7px; height:7px;"></span>
+<span style="position:absolute; border: black 1px solid; left:377px; top:2754px; width:125px; height:22px;"></span>
+<span style="position:absolute; border: black 1px solid; left:332px; top:2783px; width:26px; height:14px;"></span>
+<span style="position:absolute; border: black 1px solid; left:386px; top:2783px; width:98px; height:14px;"></span>
+<span style="position:absolute; border: black 1px solid; left:485px; top:2791px; width:19px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:505px; top:2787px; width:7px; height:7px;"></span>
+<span style="position:absolute; border: black 1px solid; left:512px; top:2783px; width:26px; height:14px;"></span>
+<span style="position:absolute; border: black 1px solid; left:359px; top:2791px; width:19px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:379px; top:2787px; width:7px; height:7px;"></span>
+<span style="position:absolute; border: black 1px solid; left:323px; top:2686px; width:224px; height:119px;"></span>
+<span style="position:absolute; border: black 1px solid; left:364px; top:2813px; width:143px; height:37px;"></span>
+<span style="position:absolute; border: black 1px solid; left:310px; top:3152px; width:242px; height:134px;"></span>
+<span style="position:absolute; border: black 1px solid; left:355px; top:3159px; width:161px; height:14px;"></span>
+<span style="position:absolute; border: black 1px solid; left:373px; top:3187px; width:125px; height:21px;"></span>
+<span style="position:absolute; border: black 1px solid; left:328px; top:3216px; width:26px; height:14px;"></span>
+<span style="position:absolute; border: black 1px solid; left:382px; top:3216px; width:98px; height:14px;"></span>
+<span style="position:absolute; border: black 1px solid; left:481px; top:3223px; width:19px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:500px; top:3219px; width:7px; height:7px;"></span>
+<span style="position:absolute; border: black 1px solid; left:508px; top:3216px; width:26px; height:14px;"></span>
+<span style="position:absolute; border: black 1px solid; left:355px; top:3223px; width:19px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:374px; top:3219px; width:7px; height:7px;"></span>
+<span style="position:absolute; border: black 1px solid; left:319px; top:3180px; width:224px; height:56px;"></span>
+<span style="position:absolute; border: black 1px solid; left:364px; top:3244px; width:143px; height:21px;"></span>
+<div style="position:absolute; border: figure 1px solid; writing-mode:False; left:528px; top:3312px; width:65px; height:50px;"><img src="Im4.8.275x212.img" border="1" style="position:absolute; left:528px; top:3312px;" width="65" height="50" />
+</div><span style="position:absolute; border: black 1px solid; left:60px; top:2879px; width:21px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:276px; top:3137px; width:14px; height:0px;"></span>
+<span style="position:absolute; border: gray 1px solid; left:0px; top:3418px; width:612px; height:792px;"></span>
+<div style="position:absolute; top:3418px;"><a name="5">Page 5</a></div>
+<div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:131px; top:3505px; width:104px; height:10px;"><span style="font-family: HOCLLN+IMOAUO+Times-Bold; font-size:10px">Component Name : Integrator
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:128px; top:3534px; width:45px; height:19px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:9px">Service Name
+<br>Connector
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:206px; top:3534px; width:31px; height:19px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:9px">: Retrieve
+<br>: SOAP
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:80px; top:3555px; width:15px; height:20px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:9px">rqst
+<br>iport
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:164px; top:3563px; width:30px; height:10px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:10px">Retrieve
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:260px; top:3555px; width:16px; height:20px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:9px">data
+<br>oport
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:119px; top:3591px; width:78px; height:19px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:9px">color rqst = unit;
+<br>color data = Data_Type;
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:100px; top:3612px; width:157px; height:12px;"><span style="font-family: HOCOIP+VNSAUO+Helvetica; font-size:12px">Figure 3. Interface net for </span><span style="font-family: HOCOKA+DHRZTO+Helvetica-Oblique; font-size:12px">Integrator
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:180px; top:3633px; width:12px; height:12px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">the
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:72px; top:3633px; width:38px; height:12px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">In order
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:120px; top:3633px; width:50px; height:12px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">to describe
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:60px; top:3633px; width:234px; height:211px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">relationships between
+<br>architectural components, we need to specify both the
+<br>provided services (i.e. via interface net specification) and
+<br>required services of the components. By specifying all the
+<br>required services of the components, the interconnection
+<br></span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">net describes all the possible dependencies upon other
+<br>components. The interconnection net is not mandatory
+<br>however; instead, it is imperative only when a component
+<br>requires foreign services to perform its own commission.
+<br>For instance, in our example, the </span><span style="font-family: HOCLPN+UKEBUO+Times-Italic; font-size:11px">queue </span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">component does
+<br>not require any other services as support; therefore, there
+<br>will be no interconnection net associated with the </span><span style="font-family: HOCLPN+UKEBUO+Times-Italic; font-size:11px">queue
+<br></span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">component. The interconnection net depicts a client/server
+<br>relationship between components.
+<br>If component C</span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:7px">i
+<br></span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">requests a service from component C</span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:7px">j</span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">, C</span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:7px">i </span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">is called the
+<br>client component, and C</span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:7px">j </span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">is called a server component.
+<br>Therefore, a component can act as a client component
+<br>sometimes, and as a server component at other times.
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:60px; top:3845px; width:234px; height:129px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">WS-Net chooses to define the required services as
+<br>foreign services since the services need to be performed
+<br>by other components. Conforming to the definitions in
+<br>CPN, in the interconnection net, the required services are
+<br>specified as a special kind of transition called a foreign
+<br>transition. As in the interface net, the interconnection net
+<br>specifies an architectural component as a set of provided
+<br>services. Each provided service
+<br>containing foreign
+<br>transitions are in turn decomposed into a set of required
+<br>foreign services. A service S</span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:7px">ij </span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">requiring foreign services is
+<br>represented as a tuple
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:72px; top:3974px; width:192px; height:12px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">S</span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:7px">ij </span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">= (PI</span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:7px">ij</span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">, PO</span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:7px">ij</span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">, QI</span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:7px">ij</span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">, QO</span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:7px">ij</span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">, TS</span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:7px">ij</span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">, TE</span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:7px">ij</span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">, TF</span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:7px">ij</span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">, A</span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:7px">ij</span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">, c),
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:60px; top:3986px; width:234px; height:141px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">where PI</span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:7px">ij </span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">and PO</span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:7px">ij </span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">are the input port and the output port
+<br>for S</span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:7px">ij </span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">respectively, as in the interface net. TS</span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:7px">ij </span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">and TE</span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:7px">ij
+<br></span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">represent the start and end of the service S</span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:7px">ij</span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">; therefore, the
+<br>input place of TS</span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:7px">ij </span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">is always the input port PI</span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:7px">ij</span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">, and the
+<br>output place of TE</span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:7px">ij </span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">is always the output port PO</span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:7px">ij</span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">. TF</span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:7px">ij </span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">is a
+<br>set of foreign transitions. A foreign transition is an
+<br>abstract view of
+<br>the service provided by the server
+<br>component. The input and output places of a foreign
+<br>transition are called input sockets and output sockets,
+<br></span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">respectively. QI</span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:7px">ij </span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">is a set of input sockets, and QO</span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:7px">ij </span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">is a set
+<br>of output sockets. A</span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:7px">ij </span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">is a set of input and output arcs for
+<br>the transitions. As in the interface net, c represents a color
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:20px; top:4174px; width:280px; height:20px;"><span style="font-family: HGCGIJ+Arial; font-size:10px">Proceedings of the IEEE International Conference on Web Services (ICWS’04) 
+<br></span><span style="font-family: HGCGIJ+Arial; font-size:10px">0-7695-2167-3/04 $ 20.00 IEEE 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:317px; top:3489px; width:35px; height:12px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">function.
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:317px; top:3501px; width:234px; height:200px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">A component may require multiple foreign services
+<br>before it can perform its execution. Figure 4 illustrates a
+<br>service that requires n foreign transitions. For services that
+<br>do not require any foreign transitions, the same service
+<br>specification of the interface net will suffice. Foreign
+<br>transitions also have inscriptions similar to the provided
+<br>services of the component. However, as shown in Figure
+<br>4, inscriptions of foreign transitions contain names of the
+<br>server components, names of the services required from
+<br>the server components, and the type of connector to be
+<br>used to invoke each foreign transition. These service
+<br>names and component names are used to identify the
+<br>services of server components represented by foreign
+<br>transitions. In addition to the inscriptions, the color set of
+<br>the sockets of the foreign services in the client component
+<br>and its corresponding color set for the services of the
+<br></span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">server component must be compatible.
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:481px; top:3713px; width:14px; height:12px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">and
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:441px; top:3713px; width:26px; height:11px;"><span style="font-family: HOCLPN+UKEBUO+Times-Italic; font-size:11px">engine
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:399px; top:3713px; width:29px; height:11px;"><span style="font-family: HOCLPN+UKEBUO+Times-Italic; font-size:11px">commit
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:342px; top:3713px; width:44px; height:12px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">component
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:317px; top:3701px; width:234px; height:106px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">Figure 5 and Figure 6 show the interconnection nets of
+<br>the
+<br></span><span style="font-family: HOCLPN+UKEBUO+Times-Italic; font-size:11px">integrator,
+<br></span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">respectively. The </span><span style="font-family: HOCLPN+UKEBUO+Times-Italic; font-size:11px">commit </span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">service needs to invoke the
+<br></span><span style="font-family: HOCLPN+UKEBUO+Times-Italic; font-size:11px">enqueue </span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">service of the component </span><span style="font-family: HOCLPN+UKEBUO+Times-Italic; font-size:11px">queue, </span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">and the </span><span style="font-family: HOCLPN+UKEBUO+Times-Italic; font-size:11px">retrieve
+<br></span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">service needs to invoke the </span><span style="font-family: HOCLPN+UKEBUO+Times-Italic; font-size:11px">dequeue </span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">service. Therefore,
+<br></span><span style="font-family: HOCLPN+UKEBUO+Times-Italic; font-size:11px">enqueue </span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">and </span><span style="font-family: HOCLPN+UKEBUO+Times-Italic; font-size:11px">dequeue </span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">services are represented as foreign
+<br>services. Inscriptions for the foreign transitions show that
+<br>they are calling </span><span style="font-family: HOCLPN+UKEBUO+Times-Italic; font-size:11px">enqueue </span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">and </span><span style="font-family: HOCLPN+UKEBUO+Times-Italic; font-size:11px">dequeue </span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">services from the
+<br>component </span><span style="font-family: HOCLPN+UKEBUO+Times-Italic; font-size:11px">queue </span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">via SOAP.
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:317px; top:3807px; width:234px; height:59px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">After specifying individual components in terms of the
+<br>interface nets and the interconnection nets, we are ready to
+<br>visualize the entire topological view of the system by
+<br>interconnecting all of these WS-Net components. Firing a
+<br>foreign transition means executing the corresponding
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:358px; top:3886px; width:158px; height:19px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:9px">Service Name : Service with n foreign transitions
+<br>Connector: connector type
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:408px; top:3929px; width:66px; height:19px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:9px">Server Name: Server
+<br>Service: Service 1
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:393px; top:3957px; width:22px; height:9px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:9px">iplugin
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:437px; top:3953px; width:23px; height:9px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:9px">Foreign
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:430px; top:3962px; width:37px; height:9px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:9px">Transition 1
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:481px; top:3957px; width:24px; height:9px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:9px">oplugin
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:408px; top:3986px; width:66px; height:18px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:9px">Server Name: Server
+<br></span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:9px">Service: Service 2
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:321px; top:4009px; width:15px; height:9px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:9px">iport
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:353px; top:4009px; width:18px; height:12px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">Start
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:391px; top:4014px; width:22px; height:9px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:9px">iplugin
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:433px; top:4010px; width:23px; height:9px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:9px">Foreign
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:426px; top:4019px; width:37px; height:9px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:9px">Transition 2
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:477px; top:4014px; width:24px; height:9px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:9px">oplugin
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:518px; top:4010px; width:16px; height:12px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">End
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:550px; top:4009px; width:16px; height:9px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:9px">oport
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:408px; top:4051px; width:66px; height:19px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:9px">Server Name: Server
+<br></span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:9px">Service: Service n
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:391px; top:4079px; width:22px; height:9px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:9px">iplugin
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:433px; top:4075px; width:23px; height:9px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:9px">Foreign
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:426px; top:4084px; width:37px; height:9px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:9px">Transition n
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:477px; top:4079px; width:24px; height:9px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:9px">oplugin
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:348px; top:4106px; width:192px; height:12px;"><span style="font-family: HOCOIP+VNSAUO+Helvetica; font-size:12px">Figure 4. A service with n foreign transitions
+<br></span></div><span style="position:absolute; border: black 1px solid; left:58px; top:3499px; width:242px; height:134px;"></span>
+<span style="position:absolute; border: black 1px solid; left:103px; top:3506px; width:161px; height:14px;"></span>
+<span style="position:absolute; border: black 1px solid; left:121px; top:3534px; width:125px; height:21px;"></span>
+<span style="position:absolute; border: black 1px solid; left:76px; top:3563px; width:26px; height:14px;"></span>
+<span style="position:absolute; border: black 1px solid; left:130px; top:3563px; width:98px; height:14px;"></span>
+<span style="position:absolute; border: black 1px solid; left:229px; top:3570px; width:19px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:248px; top:3566px; width:7px; height:7px;"></span>
+<span style="position:absolute; border: black 1px solid; left:256px; top:3563px; width:26px; height:14px;"></span>
+<span style="position:absolute; border: black 1px solid; left:103px; top:3570px; width:19px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:122px; top:3566px; width:7px; height:7px;"></span>
+<span style="position:absolute; border: black 1px solid; left:67px; top:3527px; width:224px; height:56px;"></span>
+<span style="position:absolute; border: black 1px solid; left:112px; top:3591px; width:143px; height:21px;"></span>
+<span style="position:absolute; border: black 1px solid; left:310px; top:3877px; width:269px; height:251px;"></span>
+<span style="position:absolute; border: black 1px solid; left:350px; top:3885px; width:179px; height:24px;"></span>
+<span style="position:absolute; border: black 1px solid; left:318px; top:3919px; width:253px; height:176px;"></span>
+<span style="position:absolute; border: black 1px solid; left:408px; top:3925px; width:73px; height:24px;"></span>
+<span style="position:absolute; border: black 1px solid; left:391px; top:3955px; width:29px; height:14px;"></span>
+<span style="position:absolute; border: black 1px solid; left:428px; top:3950px; width:40px; height:24px;"></span>
+<span style="position:absolute; border: black 1px solid; left:477px; top:3955px; width:29px; height:14px;"></span>
+<span style="position:absolute; border: black 1px solid; left:408px; top:3982px; width:73px; height:24px;"></span>
+<span style="position:absolute; border: black 1px solid; left:387px; top:4012px; width:29px; height:14px;"></span>
+<span style="position:absolute; border: black 1px solid; left:424px; top:4007px; width:40px; height:24px;"></span>
+<span style="position:absolute; border: black 1px solid; left:473px; top:4012px; width:29px; height:14px;"></span>
+<span style="position:absolute; border: black 1px solid; left:408px; top:4047px; width:73px; height:24px;"></span>
+<span style="position:absolute; border: black 1px solid; left:387px; top:4077px; width:29px; height:14px;"></span>
+<span style="position:absolute; border: black 1px solid; left:424px; top:4072px; width:40px; height:24px;"></span>
+<span style="position:absolute; border: black 1px solid; left:473px; top:4077px; width:29px; height:14px;"></span>
+<span style="position:absolute; border: black 1px solid; left:400px; top:4031px; width:89px; height:40px;"></span>
+<span style="position:absolute; border: black 1px solid; left:350px; top:4007px; width:24px; height:16px;"></span>
+<span style="position:absolute; border: black 1px solid; left:514px; top:4007px; width:24px; height:16px;"></span>
+<span style="position:absolute; border: black 1px solid; left:416px; top:4019px; width:3px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:419px; top:4016px; width:5px; height:5px;"></span>
+<span style="position:absolute; border: black 1px solid; left:469px; top:3962px; width:3px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:472px; top:3960px; width:5px; height:5px;"></span>
+<span style="position:absolute; border: black 1px solid; left:420px; top:3962px; width:3px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:423px; top:3960px; width:5px; height:5px;"></span>
+<span style="position:absolute; border: black 1px solid; left:416px; top:4084px; width:3px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:419px; top:4081px; width:5px; height:5px;"></span>
+<span style="position:absolute; border: black 1px solid; left:465px; top:4084px; width:3px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:468px; top:4081px; width:5px; height:5px;"></span>
+<span style="position:absolute; border: black 1px solid; left:465px; top:4019px; width:3px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:468px; top:4016px; width:5px; height:5px;"></span>
+<span style="position:absolute; border: black 1px solid; left:547px; top:4007px; width:24px; height:16px;"></span>
+<span style="position:absolute; border: black 1px solid; left:318px; top:4007px; width:24px; height:16px;"></span>
+<span style="position:absolute; border: black 1px solid; left:342px; top:4015px; width:3px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:345px; top:4012px; width:5px; height:5px;"></span>
+<span style="position:absolute; border: black 1px solid; left:375px; top:3970px; width:22px; height:36px;"></span>
+<span style="position:absolute; border: black 1px solid; left:395px; top:3966px; width:4px; height:5px;"></span>
+<span style="position:absolute; border: black 1px solid; left:375px; top:4015px; width:11px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:386px; top:4012px; width:5px; height:5px;"></span>
+<span style="position:absolute; border: black 1px solid; left:375px; top:4023px; width:14px; height:52px;"></span>
+<span style="position:absolute; border: black 1px solid; left:387px; top:4074px; width:4px; height:5px;"></span>
+<span style="position:absolute; border: black 1px solid; left:498px; top:3966px; width:14px; height:36px;"></span>
+<span style="position:absolute; border: black 1px solid; left:510px; top:4001px; width:4px; height:5px;"></span>
+<span style="position:absolute; border: black 1px solid; left:498px; top:4015px; width:11px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:509px; top:4012px; width:5px; height:5px;"></span>
+<span style="position:absolute; border: black 1px solid; left:498px; top:4028px; width:14px; height:52px;"></span>
+<span style="position:absolute; border: black 1px solid; left:510px; top:4023px; width:4px; height:5px;"></span>
+<span style="position:absolute; border: black 1px solid; left:539px; top:4015px; width:3px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:542px; top:4012px; width:5px; height:5px;"></span>
+<div style="position:absolute; border: figure 1px solid; writing-mode:False; left:528px; top:4154px; width:65px; height:50px;"><img src="Im11.8.275x212.img" border="1" style="position:absolute; left:528px; top:4154px;" width="65" height="50" />
+</div><span style="position:absolute; border: gray 1px solid; left:0px; top:4260px; width:612px; height:792px;"></span>
+<div style="position:absolute; top:4260px;"><a name="6">Page 6</a></div>
+<div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:113px; top:4337px; width:115px; height:10px;"><span style="font-family: HOCLLN+IMOAUO+Times-Bold; font-size:10px">Component name: commit engine
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:141px; top:4375px; width:57px; height:28px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:9px">Server Name:
+<br>Commit
+<br>Connector: SOAP
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:141px; top:4418px; width:65px; height:28px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:9px">Server Name: queue
+<br>Service: enqueue
+<br>Connector: SOAP
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:130px; top:4444px; width:8px; height:9px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:9px">ite
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:214px; top:4445px; width:15px; height:9px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:9px">resul
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:89px; top:4460px; width:18px; height:12px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">Start
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:124px; top:4463px; width:22px; height:9px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:9px">iplugin
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:162px; top:4457px; width:25px; height:9px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:9px">enqueue
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:205px; top:4463px; width:20px; height:9px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:9px">oplugi
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:243px; top:4460px; width:16px; height:12px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">End
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:62px; top:4444px; width:13px; height:9px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:9px">data
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:59px; top:4462px; width:15px; height:9px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:9px">iport
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:272px; top:4445px; width:13px; height:9px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:9px">msg
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:273px; top:4462px; width:16px; height:9px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:9px">oport
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:120px; top:4505px; width:85px; height:21px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:10px">color data = Data_Type
+<br>color msg = string
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:70px; top:4534px; width:208px; height:12px;"><span style="font-family: HOCOIP+VNSAUO+Helvetica; font-size:12px">Figure 5. Interconnection net for </span><span style="font-family: HOCOKA+DHRZTO+Helvetica-Oblique; font-size:12px">commit engine
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:78px; top:4596px; width:12px; height:12px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">the
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:190px; top:4596px; width:18px; height:12px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">after
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:100px; top:4596px; width:24px; height:12px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">server
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:134px; top:4596px; width:46px; height:12px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">component,
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:60px; top:4561px; width:234px; height:141px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">service transition of the server component. Therefore,
+<br>connecting WS-Net components can be achieved by
+<br>merging the ports of the client components with the ports
+<br>of
+<br>removing foreign
+<br>transitions from the client components. In our WS-Net, a
+<br>special kind of transitions is used to connect ports. This
+<br>transition is called a connector transition, and it is named
+<br>by a connector
+<br>type. Figure 7 shows the connected
+<br>interconnection nets that describe the entire information-
+<br>communication model by interconnecting the </span><span style="font-family: HOCLPN+UKEBUO+Times-Italic; font-size:11px">commit
+<br>engine </span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">and the </span><span style="font-family: HOCLPN+UKEBUO+Times-Italic; font-size:11px">integrator </span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">with the </span><span style="font-family: HOCLPN+UKEBUO+Times-Italic; font-size:11px">queue </span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">using SOAP
+<br>connectors.
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:390px; top:4437px; width:38px; height:12px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">important
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:336px; top:4437px; width:42px; height:12px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">the most
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:440px; top:4437px; width:44px; height:12px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">differences
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:317px; top:4331px; width:234px; height:282px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">The interoperation net describes the dynamic behaviors
+<br>of a component by focusing on the operational nature of
+<br>the component. The goal of the interoperation net is to
+<br>dissect each service into fundamental process units which,
+<br>taken together, define the required functional contents of
+<br>the service. This is similar
+<br>to the SADT functional
+<br>decomposition, where each transition representing the
+<br>operations of the component to be decomposed into sub-
+<br>transitions to represent fundamental operational state. One
+<br>of
+<br>the
+<br>decomposition in our interoperation net and SADT is that,
+<br>the interoperation net uses the decomposition as a means
+<br>of expressing the behaviors of the services provided by an
+<br>architectural
+<br>functional
+<br>decomposition for modularization used in SADT. As in
+<br>SADT, the control and data flow are used to describe
+<br>interactions between process units. It is very important to
+<br>distinguish foreign transitions from the detailed processes.
+<br></span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">These foreign transitions along with plugin places will be
+<br>used to interconnect the interoperation nets to form the
+<br>entire system view. Like other Petri net-based high level
+<br>design representations, places are used to represent the
+<br>control or data; and transitions are used to represent the
+<br>processes.
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:381px; top:4484px; width:46px; height:12px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">component,
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:442px; top:4484px; width:23px; height:12px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">rather
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:480px; top:4484px; width:17px; height:12px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">than
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:495px; top:4437px; width:33px; height:12px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">between
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:317px; top:4613px; width:234px; height:59px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">Our previous research reveals that the straightforward
+<br>techniques converting functional data flow to Petri nets
+<br>have
+<br>a potential problem in repeated (persistent)
+<br>simulations of the nets [1]. To solve this problem, our
+<br>WS-Net distinguishes
+<br>the persistent data from the
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:378px; top:4687px; width:115px; height:10px;"><span style="font-family: HOCLLN+IMOAUO+Times-Bold; font-size:10px">Component name: commit engine
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:60px; top:4713px; width:105px; height:14px;"><span style="font-family: HOCLLN+IMOAUO+Times-Bold; font-size:14px">4.3 Interoperation Net
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:321px; top:4716px; width:16px; height:18px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:9px">data
+<br>iport
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:352px; top:4723px; width:18px; height:12px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">Start
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:385px; top:4716px; width:28px; height:18px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:9px">p dataq
+<br>iplugin
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:472px; top:4714px; width:22px; height:20px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:9px">awk
+<br>oplugi
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:511px; top:4723px; width:16px; height:12px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">End
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:542px; top:4717px; width:17px; height:17px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:9px">msg
+<br>oport
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:107px; top:4751px; width:100px; height:10px;"><span style="font-family: HOCLLN+IMOAUO+Times-Bold; font-size:10px">Component name: integrator
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:126px; top:4789px; width:70px; height:19px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:9px">Server Name: retrieve
+<br>Connector: SOAP
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:126px; top:4832px; width:65px; height:28px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:9px">Server Name: queue
+<br></span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:9px">Service: dequeue
+<br></span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:9px">Connector: SOAP
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:106px; top:4858px; width:23px; height:9px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:9px">request
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:45px; top:4858px; width:23px; height:9px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:9px">request
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:42px; top:4876px; width:15px; height:9px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:9px">iport
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:73px; top:4874px; width:18px; height:12px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">Start
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:109px; top:4877px; width:22px; height:9px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:9px">iplugin
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:148px; top:4871px; width:25px; height:9px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:9px">dequeue
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:202px; top:4859px; width:24px; height:9px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:9px">Dq_rslt
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:193px; top:4877px; width:20px; height:9px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:9px">oplugi
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:232px; top:4874px; width:16px; height:12px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">End
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:263px; top:4859px; width:13px; height:9px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:9px">msg
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:263px; top:4876px; width:16px; height:9px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:9px">oport
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:322px; top:4896px; width:26px; height:18px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:9px">request
+<br>iport
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:388px; top:4755px; width:20px; height:9px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:9px">SOAP
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:475px; top:4757px; width:20px; height:9px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:9px">SOAP
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:424px; top:4762px; width:39px; height:9px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:9px">Component:
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:434px; top:4772px; width:19px; height:9px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:9px">queue
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:379px; top:4795px; width:13px; height:9px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:9px">data
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:395px; top:4806px; width:15px; height:9px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:9px">iport
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:388px; top:4821px; width:23px; height:21px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:9px">request
+<br></span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:9px">iport
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:430px; top:4800px; width:25px; height:9px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:9px">enqueue
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:430px; top:4827px; width:25px; height:9px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:9px">dequeue
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:478px; top:4795px; width:18px; height:20px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:9px">awk
+<br></span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:9px">oport
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:484px; top:4822px; width:17px; height:9px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:9px">result
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:478px; top:4833px; width:16px; height:9px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:9px">oport
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:389px; top:4865px; width:20px; height:9px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:9px">SOAP
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:475px; top:4865px; width:20px; height:9px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:9px">SOAP
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:370px; top:4896px; width:23px; height:9px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:9px">request
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:352px; top:4903px; width:18px; height:12px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">Start
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:392px; top:4905px; width:22px; height:9px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:9px">iplugin
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:492px; top:4894px; width:17px; height:9px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:9px">result
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:473px; top:4905px; width:20px; height:9px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:9px">oplugi
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:512px; top:4903px; width:16px; height:12px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">End
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:542px; top:4897px; width:17px; height:17px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:9px">msg
+<br></span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:9px">oport
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:104px; top:4919px; width:70px; height:21px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:10px">color request = unit
+<br></span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:10px">color msg = string
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:68px; top:4958px; width:185px; height:12px;"><span style="font-family: HOCOIP+VNSAUO+Helvetica; font-size:12px">Figure 6. Interconnection net for </span><span style="font-family: HOCOKA+DHRZTO+Helvetica-Oblique; font-size:12px">integrator
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:388px; top:4928px; width:103px; height:10px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:10px">Component name: integrator
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:354px; top:4951px; width:171px; height:12px;"><span style="font-family: HOCOIP+VNSAUO+Helvetica; font-size:12px">Figure 7. Unfolding Interconnection net
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:20px; top:5016px; width:280px; height:20px;"><span style="font-family: HGCGIJ+Arial; font-size:10px">Proceedings of the IEEE International Conference on Web Services (ICWS’04) 
+<br></span><span style="font-family: HGCGIJ+Arial; font-size:10px">0-7695-2167-3/04 $ 20.00 IEEE 
+<br></span></div><span style="position:absolute; border: black 1px solid; left:49px; top:4332px; width:251px; height:224px;"></span>
+<span style="position:absolute; border: black 1px solid; left:87px; top:4338px; width:167px; height:20px;"></span>
+<span style="position:absolute; border: black 1px solid; left:56px; top:4366px; width:236px; height:129px;"></span>
+<span style="position:absolute; border: black 1px solid; left:140px; top:4375px; width:68px; height:26px;"></span>
+<span style="position:absolute; border: black 1px solid; left:140px; top:4418px; width:68px; height:25px;"></span>
+<span style="position:absolute; border: black 1px solid; left:121px; top:4461px; width:27px; height:15px;"></span>
+<span style="position:absolute; border: black 1px solid; left:155px; top:4456px; width:38px; height:26px;"></span>
+<span style="position:absolute; border: black 1px solid; left:201px; top:4461px; width:27px; height:15px;"></span>
+<span style="position:absolute; border: black 1px solid; left:87px; top:4460px; width:22px; height:17px;"></span>
+<span style="position:absolute; border: black 1px solid; left:239px; top:4460px; width:22px; height:17px;"></span>
+<span style="position:absolute; border: black 1px solid; left:148px; top:4469px; width:2px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:150px; top:4466px; width:5px; height:5px;"></span>
+<span style="position:absolute; border: black 1px solid; left:194px; top:4469px; width:2px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:196px; top:4466px; width:5px; height:5px;"></span>
+<span style="position:absolute; border: black 1px solid; left:270px; top:4460px; width:22px; height:17px;"></span>
+<span style="position:absolute; border: black 1px solid; left:56px; top:4460px; width:22px; height:17px;"></span>
+<span style="position:absolute; border: black 1px solid; left:79px; top:4469px; width:2px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:82px; top:4466px; width:5px; height:5px;"></span>
+<span style="position:absolute; border: black 1px solid; left:110px; top:4469px; width:10px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:120px; top:4466px; width:5px; height:5px;"></span>
+<span style="position:absolute; border: black 1px solid; left:224px; top:4469px; width:10px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:234px; top:4466px; width:5px; height:5px;"></span>
+<span style="position:absolute; border: black 1px solid; left:262px; top:4469px; width:2px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:265px; top:4466px; width:5px; height:5px;"></span>
+<span style="position:absolute; border: black 1px solid; left:79px; top:4410px; width:184px; height:77px;"></span>
+<span style="position:absolute; border: black 1px solid; left:113px; top:4505px; width:134px; height:25px;"></span>
+<span style="position:absolute; border: black 1px solid; left:31px; top:4746px; width:260px; height:224px;"></span>
+<span style="position:absolute; border: black 1px solid; left:70px; top:4751px; width:173px; height:20px;"></span>
+<span style="position:absolute; border: black 1px solid; left:38px; top:4780px; width:245px; height:129px;"></span>
+<span style="position:absolute; border: black 1px solid; left:125px; top:4789px; width:71px; height:26px;"></span>
+<span style="position:absolute; border: black 1px solid; left:125px; top:4832px; width:71px; height:25px;"></span>
+<span style="position:absolute; border: black 1px solid; left:105px; top:4875px; width:28px; height:15px;"></span>
+<span style="position:absolute; border: black 1px solid; left:141px; top:4870px; width:39px; height:26px;"></span>
+<span style="position:absolute; border: black 1px solid; left:189px; top:4875px; width:28px; height:15px;"></span>
+<span style="position:absolute; border: black 1px solid; left:70px; top:4874px; width:23px; height:17px;"></span>
+<span style="position:absolute; border: black 1px solid; left:228px; top:4874px; width:23px; height:17px;"></span>
+<span style="position:absolute; border: black 1px solid; left:133px; top:4883px; width:3px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:136px; top:4880px; width:5px; height:5px;"></span>
+<span style="position:absolute; border: black 1px solid; left:181px; top:4883px; width:3px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:184px; top:4880px; width:5px; height:5px;"></span>
+<span style="position:absolute; border: black 1px solid; left:260px; top:4874px; width:23px; height:17px;"></span>
+<span style="position:absolute; border: black 1px solid; left:38px; top:4874px; width:23px; height:17px;"></span>
+<span style="position:absolute; border: black 1px solid; left:62px; top:4883px; width:3px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:65px; top:4880px; width:5px; height:5px;"></span>
+<span style="position:absolute; border: black 1px solid; left:94px; top:4883px; width:10px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:104px; top:4880px; width:5px; height:5px;"></span>
+<span style="position:absolute; border: black 1px solid; left:212px; top:4883px; width:11px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:223px; top:4880px; width:5px; height:5px;"></span>
+<span style="position:absolute; border: black 1px solid; left:252px; top:4883px; width:3px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:255px; top:4880px; width:5px; height:5px;"></span>
+<span style="position:absolute; border: black 1px solid; left:62px; top:4824px; width:191px; height:77px;"></span>
+<span style="position:absolute; border: black 1px solid; left:97px; top:4919px; width:139px; height:25px;"></span>
+<span style="position:absolute; border: black 1px solid; left:310px; top:4683px; width:260px; height:287px;"></span>
+<span style="position:absolute; border: black 1px solid; left:349px; top:4688px; width:173px; height:16px;"></span>
+<span style="position:absolute; border: black 1px solid; left:468px; top:4724px; width:28px; height:12px;"></span>
+<span style="position:absolute; border: black 1px solid; left:349px; top:4723px; width:23px; height:14px;"></span>
+<span style="position:absolute; border: black 1px solid; left:507px; top:4723px; width:23px; height:14px;"></span>
+<span style="position:absolute; border: black 1px solid; left:539px; top:4723px; width:23px; height:14px;"></span>
+<span style="position:absolute; border: black 1px solid; left:317px; top:4723px; width:23px; height:14px;"></span>
+<span style="position:absolute; border: black 1px solid; left:341px; top:4730px; width:3px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:344px; top:4727px; width:5px; height:5px;"></span>
+<span style="position:absolute; border: black 1px solid; left:373px; top:4730px; width:10px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:383px; top:4727px; width:5px; height:5px;"></span>
+<span style="position:absolute; border: black 1px solid; left:491px; top:4730px; width:11px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:502px; top:4727px; width:5px; height:5px;"></span>
+<span style="position:absolute; border: black 1px solid; left:531px; top:4730px; width:3px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:534px; top:4727px; width:5px; height:5px;"></span>
+<span style="position:absolute; border: black 1px solid; left:318px; top:4712px; width:243px; height:28px;"></span>
+<span style="position:absolute; border: black 1px solid; left:387px; top:4805px; width:28px; height:12px;"></span>
+<span style="position:absolute; border: black 1px solid; left:423px; top:4800px; width:39px; height:21px;"></span>
+<span style="position:absolute; border: black 1px solid; left:471px; top:4805px; width:28px; height:12px;"></span>
+<span style="position:absolute; border: black 1px solid; left:415px; top:4811px; width:3px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:418px; top:4809px; width:5px; height:5px;"></span>
+<span style="position:absolute; border: black 1px solid; left:463px; top:4811px; width:3px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:466px; top:4809px; width:5px; height:5px;"></span>
+<span style="position:absolute; border: black 1px solid; left:370px; top:4791px; width:147px; height:64px;"></span>
+<span style="position:absolute; border: black 1px solid; left:387px; top:4831px; width:28px; height:12px;"></span>
+<span style="position:absolute; border: black 1px solid; left:423px; top:4827px; width:39px; height:21px;"></span>
+<span style="position:absolute; border: black 1px solid; left:471px; top:4831px; width:28px; height:12px;"></span>
+<span style="position:absolute; border: black 1px solid; left:415px; top:4838px; width:3px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:418px; top:4835px; width:5px; height:5px;"></span>
+<span style="position:absolute; border: black 1px solid; left:463px; top:4838px; width:3px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:466px; top:4835px; width:5px; height:5px;"></span>
+<span style="position:absolute; border: black 1px solid; left:418px; top:4762px; width:52px; height:21px;"></span>
+<span style="position:absolute; border: black 1px solid; left:468px; top:4904px; width:28px; height:12px;"></span>
+<span style="position:absolute; border: black 1px solid; left:350px; top:4903px; width:23px; height:14px;"></span>
+<span style="position:absolute; border: black 1px solid; left:508px; top:4903px; width:23px; height:14px;"></span>
+<span style="position:absolute; border: black 1px solid; left:540px; top:4903px; width:23px; height:14px;"></span>
+<span style="position:absolute; border: black 1px solid; left:318px; top:4903px; width:23px; height:14px;"></span>
+<span style="position:absolute; border: black 1px solid; left:342px; top:4910px; width:3px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:345px; top:4907px; width:5px; height:5px;"></span>
+<span style="position:absolute; border: black 1px solid; left:374px; top:4910px; width:11px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:384px; top:4907px; width:5px; height:5px;"></span>
+<span style="position:absolute; border: black 1px solid; left:492px; top:4910px; width:11px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:503px; top:4907px; width:5px; height:5px;"></span>
+<span style="position:absolute; border: black 1px solid; left:532px; top:4910px; width:3px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:535px; top:4907px; width:5px; height:5px;"></span>
+<span style="position:absolute; border: black 1px solid; left:319px; top:4892px; width:243px; height:28px;"></span>
+<span style="position:absolute; border: black 1px solid; left:475px; top:4757px; width:25px; height:12px;"></span>
+<span style="position:absolute; border: black 1px solid; left:475px; top:4865px; width:25px; height:11px;"></span>
+<span style="position:absolute; border: black 1px solid; left:401px; top:4733px; width:0px; height:16px;"></span>
+<span style="position:absolute; border: black 1px solid; left:398px; top:4750px; width:5px; height:5px;"></span>
+<span style="position:absolute; border: black 1px solid; left:484px; top:4741px; width:0px; height:16px;"></span>
+<span style="position:absolute; border: black 1px solid; left:481px; top:4736px; width:5px; height:5px;"></span>
+<span style="position:absolute; border: black 1px solid; left:387px; top:4724px; width:28px; height:12px;"></span>
+<span style="position:absolute; border: black 1px solid; left:401px; top:4762px; width:0px; height:38px;"></span>
+<span style="position:absolute; border: black 1px solid; left:398px; top:4800px; width:5px; height:5px;"></span>
+<span style="position:absolute; border: black 1px solid; left:388px; top:4755px; width:25px; height:11px;"></span>
+<span style="position:absolute; border: black 1px solid; left:484px; top:4774px; width:0px; height:31px;"></span>
+<span style="position:absolute; border: black 1px solid; left:481px; top:4769px; width:5px; height:5px;"></span>
+<span style="position:absolute; border: black 1px solid; left:401px; top:4882px; width:0px; height:23px;"></span>
+<span style="position:absolute; border: black 1px solid; left:399px; top:4877px; width:5px; height:5px;"></span>
+<span style="position:absolute; border: black 1px solid; left:388px; top:4904px; width:28px; height:12px;"></span>
+<span style="position:absolute; border: black 1px solid; left:401px; top:4847px; width:0px; height:22px;"></span>
+<span style="position:absolute; border: black 1px solid; left:399px; top:4842px; width:5px; height:5px;"></span>
+<span style="position:absolute; border: black 1px solid; left:389px; top:4865px; width:25px; height:11px;"></span>
+<span style="position:absolute; border: black 1px solid; left:484px; top:4846px; width:0px; height:16px;"></span>
+<span style="position:absolute; border: black 1px solid; left:481px; top:4862px; width:5px; height:5px;"></span>
+<span style="position:absolute; border: black 1px solid; left:484px; top:4877px; width:0px; height:23px;"></span>
+<span style="position:absolute; border: black 1px solid; left:481px; top:4901px; width:5px; height:5px;"></span>
+<span style="position:absolute; border: black 1px solid; left:353px; top:4928px; width:173px; height:16px;"></span>
+<div style="position:absolute; border: figure 1px solid; writing-mode:False; left:528px; top:4996px; width:65px; height:50px;"><img src="Im2.8.275x212.img" border="1" style="position:absolute; left:528px; top:4996px;" width="65" height="50" />
+</div><span style="position:absolute; border: black 1px solid; left:418px; top:4661px; width:10px; height:0px;"></span>
+<span style="position:absolute; border: gray 1px solid; left:0px; top:5102px; width:612px; height:792px;"></span>
+<div style="position:absolute; top:5102px;"><a name="7">Page 7</a></div>
+<div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:162px; top:5208px; width:43px; height:12px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">throughout
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:60px; top:5173px; width:234px; height:200px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">transient data. Persistent data items are similar to the data
+<br>attributes of a class in the object-oriented paradigm. These
+<br>persistent data items represent the state of the component,
+<br>and they should exist
+<br>the lifetime of the
+<br>component. On the other hand, transient data items are
+<br>produced by one process and will be immediately
+<br>consumed by another process. Therefore, transient data
+<br>items are created only when they are needed and
+<br>destroyed upon the completion of the service. Since all
+<br>transient tokens are created by the local transitions and all
+<br>persistent tokens are restored before the completion of the
+<br>service, repeated simulation of the net
+<br>is possible. In
+<br>converting functional data flow models to Petri nets, we
+<br>also face the concurrency and choice problems [15].
+<br>Those problems need to be addressed properly by a
+<br>system engineer who builds the system architecture by
+<br>using WS-Net.
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:72px; top:5370px; width:221px; height:16px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">A service S</span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:7px">ij </span><span style="font-family: HOCMIL+EPAAUO+Symbol; font-size:12px">∈ </span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">S</span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:7px">i </span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">of component C</span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:7px">i </span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">is represented as
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:60px; top:5385px; width:32px; height:12px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">follows:
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:72px; top:5397px; width:221px; height:12px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">S</span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:7px">ij </span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">= (PI</span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:7px">ij</span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">, PO</span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:7px">ij</span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">, PT</span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:7px">ij</span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">, PP</span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:7px">ij</span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">, QI</span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:7px">ij</span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">, QO</span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:7px">ij</span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">, TL</span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:7px">ij</span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">, TF</span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:7px">ij</span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">, A</span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:7px">ij</span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">, c, G,
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:60px; top:5409px; width:234px; height:188px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">E, IN),
+<br>where PI</span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:7px">ij </span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">and PO</span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:7px">ij </span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">are the input ports, and PT</span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:7px">ij </span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">and PP</span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:7px">ij</span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">,
+<br>are a set of transient data places and a set of persistent
+<br>data places respectively. Persistent places are represented
+<br>as boldface circles. TL</span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:7px">ij </span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">is a set of local transitions; and
+<br>TF</span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:7px">ij </span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">is a set of foreign transitions. QI</span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:7px">ij </span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">is a set of input
+<br>socket places serving as input places for the foreign
+<br>transitions,;and QO</span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:7px">ij
+<br></span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">is a set of output socket places
+<br>serving as output places for the foreign transitions. A</span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:7px">ij </span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">is a
+<br>set of input and output arcs of the transitions. To describe
+<br>the functional behaviors of a component, we can use all
+<br>the inscriptions used in Colored Petri Net [7]. As before, c
+<br>is a color function to represent the color sets for the
+<br>places. G is a guard function for the transitions. E is an arc
+<br>expression function, and IN is an initialization function
+<br>for the tokens.
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:60px; top:5597px; width:234px; height:223px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">In our example, the </span><span style="font-family: HOCLPN+UKEBUO+Times-Italic; font-size:11px">queue </span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">component has </span><span style="font-family: HOCLPN+UKEBUO+Times-Italic; font-size:11px">enqueue </span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">and
+<br></span><span style="font-family: HOCLPN+UKEBUO+Times-Italic; font-size:11px">dequeue </span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">services. The control and data are represented by
+<br>places; and processes are represented by transitions.
+<br>Figure 8 shows the first phase of the interoperation
+<br></span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">description of the </span><span style="font-family: HOCLPN+UKEBUO+Times-Italic; font-size:11px">queue </span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">component. </span><span style="font-family: HOCLPN+UKEBUO+Times-Italic; font-size:11px">Count </span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">and </span><span style="font-family: HOCLPN+UKEBUO+Times-Italic; font-size:11px">storage
+<br></span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">places are defined as persistent data and represented with
+<br>boldface circles. Since the persistent data may exist
+<br>throughout
+<br>the lifetime of a component, we need to
+<br>initialize the persistent places with proper tokens for later
+<br>simulations. Tokens in the transient places will be
+<br>produced as a result of firing transitions. It
+<br>is very
+<br>common for persistent data items to be shared by other
+<br>services in the same component. If different services use
+<br>the same persistent data, they need to be merged using the
+<br>place-fusion technique in high level Petri nets. As shown
+<br></span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">in Figure 8, </span><span style="font-family: HOCLPN+UKEBUO+Times-Italic; font-size:11px">count </span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">and </span><span style="font-family: HOCLPN+UKEBUO+Times-Italic; font-size:11px">storage </span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">are persistent places of
+<br>both the </span><span style="font-family: HOCLPN+UKEBUO+Times-Italic; font-size:11px">enqueue </span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">and </span><span style="font-family: HOCLPN+UKEBUO+Times-Italic; font-size:11px">dequeue </span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">services. By merging those
+<br>persistent places of two services, the interoperation net for
+<br>the </span><span style="font-family: HOCLPN+UKEBUO+Times-Italic; font-size:11px">queue </span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">component can be completed.
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:384px; top:5181px; width:61px; height:10px;"><span style="font-family: HOCLLN+IMOAUO+Times-Bold; font-size:10px">Component Name
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:460px; top:5181px; width:26px; height:10px;"><span style="font-family: HOCLLN+IMOAUO+Times-Bold; font-size:10px">: Queue
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:380px; top:5211px; width:45px; height:19px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:9px">Service Name
+<br>Connector
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:458px; top:5211px; width:32px; height:19px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:9px">: Enqueue
+<br>: SOAP
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:415px; top:5241px; width:31px; height:10px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:10px">Enqueue
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:386px; top:5275px; width:17px; height:9px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:9px">count
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:458px; top:5297px; width:15px; height:9px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:9px">store
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:415px; top:5317px; width:32px; height:10px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:10px">Dequeue
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:371px; top:5347px; width:45px; height:19px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:9px">Service Name
+<br>Connector
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:449px; top:5347px; width:32px; height:19px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:9px">: Dequeue
+<br>: SOAP
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:332px; top:5234px; width:15px; height:20px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:9px">item
+<br>iport
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:332px; top:5316px; width:23px; height:20px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:9px">request
+<br>iport
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:512px; top:5234px; width:17px; height:20px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:9px">result
+<br>oport
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:512px; top:5316px; width:22px; height:20px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:9px">dq rslt
+<br>oport
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:317px; top:5376px; width:227px; height:12px;"><span style="font-family: HOCOIP+VNSAUO+Helvetica; font-size:12px">Figure 8. First phase of Interoperation net for </span><span style="font-family: HOCOKA+DHRZTO+Helvetica-Oblique; font-size:12px">queue
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:317px; top:5396px; width:234px; height:223px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">As we further decompose the functional behaviors of
+<br>each service, we can get a further complex interoperation
+<br>net. Figure 9 shows a more detailed interoperation net of
+<br>the service </span><span style="font-family: HOCLPN+UKEBUO+Times-Italic; font-size:11px">enqueue </span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">of the </span><span style="font-family: HOCLPN+UKEBUO+Times-Italic; font-size:11px">queue </span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">component. After all the
+<br>interoperation nets of the architectural components are
+<br>specified, we can again visualize the entire system
+<br>topology by connecting plugins of the client components
+<br>with the ports of the server components using connector
+<br>transitions. WS-Net
+<br>interconnection
+<br>mechanism across different levels of component diagrams.
+<br>Interconnections can be visualized by: (1) interoperation
+<br>nets of sender and receiver components, and (2) the
+<br>interface net of
+<br>receiver, and channel
+<br>components. We believe that this is a very important
+<br>feature to visualize very large systems. By applying such
+<br>visual abstractions, such as replacing large interoperation
+<br>nets with simpler
+<br>interconnection nets or even with
+<br>interface nets, complicated nets can be effectively
+<br>visualized at various levels of abstraction.
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:397px; top:5537px; width:48px; height:12px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">the sender,
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:420px; top:5490px; width:34px; height:12px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">provides
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:467px; top:5490px; width:9px; height:12px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">an
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:317px; top:5619px; width:234px; height:94px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">Connected interoperation nets can be executed under
+<br>different input scenarios to simulate the behaviors of a
+<br></span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">system. The execution proceeds by assigning initial tokens
+<br>to the input ports. The execution traces need to be
+<br>visualized to analyze the runtime quality attributes and to
+<br>enhance communication with the user communities by
+<br>providing an executable model of the system early in the
+<br>development process.
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:317px; top:5724px; width:167px; height:15px;"><span style="font-family: HOCLLN+IMOAUO+Times-Bold; font-size:15px">5. Conclusions and Future Work
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:317px; top:5751px; width:234px; height:59px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">We have presented the basic idea of WS-Net. Software
+<br>architecture of a web services-oriented system can be
+<br></span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">described by building an executable WS-Net model. The
+<br>behaviors of such a model can be simulated to allow
+<br>corrections and further
+<br>refinements. As a result, our
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:20px; top:5858px; width:280px; height:20px;"><span style="font-family: HGCGIJ+Arial; font-size:10px">Proceedings of the IEEE International Conference on Web Services (ICWS’04) 
+<br></span><span style="font-family: HGCGIJ+Arial; font-size:10px">0-7695-2167-3/04 $ 20.00 IEEE 
+<br></span></div><span style="position:absolute; border: black 1px solid; left:310px; top:5174px; width:242px; height:217px;"></span>
+<span style="position:absolute; border: black 1px solid; left:373px; top:5181px; width:125px; height:15px;"></span>
+<span style="position:absolute; border: black 1px solid; left:373px; top:5211px; width:125px; height:22px;"></span>
+<span style="position:absolute; border: black 1px solid; left:328px; top:5241px; width:26px; height:15px;"></span>
+<span style="position:absolute; border: black 1px solid; left:382px; top:5241px; width:98px; height:22px;"></span>
+<span style="position:absolute; border: black 1px solid; left:481px; top:5249px; width:19px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:500px; top:5245px; width:7px; height:7px;"></span>
+<span style="position:absolute; border: black 1px solid; left:508px; top:5241px; width:26px; height:15px;"></span>
+<span style="position:absolute; border: black 1px solid; left:355px; top:5249px; width:19px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:374px; top:5245px; width:7px; height:7px;"></span>
+<span style="position:absolute; border: black 1px solid; left:364px; top:5347px; width:125px; height:22px;"></span>
+<span style="position:absolute; border: black 1px solid; left:328px; top:5324px; width:26px; height:14px;"></span>
+<span style="position:absolute; border: black 1px solid; left:382px; top:5317px; width:98px; height:22px;"></span>
+<span style="position:absolute; border: black 1px solid; left:481px; top:5332px; width:19px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:500px; top:5328px; width:7px; height:7px;"></span>
+<span style="position:absolute; border: black 1px solid; left:508px; top:5324px; width:26px; height:14px;"></span>
+<span style="position:absolute; border: black 1px solid; left:355px; top:5332px; width:19px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:374px; top:5328px; width:7px; height:7px;"></span>
+<span style="position:absolute; border: black 1px solid; left:319px; top:5204px; width:224px; height:172px;"></span>
+<span style="position:absolute; border: black 1px solid; left:413px; top:5256px; width:76px; height:22px;"></span>
+<span style="position:absolute; border: black 1px solid; left:409px; top:5276px; width:5px; height:5px;"></span>
+<span style="position:absolute; border: black 1px solid; left:481px; top:5264px; width:17px; height:37px;"></span>
+<span style="position:absolute; border: black 1px solid; left:481px; top:5299px; width:5px; height:5px;"></span>
+<span style="position:absolute; border: black 1px solid; left:476px; top:5309px; width:13px; height:7px;"></span>
+<span style="position:absolute; border: black 1px solid; left:472px; top:5306px; width:5px; height:5px;"></span>
+<span style="position:absolute; border: black 1px solid; left:400px; top:5286px; width:107px; height:37px;"></span>
+<span style="position:absolute; border: black 1px solid; left:481px; top:5322px; width:5px; height:5px;"></span>
+<span style="position:absolute; border: black 1px solid; left:364px; top:5256px; width:17px; height:22px;"></span>
+<span style="position:absolute; border: black 1px solid; left:377px; top:5254px; width:5px; height:5px;"></span>
+<span style="position:absolute; border: black 1px solid; left:373px; top:5264px; width:80px; height:37px;"></span>
+<span style="position:absolute; border: black 1px solid; left:377px; top:5261px; width:5px; height:5px;"></span>
+<span style="position:absolute; border: black 1px solid; left:364px; top:5286px; width:26px; height:37px;"></span>
+<span style="position:absolute; border: black 1px solid; left:377px; top:5322px; width:5px; height:5px;"></span>
+<span style="position:absolute; border: black 1px solid; left:373px; top:5309px; width:89px; height:7px;"></span>
+<span style="position:absolute; border: black 1px solid; left:377px; top:5314px; width:5px; height:5px;"></span>
+<span style="position:absolute; border: black 1px solid; left:382px; top:5271px; width:26px; height:14px;"></span>
+<span style="position:absolute; border: black 1px solid; left:454px; top:5294px; width:26px; height:14px;"></span>
+<div style="position:absolute; border: figure 1px solid; writing-mode:False; left:528px; top:5838px; width:65px; height:50px;"><img src="Im16.8.275x212.img" border="1" style="position:absolute; left:528px; top:5838px;" width="65" height="50" />
+</div><span style="position:absolute; border: black 1px solid; left:229px; top:5550px; width:14px; height:0px;"></span>
+<span style="position:absolute; border: gray 1px solid; left:0px; top:5944px; width:612px; height:792px;"></span>
+<div style="position:absolute; top:5944px;"><a name="8">Page 8</a></div>
+<div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:245px; top:6030px; width:83px; height:21px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:10px">Service name: enqueue
+<br>Connector: SOAP
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:94px; top:6061px; width:18px; height:17px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:9px">item
+<br>iport
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:121px; top:6064px; width:28px; height:9px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:9px">l’i value
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:159px; top:6064px; width:21px; height:28px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:9px">Get
+<br>Insert
+<br>R
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:183px; top:6083px; width:2px; height:9px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:9px">t
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:220px; top:6064px; width:24px; height:9px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:9px">l’ivalue
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:220px; top:6091px; width:23px; height:9px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:9px">request
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:382px; top:6098px; width:23px; height:9px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:9px">request
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:238px; top:6112px; width:17px; height:9px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:9px">l’flag
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:265px; top:6110px; width:17px; height:9px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:9px">result
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:205px; top:6112px; width:20px; height:19px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:9px">Check
+<br>Full
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:301px; top:6124px; width:14px; height:9px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:9px">item
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:355px; top:6126px; width:17px; height:9px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:9px">l’flag
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:184px; top:6153px; width:22px; height:9px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:9px">l’index
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:148px; top:6167px; width:22px; height:9px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:9px">l’index
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:220px; top:6160px; width:22px; height:9px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:9px">l’index
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:229px; top:6174px; width:22px; height:9px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:9px">l’index
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:265px; top:6146px; width:14px; height:9px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:9px">item
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:292px; top:6144px; width:24px; height:9px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:9px">l’ivalue
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:315px; top:6154px; width:20px; height:19px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:9px">Check
+<br>Full
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:348px; top:6153px; width:17px; height:9px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:9px">l’flag
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:384px; top:6151px; width:17px; height:9px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:9px">l’flag
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:366px; top:6165px; width:17px; height:9px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:9px">result
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:284px; top:6187px; width:21px; height:9px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:9px">l’array
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:355px; top:6187px; width:21px; height:9px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:9px">l’array
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:416px; top:6112px; width:16px; height:19px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:9px">Ret
+<br>False
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:417px; top:6151px; width:15px; height:19px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:9px">Ret
+<br>True
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:447px; top:6110px; width:17px; height:9px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:9px">l’flag
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:447px; top:6158px; width:17px; height:9px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:9px">l’flag
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:495px; top:6132px; width:16px; height:9px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:9px">oport
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:220px; top:6208px; width:17px; height:9px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:9px">count
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:274px; top:6208px; width:23px; height:9px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:9px">storage
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:382px; top:6208px; width:23px; height:9px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:9px">request
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:219px; top:6228px; width:172px; height:12px;"><span style="font-family: HOCOIP+VNSAUO+Helvetica; font-size:12px">Figure 9. Interoperation net of </span><span style="font-family: HOCOKA+DHRZTO+Helvetica-Oblique; font-size:12px">enqueue
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:103px; top:6273px; width:62px; height:12px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">paradigm and
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:176px; top:6273px; width:70px; height:12px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">component-based
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:60px; top:6249px; width:234px; height:94px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">approach helps enhance the reliability of web services-
+<br>oriented applications. Furthermore, it supports the object-
+<br>oriented
+<br>concepts.
+<br>Specification formalism in WS-Net
+<br>is object-oriented,
+<br>executable, expressive, comprehensive, and yet easy to
+<br>use. Thus a wide body of theories available for Petri nets
+<br>is available for analyzing a system design.
+<br>transferring
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:60px; top:6332px; width:234px; height:82px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">the WSDL
+<br>specifications into the WS-Net specifications is not a
+<br>trivial job. That is why currently we have only built some
+<br>simple experiments, e.g.
+<br>the example described in the
+<br>paper. In order for our WS-Net to monitor and verify real-
+<br>life applications, the translation from WSDL into WS-Net
+<br>must be automated.
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:72px; top:6332px; width:90px; height:12px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">However, manually
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:60px; top:6414px; width:234px; height:47px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">Our future work includes establishing an automation
+<br>engine that translates web services written in WSDL into
+<br>WS-Net, and building WS-Net models over
+<br>real-life
+<br>applications.
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:60px; top:6472px; width:67px; height:15px;"><span style="font-family: HOCLLN+IMOAUO+Times-Bold; font-size:15px">6. References
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:160px; top:6509px; width:69px; height:10px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:10px">for Architectural
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:102px; top:6531px; width:120px; height:10px;"><span style="font-family: HOCLPN+UKEBUO+Times-Italic; font-size:10px">and Applications Conference
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:60px; top:6498px; width:234px; height:159px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:10px">[1] C.K. Chang and S. Kim, “I</span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:7px">3</span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:10px">: A Petri-Net Based
+<br>Specification Method
+<br>Components”,
+<br></span><span style="font-family: HOCLPN+UKEBUO+Times-Italic; font-size:10px">IEEE 23th Annual International Computer
+<br>Proceedings of
+<br>Software
+<br>(COMPSAC’99),
+<br></span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:10px">Phoenix, AR, USA, Oct. 25-26, 1999, pp. 396-402.
+<br>[2] Design/CPN Reference Manual for X-Windows Version 2.0,
+<br>Meta Software Corporation, 1993.
+<br>[3] X. Gao, J. Yang, and M.P. Papazoglou, “The Capability
+<br>Matching of Web Services”, </span><span style="font-family: HOCLPN+UKEBUO+Times-Italic; font-size:10px">Proceedings of
+<br>the IEEE
+<br>International Symposium on Multimedia Software Engineering
+<br></span><span style="font-family: HOCLPN+UKEBUO+Times-Italic; font-size:10px">(MSE’02)</span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:10px">, Newport Beach, CA, USA, Dec. 11-13, 2002, pp. 56-
+<br></span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:10px">63.
+<br></span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:10px">[4] </span><span style="font-family: HOCLPN+UKEBUO+Times-Italic; font-size:10px">The American Heritage Dictionary of the English Language</span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:10px">,
+<br></span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:10px">4th edition, Houghton Mifflin Company, 2000.
+<br></span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:10px">[5] W.J. van den Heuvel, J. Yang, and M. Papazoglou, “Service
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:20px; top:6700px; width:280px; height:20px;"><span style="font-family: HGCGIJ+Arial; font-size:10px">Proceedings of the IEEE International Conference on Web Services (ICWS’04) 
+<br></span><span style="font-family: HGCGIJ+Arial; font-size:10px">0-7695-2167-3/04 $ 20.00 IEEE 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:50px; top:6727px; width:38px; height:4px;"><span style="font-family: Helvetica; font-size:4px">View publication stats
+<br>View publication stats
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:520px; top:6249px; width:10px; height:10px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:10px">for
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:435px; top:6249px; width:13px; height:10px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:10px">and
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:461px; top:6249px; width:46px; height:10px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:10px">Composition
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:317px; top:6249px; width:234px; height:402px;"><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:10px">Representation, Discovery
+<br>E-
+<br>marketplaces”, </span><span style="font-family: HOCLPN+UKEBUO+Times-Italic; font-size:10px">Proceedings of the 6th International Conference
+<br></span><span style="font-family: HOCLPN+UKEBUO+Times-Italic; font-size:10px">on Cooperative Information Systems (COOPIS’01)</span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:10px">, Trento,
+<br>Italy, Sep. 5-7, 2001.
+<br>[6] IBM Corporation, “Business Process Execution Language
+<br>for Web Services (BPEL4WS),” Version 1.0, 2002.
+<br>[7] K. Jensen, “Coloured Petri Nets: A High Level language for
+<br>System Design and Analysis”, </span><span style="font-family: HOCLPN+UKEBUO+Times-Italic; font-size:10px">Lecture Notes in Computer
+<br></span><span style="font-family: HOCLPN+UKEBUO+Times-Italic; font-size:10px">Science, Advances in Petri Nets</span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:10px">, 1990.
+<br>[8] F. Leymann, “Web Services Flow Language (WSFL 1.0),”
+<br>IBM Corporation, 2001.
+<br>[9] V. Pinci and R. Shapiro, “An Integrated Software
+<br>Development Methodology based on Hierarchical Colored Petri
+<br>Nets”, </span><span style="font-family: HOCLPN+UKEBUO+Times-Italic; font-size:10px">Lecture Nets in Computer Science, Advances in Petri
+<br></span><span style="font-family: HOCLPN+UKEBUO+Times-Italic; font-size:10px">Nets, </span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:10px">1990, pp. 227-252.
+<br>[10] D. Ross, “Application and extensions of SADT”, </span><span style="font-family: HOCLPN+UKEBUO+Times-Italic; font-size:10px">IEEE
+<br>Computer</span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:10px">, 18</span><span style="font-family: HOCLPN+UKEBUO+Times-Italic; font-size:10px">(4)</span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:10px">, Apr. 1984, pp. 25-35.
+<br>[11] M. Shaw, R. DeLine, D.V. Klein, T.L. Ross, D.M. Young,
+<br>and G. Zelesnik, “Abstractions for Software Architecture and
+<br>Tools to Support Them”,
+<br></span><span style="font-family: HOCLPN+UKEBUO+Times-Italic; font-size:10px">IEEE Transactions on Software
+<br></span><span style="font-family: HOCLPN+UKEBUO+Times-Italic; font-size:10px">Engineering, </span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:10px">Special Issue on Software Architecture, 21</span><span style="font-family: HOCLPN+UKEBUO+Times-Italic; font-size:10px">(4)</span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:10px">,
+<br>Apr. 1995.
+<br>[12] http://www.w3.org/TR/SOAP, accessed on Oct. 25, 2003.
+<br>[13] Sun Microsystems, “Web Service Choreography Interface
+<br>(WSCI),” Version 1.0, 2002.
+<br>[14] S. Thatte, “XLANG - Web Services for Business Process
+<br>Design,” Microsoft Corporation, 2001.
+<br>[15] W. Trattnig and H. Kerner, “EDDA-A Very High-level
+<br>Programming and Specification Language in the Style of
+<br>SADT”, </span><span style="font-family: HOCLPN+UKEBUO+Times-Italic; font-size:10px">Proceedings of IEEE Annual InternationalComputer
+<br>Software and Applications Conference (COMPSAC’80)</span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:10px">, Oct.
+<br>1980, pp. 436-443.
+<br>[16] A. Tsalgatidou and T. Pilioura, “An Overview of Standards
+<br>and Related Technology in Web Services”, </span><span style="font-family: HOCLPN+UKEBUO+Times-Italic; font-size:10px">Distributed and
+<br>Parallel Databases, </span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:10px">12, 2002, pp. 135-162.
+<br></span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">[17] </span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:10px">http://www.w3.org/TR/wsdl</span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:12px">, accessed on Oct. 25, 2003.
+<br></span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:10px">[18] .B. McLaughlin and M. Loukides, </span><span style="font-family: HOCLPN+UKEBUO+Times-Italic; font-size:10px">Java and XML</span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:10px">, O’Reilly
+<br></span><span style="font-family: HOCLON+VOTAUO+Times-Roman; font-size:10px">Java Tools, 2001.
+<br></span></div><span style="position:absolute; border: black 1px solid; left:335px; top:6491px; width:107px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:336px; top:6630px; width:101px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:76px; top:6016px; width:458px; height:233px;"></span>
+<span style="position:absolute; border: black 1px solid; left:238px; top:6029px; width:134px; height:20px;"></span>
+<span style="position:absolute; border: black 1px solid; left:94px; top:6068px; width:24px; height:13px;"></span>
+<span style="position:absolute; border: black 1px solid; left:85px; top:6057px; width:440px; height:165px;"></span>
+<span style="position:absolute; border: black 1px solid; left:202px; top:6195px; width:26px; height:13px;"></span>
+<span style="position:absolute; border: black 1px solid; left:202px; top:6112px; width:26px; height:20px;"></span>
+<span style="position:absolute; border: black 1px solid; left:121px; top:6075px; width:31px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:152px; top:6072px; width:5px; height:5px;"></span>
+<span style="position:absolute; border: black 1px solid; left:184px; top:6078px; width:35px; height:20px;"></span>
+<span style="position:absolute; border: black 1px solid; left:208px; top:6086px; width:5px; height:5px;"></span>
+<span style="position:absolute; border: black 1px solid; left:211px; top:6098px; width:0px; height:8px;"></span>
+<span style="position:absolute; border: black 1px solid; left:208px; top:6107px; width:5px; height:5px;"></span>
+<span style="position:absolute; border: black 1px solid; left:229px; top:6123px; width:22px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:251px; top:6121px; width:5px; height:5px;"></span>
+<span style="position:absolute; border: black 1px solid; left:256px; top:6119px; width:18px; height:6px;"></span>
+<span style="position:absolute; border: black 1px solid; left:184px; top:6071px; width:98px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:157px; top:6064px; width:31px; height:23px;"></span>
+<span style="position:absolute; border: black 1px solid; left:283px; top:6071px; width:0px; height:77px;"></span>
+<span style="position:absolute; border: black 1px solid; left:280px; top:6148px; width:5px; height:5px;"></span>
+<span style="position:absolute; border: black 1px solid; left:411px; top:6112px; width:26px; height:20px;"></span>
+<span style="position:absolute; border: black 1px solid; left:492px; top:6131px; width:24px; height:13px;"></span>
+<span style="position:absolute; border: black 1px solid; left:438px; top:6117px; width:49px; height:20px;"></span>
+<span style="position:absolute; border: black 1px solid; left:487px; top:6135px; width:5px; height:5px;"></span>
+<span style="position:absolute; border: black 1px solid; left:474px; top:6144px; width:22px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:496px; top:6142px; width:5px; height:5px;"></span>
+<span style="position:absolute; border: black 1px solid; left:411px; top:6151px; width:26px; height:20px;"></span>
+<span style="position:absolute; border: black 1px solid; left:438px; top:6144px; width:35px; height:13px;"></span>
+<span style="position:absolute; border: black 1px solid; left:312px; top:6153px; width:26px; height:20px;"></span>
+<span style="position:absolute; border: black 1px solid; left:339px; top:6165px; width:22px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:361px; top:6162px; width:5px; height:5px;"></span>
+<span style="position:absolute; border: black 1px solid; left:366px; top:6160px; width:17px; height:6px;"></span>
+<span style="position:absolute; border: black 1px solid; left:384px; top:6163px; width:22px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:406px; top:6160px; width:5px; height:5px;"></span>
+<span style="position:absolute; border: black 1px solid; left:274px; top:6122px; width:130px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:404px; top:6120px; width:5px; height:5px;"></span>
+<span style="position:absolute; border: black 1px solid; left:283px; top:6157px; width:22px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:305px; top:6154px; width:5px; height:5px;"></span>
+<span style="position:absolute; border: black 1px solid; left:265px; top:6126px; width:40px; height:34px;"></span>
+<span style="position:absolute; border: black 1px solid; left:305px; top:6158px; width:5px; height:5px;"></span>
+<span style="position:absolute; border: black 1px solid; left:211px; top:6167px; width:94px; height:39px;"></span>
+<span style="position:absolute; border: black 1px solid; left:305px; top:6165px; width:5px; height:5px;"></span>
+<span style="position:absolute; border: black 1px solid; left:283px; top:6174px; width:22px; height:20px;"></span>
+<span style="position:absolute; border: black 1px solid; left:305px; top:6171px; width:5px; height:5px;"></span>
+<span style="position:absolute; border: black 1px solid; left:220px; top:6174px; width:107px; height:15px;"></span>
+<span style="position:absolute; border: black 1px solid; left:217px; top:6190px; width:5px; height:5px;"></span>
+<span style="position:absolute; border: black 1px solid; left:305px; top:6174px; width:49px; height:27px;"></span>
+<span style="position:absolute; border: black 1px solid; left:301px; top:6199px; width:5px; height:5px;"></span>
+<span style="position:absolute; border: black 1px solid; left:184px; top:6126px; width:18px; height:75px;"></span>
+<span style="position:absolute; border: black 1px solid; left:197px; top:6123px; width:5px; height:5px;"></span>
+<span style="position:absolute; border: black 1px solid; left:175px; top:6119px; width:31px; height:89px;"></span>
+<span style="position:absolute; border: black 1px solid; left:206px; top:6206px; width:5px; height:5px;"></span>
+<div style="position:absolute; border: figure 1px solid; writing-mode:False; left:528px; top:6680px; width:65px; height:50px;"><img src="Im13.8.275x212.img" border="1" style="position:absolute; left:528px; top:6680px;" width="65" height="50" />
+</div><span style="position:absolute; border: black 1px solid; left:75px; top:6584px; width:218px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:60px; top:6594px; width:233px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:60px; top:6605px; width:233px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:60px; top:6615px; width:233px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:60px; top:6626px; width:11px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:79px; top:6510px; width:125px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:204px; top:6505px; width:2px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:207px; top:6510px; width:87px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:60px; top:6520px; width:233px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:60px; top:6531px; width:234px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:60px; top:6541px; width:233px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:60px; top:6552px; width:186px; height:0px;"></span>
+<div style="position:absolute; top:0px;">Page: <a href="#1">1</a>, <a href="#2">2</a>, <a href="#3">3</a>, <a href="#4">4</a>, <a href="#5">5</a>, <a href="#6">6</a>, <a href="#7">7</a>, <a href="#8">8</a></div>
+</body></html>

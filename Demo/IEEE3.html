@@ -1,0 +1,777 @@
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head><body>
+<span style="position:absolute; border: gray 1px solid; left:0px; top:50px; width:612px; height:792px;"></span>
+<div style="position:absolute; top:50px;"><a name="1">Page 1</a></div>
+<div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:46px; top:99px; width:523px; height:31px;"><span style="font-family: EEEDDG+TimesNewRoman; font-size:31px">Human detection by neural networks using a low-cost 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:147px; top:127px; width:322px; height:31px;"><span style="font-family: EEEDDG+TimesNewRoman; font-size:31px">short-range Doppler radar sensor 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:132px; top:181px; width:61px; height:14px;"><span style="font-family: EEEDDG+TimesNewRoman; font-size:14px">Jihoon Kwon 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:405px; top:181px; width:59px; height:14px;"><span style="font-family: EEEDDG+TimesNewRoman; font-size:14px">Nojun Kwak 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:104px; top:195px; width:118px; height:13px;"><span style="font-family: EEEDDG+TimesNewRoman; font-size:13px">Radar R&amp;D Center / GSCST 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:71px; top:207px; width:183px; height:13px;"><span style="font-family: EEEDDG+TimesNewRoman; font-size:13px">Hanwha Systems / Seoul National University 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:82px; top:218px; width:162px; height:13px;"><span style="font-family: EEEDDG+TimesNewRoman; font-size:13px">Youngin-si, Gyeonggi-do 17121, Korea 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:101px; top:230px; width:124px; height:13px;"><span style="font-family: EEEDDG+TimesNewRoman; font-size:13px">Email: jihoonkwon@snu.ac.kr 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:45px; top:265px; width:253px; height:156px;"><span style="font-family: EEEDDI+TimesNewRoman,BoldItalic; font-size:12px">Abstract</span><span style="font-family: EEEDDK+TimesNewRoman,Bold; font-size:11px">—In  this  paper,  we  propose  the  human  detection 
+<br>technique  using  Neural  Networks  to  effectively  classify  the 
+<br>Doppler  signals  caused  by  human  walking  along  with  the 
+<br>background  noise  sources.  The  frequency  or  phase  feature 
+<br>vectors converted from the given input signal are directly used as 
+<br>the  input  of  Neural  Networks.  In  addition,  Gaussian  noise  is 
+<br></span><span style="font-family: EEEDDK+TimesNewRoman,Bold; font-size:11px">added in the input nodes of Neural Network in order to prevent 
+<br>the  overfitting  problem.  We  developed  the  low-cost  &amp;  short-
+<br>range K-band  Doppler radar for the experiment. The  proposed 
+<br>technique was examined with human walking data accompanied 
+<br>with  the  background  noises  caused  by  the  fan,  rain,  snow,  and 
+<br>other  outdoor  environmental  factors.  The  trained  Neural 
+<br>Network  detection  technique  can  detect  human  walking  with 
+<br>95.2%  of  the  true  positive  rate  and  it  has  4.6%  of  the  false 
+<br>positive rate.  
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:59px; top:430px; width:240px; height:12px;"><span style="font-family: EEEDDI+TimesNewRoman,BoldItalic; font-size:12px">Keywords—Doppler radar; background noise removal; human 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:45px; top:440px; width:201px; height:12px;"><span style="font-family: EEEDDI+TimesNewRoman,BoldItalic; font-size:12px">detection; Neural Network; radar target classification 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:132px; top:464px; width:77px; height:13px;"><span style="font-family: EEEDDG+TimesNewRoman; font-size:13px">I.</span><span style="font-family: EEEDEM+Arial; font-size:13px">  </span><span style="font-family: EEEDDG+TimesNewRoman; font-size:13px">I</span><span style="font-family: EEEDDG+TimesNewRoman; font-size:10px">NTRODUCTION</span><span style="font-family: EEEDDG+TimesNewRoman; font-size:13px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:45px; top:479px; width:254px; height:122px;"><span style="font-family: EEEDDG+TimesNewRoman; font-size:13px">A  low-cost  and  short-range  K-band  Doppler  radar  sensor 
+<br>(Doppler  radar  sensor,  Microwave  motion  sensor)  detects 
+<br>Doppler  signals  generated  by  moving  targets.  It  provides 
+<br>velocity  information  of  targets  within  the  detected  area.  This 
+<br>radar sensor has been widely applied for LED controlling and 
+<br>alarm  monitoring 
+<br>indoor  environments.  Conventional 
+<br>detection methods with the use of Doppler radar sensors have 
+<br>been  processed  by  comparing  the  received  signal  power  (or 
+<br>phase) and the threshold level. Such method is very simple in 
+<br>the  aspect  of  computational  complexity,  and  thus  has  been 
+<br>widely applied for indoor commercial products.  
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:128px; top:534px; width:10px; height:13px;"><span style="font-family: EEEDDG+TimesNewRoman; font-size:13px">in 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:305px; top:241px; width:2px; height:24px;"><span style="font-family: EEEDDG+TimesNewRoman; font-size:13px"> 
+<br> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:316px; top:195px; width:236px; height:13px;"><span style="font-family: EEEDDG+TimesNewRoman; font-size:13px">Graduate School of Convergence Science and Technology 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:359px; top:207px; width:149px; height:13px;"><span style="font-family: EEEDDG+TimesNewRoman; font-size:13px">(GSCST), Seoul National University 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:367px; top:218px; width:133px; height:13px;"><span style="font-family: EEEDDG+TimesNewRoman; font-size:13px">Gwanak-gu, Seoul 08826, Korea 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:382px; top:230px; width:101px; height:13px;"><span style="font-family: EEEDDG+TimesNewRoman; font-size:13px">Email: nojunk@snu.ac.kr
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:314px; top:264px; width:254px; height:122px;"><span style="font-family: EEEDDG+TimesNewRoman; font-size:13px">However,  these  conventional  detection  methods  have 
+<br>limitations to remove unwanted Doppler signals that are caused 
+<br>by  various  background  noise  sources  present  in  indoor  and 
+<br>outdoor  situations.  For  example,  unwanted  Doppler  signals 
+<br>caused by the fan continuously cause false alarms, and Doppler 
+<br></span><span style="font-family: EEEDDG+TimesNewRoman; font-size:13px">signals caused by the rain and the snow increase the false alarm 
+<br>rate. Because the performance of detection and false alarm is 
+<br>highly susceptible to the background environment, the methods 
+<br>have many restrictions on many applications and installations 
+<br>despite of the outstanding sensitivity of Doppler radar sensor. 
+<br>These restrictions are shown in Figure 1. 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:314px; top:390px; width:254px; height:111px;"><span style="font-family: EEEDDG+TimesNewRoman; font-size:13px">Recently, many researches related to Doppler radar human 
+<br>detection methods using the pattern recognition methods have 
+<br>been  reported  [1][2][3].  Many  of  them  require  mathematical 
+<br>investigations  to  look  for  meaningful  feature  vectors  which 
+<br>directly  affect  the  estimation  accuracy  performance  of  the 
+<br>classifiers  [4][5].  However,  these  approaches  of  selecting 
+<br>meaningful feature vectors are done with lots of heuristic trials 
+<br>[1][2][6].  Also,  in  order  to  extract  feature  vectors  from  the 
+<br>micro-Doppler  spectrum,  they  demand  a relatively  long  time, 
+<br>compared with the conventional detection methods [1][2][6].  
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:314px; top:505px; width:254px; height:155px;"><span style="font-family: EEEDDG+TimesNewRoman; font-size:13px">In  this  paper,  we  propose  the  detection  techniques  using 
+<br>Neural Network to distinguish human walking micro-Doppler 
+<br>signals  from  Doppler  signals  that  include  background  noises. 
+<br>In  addition,  unlike  the  previous  approaches  that  require 
+<br>heuristic ways to select meaningful feature vectors from micro-
+<br>Doppler spectrum, in this paper, the frequency or phase feature 
+<br>vectors converted from the given input signal are directly used 
+<br>without  any  additional 
+<br>feature  selection  processing  or 
+<br>dimension  reduction  method.  Moreover,  Gaussian  noise  is 
+<br>added in the input nodes of Neural Network in order to prevent 
+<br>the overfitting problem. The addition of Gaussian noise to the 
+<br>input  data  of  Neural  Network  during  training  leads  to 
+<br>significant  improvements  in  generalization  performance  [7], 
+<br>like L2 regularization. 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:45px; top:754px; width:234px; height:10px;"><span style="font-family: EEEDDG+TimesNewRoman; font-size:10px">Fig. 1.</span><span style="font-family: EEEDEM+Arial; font-size:10px">  </span><span style="font-family: EEEDDG+TimesNewRoman; font-size:10px">Radar sensor applications and various background noise sources 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:356px; top:673px; width:167px; height:13px;"><span style="font-family: EEEDDG+TimesNewRoman; font-size:13px">II.</span><span style="font-family: EEEDEM+Arial; font-size:13px">  </span><span style="font-family: EEEDDG+TimesNewRoman; font-size:13px">H</span><span style="font-family: EEEDDG+TimesNewRoman; font-size:10px">ARDWARE AND SIGNAL PROCESSING</span><span style="font-family: EEEDDG+TimesNewRoman; font-size:13px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:314px; top:694px; width:190px; height:13px;"><span style="font-family: EEEDJM+TimesNewRoman,Italic; font-size:13px">A.</span><span style="font-family: EEEDJO+Arial,Italic; font-size:13px">  </span><span style="font-family: EEEDJM+TimesNewRoman,Italic; font-size:13px">Hardware of K-band Doppler radar sensor 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:314px; top:708px; width:254px; height:56px;"><span style="font-family: EEEDDG+TimesNewRoman; font-size:13px">In  order  to  be  widely  used  as  a  sensor  for  commercial 
+<br>purposes, the price of a radar sensor should be low. To reduce 
+<br>the price of the sensor, two parts were reflected in the hardware 
+<br>design. First, the phase locked loop was not applied. Second, 
+<br>an inexpensive micro-controller including ADC and FPU was 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:289px; top:740px; width:2px; height:13px;"><span style="font-family: EEEDDG+TimesNewRoman; font-size:13px"> 
+<br></span></div><span style="position:absolute; border: black 1px solid; left:46px; top:103px; width:518px; height:27px;"></span>
+<span style="position:absolute; border: black 1px solid; left:147px; top:131px; width:316px; height:27px;"></span>
+<div style="position:absolute; border: figure 1px solid; writing-mode:False; left:52px; top:608px; width:236px; height:143px;"><img src="Im1.8.723x438.img" border="1" style="position:absolute; left:52px; top:608px;" width="236" height="143" />
+</div><span style="position:absolute; border: gray 1px solid; left:0px; top:892px; width:612px; height:792px;"></span>
+<div style="position:absolute; top:892px;"><a name="2">Page 2</a></div>
+<div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:45px; top:943px; width:254px; height:45px;"><span style="font-family: EEEDDG+TimesNewRoman; font-size:13px">used.  Of  course,  recent  advances  in  the  semiconductor 
+<br>technology  can  provide  improved  development  environments 
+<br>for  making  cost-effective  products.  The  designed  radar 
+<br>hardware configuration to reduce cost is shown in Figure 2. 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:45px; top:1117px; width:246px; height:10px;"><span style="font-family: EEEDDG+TimesNewRoman; font-size:10px">Fig. 2.</span><span style="font-family: EEEDEM+Arial; font-size:10px">  </span><span style="font-family: EEEDDG+TimesNewRoman; font-size:10px">Configuration of the low-cost &amp; short range K-band Doppler Radar  
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:275px; top:1104px; width:2px; height:13px;"><span style="font-family: EEEDDG+TimesNewRoman; font-size:13px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:45px; top:1136px; width:254px; height:100px;"><span style="font-family: EEEDDG+TimesNewRoman; font-size:13px">Doppler radar sensor hardware is composed of circuits for 
+<br>transmitting/receiving  and  signal  processing.  The  transmit 
+<br>/receive  circuit  includes  the  microstrip  patch  antenna,  CW 
+<br></span><span style="font-family: EEEDDG+TimesNewRoman; font-size:13px">signal  generator,  low  noise  amplifier,  heterodyne  I/Q  mixer 
+<br>and  two-stage  baseband  amplifiers.  The  signal  processing 
+<br>circuit 
+<br>for  AD 
+<br>conversion &amp; data processing and interface ICs for the external 
+<br>link. Figure 3 shows the implemented hardware board. Table 1 
+<br>describes the development specifications.  
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:143px; top:1191px; width:112px; height:13px;"><span style="font-family: EEEDDG+TimesNewRoman; font-size:13px">integrated  microcontroller 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:79px; top:1191px; width:35px; height:13px;"><span style="font-family: EEEDDG+TimesNewRoman; font-size:13px">includes 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:121px; top:1191px; width:14px; height:13px;"><span style="font-family: EEEDDG+TimesNewRoman; font-size:13px">the 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:381px; top:945px; width:3px; height:17px;"><span style="font-family: EEEDON+Symbol; font-size:17px">(
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:350px; top:949px; width:5px; height:13px;"><span style="font-family: EEEDON+Symbol; font-size:13px">=
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:406px; top:949px; width:5px; height:13px;"><span style="font-family: EEEDON+Symbol; font-size:13px">×
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:332px; top:951px; width:15px; height:13px;"><span style="font-family: EEEDJM+TimesNewRoman,Italic; font-size:13px">tp
+<br></span><span style="font-family: EEEDDG+TimesNewRoman; font-size:13px">)(
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:385px; top:951px; width:20px; height:14px;"><span style="font-family: EEEDJM+TimesNewRoman,Italic; font-size:13px">tx
+<br></span><span style="font-family: EEEDDG+TimesNewRoman; font-size:13px">)(
+<br></span><span style="font-family: EEEDJM+TimesNewRoman,Italic; font-size:7px">k
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:372px; top:948px; width:9px; height:42px;"><span style="font-family: EEEDJM+TimesNewRoman,Italic; font-size:7px">M
+<br></span><span style="font-family: EEEDOO+Symbol; font-size:12px">
+<br></span><span style="font-family: EEEDON+Symbol; font-size:7px">=
+<br></span><span style="font-family: EEEDJM+TimesNewRoman,Italic; font-size:7px">k
+<br></span><span style="font-family: EEEDDG+TimesNewRoman; font-size:7px">1
+<br></span><span style="font-family: EEEDDG+TimesNewRoman; font-size:13px">,
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:329px; top:945px; width:88px; height:66px;"><span style="font-family: EEEDDG+TimesNewRoman; font-size:13px">1
+<br></span><span style="font-family: EEEDJM+TimesNewRoman,Italic; font-size:13px">M
+<br></span><span style="font-family: EEEDON+Symbol; font-size:18px">[
+<br></span><span style="font-family: EEEDON+Symbol; font-size:13px">ψψψψ
+<br></span><span style="font-family: EEEDJM+TimesNewRoman,Italic; font-size:13px">t
+<br></span><span style="font-family: EEEDDG+TimesNewRoman; font-size:13px">)(
+<br></span><span style="font-family: EEEDJM+TimesNewRoman,Italic; font-size:7px">M
+<br></span><span style="font-family: EEEDJM+TimesNewRoman,Italic; font-size:13px">tq </span><span style="font-family: EEEDON+Symbol; font-size:13px">ψ=</span><span style="font-family: EEEDDG+TimesNewRoman; font-size:13px">)(
+<br></span><span style="font-family: EEEDJM+TimesNewRoman,Italic; font-size:7px">M
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:388px; top:977px; width:2px; height:13px;"><span style="font-family: EEEDDG+TimesNewRoman; font-size:13px">,
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:391px; top:976px; width:9px; height:13px;"><span style="font-family: EEEDOP+MTExtra; font-size:13px">
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:402px; top:977px; width:2px; height:13px;"><span style="font-family: EEEDDG+TimesNewRoman; font-size:13px">,
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:383px; top:983px; width:2px; height:7px;"><span style="font-family: EEEDDG+TimesNewRoman; font-size:7px">2
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:351px; top:974px; width:5px; height:13px;"><span style="font-family: EEEDON+Symbol; font-size:13px">=
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:368px; top:983px; width:2px; height:7px;"><span style="font-family: EEEDDG+TimesNewRoman; font-size:7px">1
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:372px; top:997px; width:196px; height:13px;"><span style="font-family: EEEDDG+TimesNewRoman; font-size:13px">                                                                                           (3) 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:413px; top:951px; width:20px; height:36px;"><span style="font-family: EEEDJM+TimesNewRoman,Italic; font-size:13px">tx
+<br></span><span style="font-family: EEEDDG+TimesNewRoman; font-size:13px">)(
+<br></span><span style="font-family: EEEDJM+TimesNewRoman,Italic; font-size:7px">k
+<br></span><span style="font-family: EEEDON+Symbol; font-size:18px">]
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:425px; top:974px; width:5px; height:13px;"><span style="font-family: EEEDON+Symbol; font-size:13px">=
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:434px; top:945px; width:3px; height:17px;"><span style="font-family: EEEDON+Symbol; font-size:17px">)
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:439px; top:951px; width:129px; height:13px;"><span style="font-family: EEEDDG+TimesNewRoman; font-size:13px">                                (1) 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:433px; top:976px; width:30px; height:13px;"><span style="font-family: EEEDJM+TimesNewRoman,Italic; font-size:13px">unwrap
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:464px; top:970px; width:3px; height:17px;"><span style="font-family: EEEDON+Symbol; font-size:17px">(
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:470px; top:974px; width:7px; height:13px;"><span style="font-family: EEEDON+Symbol; font-size:13px">∠
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:480px; top:970px; width:21px; height:19px;"><span style="font-family: EEEDON+Symbol; font-size:17px">)</span><span style="font-family: EEEDDG+TimesNewRoman; font-size:13px">)(
+<br></span><span style="font-family: EEEDJM+TimesNewRoman,Italic; font-size:13px">tx
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:502px; top:977px; width:66px; height:13px;"><span style="font-family: EEEDDG+TimesNewRoman; font-size:13px">                         (2) 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:315px; top:1133px; width:239px; height:23px;"><span style="font-family: EEEDDG+TimesNewRoman; font-size:13px"> 
+<br></span><span style="font-family: EEEDDG+TimesNewRoman; font-size:10px">Fig. 4.</span><span style="font-family: EEEDEM+Arial; font-size:10px">  </span><span style="font-family: EEEDDG+TimesNewRoman; font-size:10px">Doppler signal characteristics caused by human walking and rain  
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:314px; top:1165px; width:256px; height:111px;"><span style="font-family: EEEDDG+TimesNewRoman; font-size:13px">This approach is very simple, but it can cause many false 
+<br></span><span style="font-family: EEEDDG+TimesNewRoman; font-size:13px">alarms  if  there  exists  background  noise.  Figure  5  shows  </span><span style="font-family: EEEDJM+TimesNewRoman,Italic; font-size:13px">x</span><span style="font-family: EEEDDG+TimesNewRoman; font-size:13px">(</span><span style="font-family: EEEDJM+TimesNewRoman,Italic; font-size:13px">t</span><span style="font-family: EEEDDG+TimesNewRoman; font-size:13px">), 
+<br></span><span style="font-family: EEEDJM+TimesNewRoman,Italic; font-size:13px">p</span><span style="font-family: EEEDDG+TimesNewRoman; font-size:13px">(</span><span style="font-family: EEEDJM+TimesNewRoman,Italic; font-size:13px">t</span><span style="font-family: EEEDDG+TimesNewRoman; font-size:13px">) and </span><span style="font-family: EEEDJM+TimesNewRoman,Italic; font-size:13px">q</span><span style="font-family: EEEDDG+TimesNewRoman; font-size:13px">(</span><span style="font-family: EEEDJM+TimesNewRoman,Italic; font-size:13px">t</span><span style="font-family: EEEDDG+TimesNewRoman; font-size:13px">) of Doppler signals caused by human walking and 
+<br>rain. If we use the conventional methods, </span><span style="font-family: EEEDJM+TimesNewRoman,Italic; font-size:13px">p</span><span style="font-family: EEEDDG+TimesNewRoman; font-size:13px">(</span><span style="font-family: EEEDJM+TimesNewRoman,Italic; font-size:13px">t</span><span style="font-family: EEEDDG+TimesNewRoman; font-size:13px">) and </span><span style="font-family: EEEDJM+TimesNewRoman,Italic; font-size:13px">q</span><span style="font-family: EEEDDG+TimesNewRoman; font-size:13px">(</span><span style="font-family: EEEDJM+TimesNewRoman,Italic; font-size:13px">t</span><span style="font-family: EEEDDG+TimesNewRoman; font-size:13px">) of the 
+<br>human  walking  data  can  be  processed  by  the  appropriate 
+<br>detection  reference.  In  the case of  the  rain data, </span><span style="font-family: EEEDJM+TimesNewRoman,Italic; font-size:13px">p</span><span style="font-family: EEEDDG+TimesNewRoman; font-size:13px">(</span><span style="font-family: EEEDJM+TimesNewRoman,Italic; font-size:13px">t</span><span style="font-family: EEEDDG+TimesNewRoman; font-size:13px">)  and </span><span style="font-family: EEEDJM+TimesNewRoman,Italic; font-size:13px">q</span><span style="font-family: EEEDDG+TimesNewRoman; font-size:13px">(</span><span style="font-family: EEEDJM+TimesNewRoman,Italic; font-size:13px">t</span><span style="font-family: EEEDDG+TimesNewRoman; font-size:13px">)  
+<br>have  to  be  removed  for  reducing  false  alarms,  because  these 
+<br>are  the  background  noise.  However,  if  we  still  use  the 
+<br>conventional  methods, 
+<br>to 
+<br>effectively remove </span><span style="font-family: EEEDJM+TimesNewRoman,Italic; font-size:13px">p</span><span style="font-family: EEEDDG+TimesNewRoman; font-size:13px">(</span><span style="font-family: EEEDJM+TimesNewRoman,Italic; font-size:13px">t</span><span style="font-family: EEEDDG+TimesNewRoman; font-size:13px">) and </span><span style="font-family: EEEDJM+TimesNewRoman,Italic; font-size:13px">q</span><span style="font-family: EEEDDG+TimesNewRoman; font-size:13px">(</span><span style="font-family: EEEDJM+TimesNewRoman,Italic; font-size:13px">t</span><span style="font-family: EEEDDG+TimesNewRoman; font-size:13px">) by the rain data. 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:468px; top:1252px; width:84px; height:13px;"><span style="font-family: EEEDDG+TimesNewRoman; font-size:13px">lots  of  difficulties 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:419px; top:1252px; width:42px; height:13px;"><span style="font-family: EEEDDG+TimesNewRoman; font-size:13px">there  are 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:45px; top:1366px; width:160px; height:10px;"><span style="font-family: EEEDDG+TimesNewRoman; font-size:10px">Fig. 3.</span><span style="font-family: EEEDEM+Arial; font-size:10px">  </span><span style="font-family: EEEDDG+TimesNewRoman; font-size:10px">Implemented Doppler radar sensor board 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:292px; top:1353px; width:2px; height:13px;"><span style="font-family: EEEDDG+TimesNewRoman; font-size:13px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:73px; top:1397px; width:36px; height:10px;"><span style="font-family: EEEDDG+TimesNewRoman; font-size:10px">TABLE I. </span><span style="font-family: EEEDEM+Arial; font-size:10px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:127px; top:1397px; width:143px; height:10px;"><span style="font-family: EEEDDG+TimesNewRoman; font-size:10px">S</span><span style="font-family: EEEDDG+TimesNewRoman; font-size:8px">PECIFICATIONS OF </span><span style="font-family: EEEDDG+TimesNewRoman; font-size:10px">K-</span><span style="font-family: EEEDDG+TimesNewRoman; font-size:8px">BAND DOPPLER RAAR</span><span style="font-family: EEEDDG+TimesNewRoman; font-size:10px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:84px; top:1414px; width:20px; height:10px;"><span style="font-family: EEEDDK+TimesNewRoman,Bold; font-size:10px">items 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:58px; top:1426px; width:68px; height:81px;"><span style="font-family: EEEDDG+TimesNewRoman; font-size:10px">Operating freqeuncy 
+<br></span><span style="font-family: EEEDDG+TimesNewRoman; font-size:10px">RF output 
+<br>Detection range 
+<br>Detection angle 
+<br>Microcontroller 
+<br>Size 
+<br></span><span style="font-family: EEEDDG+TimesNewRoman; font-size:13px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:156px; top:1414px; width:47px; height:10px;"><span style="font-family: EEEDDK+TimesNewRoman,Bold; font-size:10px">specifications 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:138px; top:1426px; width:80px; height:68px;"><span style="font-family: EEEDDG+TimesNewRoman; font-size:10px">24.125GHz 
+<br></span><span style="font-family: EEEDDG+TimesNewRoman; font-size:10px">16 dBm 
+<br>Max. 20m, typ. 15m 
+<br>-40 ~ +40 
+<br>Freescale kinetis k60 
+<br>60mm × 60mm × 15mm 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:250px; top:1414px; width:16px; height:35px;"><span style="font-family: EEEDDK+TimesNewRoman,Bold; font-size:10px">Ref. 
+<br></span><span style="font-family: EEEDDG+TimesNewRoman; font-size:13px"> 
+<br> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:230px; top:1449px; width:53px; height:33px;"><span style="font-family: EEEDDG+TimesNewRoman; font-size:10px">Human walking 
+<br>Azimuth 
+<br>Clock: 100MHz 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:257px; top:1482px; width:2px; height:13px;"><span style="font-family: EEEDDG+TimesNewRoman; font-size:13px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:45px; top:1517px; width:141px; height:13px;"><span style="font-family: EEEDJM+TimesNewRoman,Italic; font-size:13px">B.</span><span style="font-family: EEEDJO+Arial,Italic; font-size:13px">  </span><span style="font-family: EEEDJM+TimesNewRoman,Italic; font-size:13px">Conventional detetion methods 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:45px; top:1531px; width:254px; height:78px;"><span style="font-family: EEEDDG+TimesNewRoman; font-size:13px">In the  conventional detection methods,  the average power 
+<br>p(t) or the unwrapped phase q(t) calculated from the received 
+<br></span><span style="font-family: EEEDDG+TimesNewRoman; font-size:13px">signal x(t) is compared to the static or dynamic threshold level. 
+<br>These are described in Equation (1), (2) and (3). When p(t) or 
+<br>q(t) exceeds the threshold level, the radar sensor determines the 
+<br>detection  of 
+<br>these  conventional 
+<br>methods. 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:105px; top:1586px; width:106px; height:13px;"><span style="font-family: EEEDDG+TimesNewRoman; font-size:13px">target.  Figure  4  shows 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:315px; top:1541px; width:239px; height:10px;"><span style="font-family: EEEDDG+TimesNewRoman; font-size:10px">Fig. 5.</span><span style="font-family: EEEDEM+Arial; font-size:10px">  </span><span style="font-family: EEEDDG+TimesNewRoman; font-size:10px">Doppler signal characteristics caused by human walking and rain  
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:314px; top:1559px; width:254px; height:45px;"><span style="font-family: EEEDDG+TimesNewRoman; font-size:13px">The  rain  data  x(t)  has  the  form  of  an  impulse  waveform. 
+<br>And the rain data p(t) can have relatively high values for  high 
+<br>rainfall intensity. If p(t) is used for the parameter of detection 
+<br>processing, radar performance will be reduced remarkably due 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:566px; top:1527px; width:2px; height:13px;"><span style="font-family: EEEDDG+TimesNewRoman; font-size:13px"> 
+<br></span></div><div style="position:absolute; border: figure 1px solid; writing-mode:False; left:66px; top:995px; width:209px; height:119px;"><img src="Im2.8.702x397.img" border="1" style="position:absolute; left:66px; top:995px;" width="209" height="119" />
+</div><div style="position:absolute; border: figure 1px solid; writing-mode:False; left:49px; top:1243px; width:243px; height:121px;"><img src="Im3.jpg" border="1" style="position:absolute; left:49px; top:1243px;" width="243" height="121" />
+</div><span style="position:absolute; border: black 1px solid; left:52px; top:1414px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:52px; top:1414px; width:236px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:289px; top:1414px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:52px; top:1414px; width:0px; height:12px;"></span>
+<span style="position:absolute; border: black 1px solid; left:133px; top:1414px; width:0px; height:12px;"></span>
+<span style="position:absolute; border: black 1px solid; left:225px; top:1414px; width:0px; height:12px;"></span>
+<span style="position:absolute; border: black 1px solid; left:289px; top:1414px; width:0px; height:12px;"></span>
+<span style="position:absolute; border: black 1px solid; left:52px; top:1426px; width:236px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:52px; top:1426px; width:0px; height:11px;"></span>
+<span style="position:absolute; border: black 1px solid; left:133px; top:1426px; width:0px; height:11px;"></span>
+<span style="position:absolute; border: black 1px solid; left:225px; top:1426px; width:0px; height:11px;"></span>
+<span style="position:absolute; border: black 1px solid; left:289px; top:1426px; width:0px; height:11px;"></span>
+<span style="position:absolute; border: black 1px solid; left:52px; top:1438px; width:236px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:52px; top:1438px; width:0px; height:11px;"></span>
+<span style="position:absolute; border: black 1px solid; left:133px; top:1438px; width:0px; height:11px;"></span>
+<span style="position:absolute; border: black 1px solid; left:225px; top:1438px; width:0px; height:11px;"></span>
+<span style="position:absolute; border: black 1px solid; left:289px; top:1438px; width:0px; height:11px;"></span>
+<span style="position:absolute; border: black 1px solid; left:52px; top:1449px; width:236px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:52px; top:1450px; width:0px; height:11px;"></span>
+<span style="position:absolute; border: black 1px solid; left:133px; top:1450px; width:0px; height:11px;"></span>
+<span style="position:absolute; border: black 1px solid; left:225px; top:1450px; width:0px; height:11px;"></span>
+<span style="position:absolute; border: black 1px solid; left:289px; top:1450px; width:0px; height:11px;"></span>
+<span style="position:absolute; border: black 1px solid; left:52px; top:1461px; width:236px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:52px; top:1461px; width:0px; height:11px;"></span>
+<span style="position:absolute; border: black 1px solid; left:133px; top:1461px; width:0px; height:11px;"></span>
+<span style="position:absolute; border: black 1px solid; left:225px; top:1461px; width:0px; height:11px;"></span>
+<span style="position:absolute; border: black 1px solid; left:289px; top:1461px; width:0px; height:11px;"></span>
+<span style="position:absolute; border: black 1px solid; left:52px; top:1472px; width:236px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:52px; top:1473px; width:0px; height:11px;"></span>
+<span style="position:absolute; border: black 1px solid; left:133px; top:1473px; width:0px; height:11px;"></span>
+<span style="position:absolute; border: black 1px solid; left:225px; top:1473px; width:0px; height:11px;"></span>
+<span style="position:absolute; border: black 1px solid; left:289px; top:1473px; width:0px; height:11px;"></span>
+<span style="position:absolute; border: black 1px solid; left:52px; top:1484px; width:236px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:52px; top:1484px; width:0px; height:11px;"></span>
+<span style="position:absolute; border: black 1px solid; left:52px; top:1496px; width:80px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:133px; top:1484px; width:0px; height:11px;"></span>
+<span style="position:absolute; border: black 1px solid; left:133px; top:1496px; width:91px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:225px; top:1484px; width:0px; height:11px;"></span>
+<span style="position:absolute; border: black 1px solid; left:225px; top:1496px; width:63px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:289px; top:1484px; width:0px; height:11px;"></span>
+<span style="position:absolute; border: black 1px solid; left:289px; top:1496px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:358px; top:960px; width:11px; height:0px;"></span>
+<div style="position:absolute; border: figure 1px solid; writing-mode:False; left:329px; top:1019px; width:221px; height:125px;"><img src="Im4.8.672x380.img" border="1" style="position:absolute; left:329px; top:1019px;" width="221" height="125" />
+</div><div style="position:absolute; border: figure 1px solid; writing-mode:False; left:315px; top:1283px; width:251px; height:255px;"><img src="Im5.jpg" border="1" style="position:absolute; left:315px; top:1283px;" width="251" height="255" />
+</div><span style="position:absolute; border: gray 1px solid; left:0px; top:1734px; width:612px; height:792px;"></span>
+<div style="position:absolute; top:1734px;"><a name="3">Page 3</a></div>
+<div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:45px; top:1785px; width:254px; height:155px;"><span style="font-family: EEEDDG+TimesNewRoman; font-size:13px">to lots of false alarms. If the boresight direction of the radar is 
+<br>pointing to the ground, the rain data q(t) tends to have negative 
+<br>value because of the directionality of rain falling. Considering 
+<br>this  directionality  phenomenon,  the  false  alarm  rate  can  be 
+<br>reduced under the given conditions. However, when the rain is 
+<br>combined  with  wind,  this  assumption  about  the  directionality 
+<br>of rain falling has to be modified because the error increases. 
+<br>Especially, 
+<br>is  easily 
+<br>observed during snow falling. Therefore, using p(t) and q(t) for 
+<br>the  detection  is  hardly  a  right  approach  to  distinguish  targets 
+<br>from background noise. Doppler signals by the fan causes lots 
+<br>of false alarm with similar reasons as well. Therefore, the new 
+<br>approach  of  pattern  recognition  is  required  to  solve  these 
+<br>problems. 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:97px; top:1862px; width:155px; height:13px;"><span style="font-family: EEEDDG+TimesNewRoman; font-size:13px">this  wind  combining  phenomenon 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:45px; top:1950px; width:230px; height:13px;"><span style="font-family: EEEDJM+TimesNewRoman,Italic; font-size:13px">C.</span><span style="font-family: EEEDJO+Arial,Italic; font-size:13px">  </span><span style="font-family: EEEDJM+TimesNewRoman,Italic; font-size:13px">Human detection technique using pattern recognition 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:45px; top:1965px; width:254px; height:177px;"><span style="font-family: EEEDDG+TimesNewRoman; font-size:13px">In the previous research, heuristic ways have been applied 
+<br>to  select  meaningful  feature  vectors  from  a  micro-Doppler 
+<br>spectrum  [1][2][6].  For  example,  the  fundamental  frequency, 
+<br>micro-Doppler  bandwidth,  the  user  defined  offset  bandwidth 
+<br></span><span style="font-family: EEEDDG+TimesNewRoman; font-size:13px">and  so  on  were  extracted  from  micro-Doppler  spectrogram 
+<br>accordingly [1][2]. Effective feature extraction is the key point 
+<br>to  improve  classification  performance.  However,  Extracting 
+<br>meaningful 
+<br>requires  many 
+<br>experiments and experiences. Also, pre-processing for feature 
+<br>extraction  can  increase  the  total  computation  complexity, 
+<br>because  pre-processing  can  require  complex  formulas  [8][9]. 
+<br>This  conventional  pattern  recognition  approach  is  shown  in 
+<br>Figure 6. Meanwhile, Principal Component Analysis algorithm 
+<br>was  used  for  dimension  reduction  of  feature  vectors  [10]. 
+<br>However, 
+<br>time  and 
+<br>calculation complexity. 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:162px; top:2118px; width:86px; height:13px;"><span style="font-family: EEEDDG+TimesNewRoman; font-size:13px">increase  processing 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:93px; top:2118px; width:62px; height:13px;"><span style="font-family: EEEDDG+TimesNewRoman; font-size:13px">this  approach 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:100px; top:2041px; width:33px; height:13px;"><span style="font-family: EEEDDG+TimesNewRoman; font-size:13px">features 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:141px; top:2041px; width:21px; height:13px;"><span style="font-family: EEEDDG+TimesNewRoman; font-size:13px">from 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:170px; top:2041px; width:55px; height:13px;"><span style="font-family: EEEDDG+TimesNewRoman; font-size:13px">input  signal 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:562px; top:1915px; width:2px; height:13px;"><span style="font-family: EEEDDG+TimesNewRoman; font-size:13px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:315px; top:1928px; width:205px; height:10px;"><span style="font-family: EEEDDG+TimesNewRoman; font-size:10px">Fig. 7.</span><span style="font-family: EEEDEM+Arial; font-size:10px">  </span><span style="font-family: EEEDDG+TimesNewRoman; font-size:10px">Diagram of an neural network (Multi-layer perceptron) 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:314px; top:1947px; width:254px; height:56px;"><span style="font-family: EEEDDG+TimesNewRoman; font-size:13px">By using FNN, we propose a new approach of using neural 
+<br>networks  for  human  motion  detection  processing.  This 
+<br>detection process is shown in Figure 8. The architecture of the 
+<br>proposed detection processing is similar with CFAR (Constant 
+<br>False Alarm Rate).  
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:296px; top:2285px; width:2px; height:13px;"><span style="font-family: EEEDDG+TimesNewRoman; font-size:13px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:45px; top:2299px; width:221px; height:10px;"><span style="font-family: EEEDDG+TimesNewRoman; font-size:10px">Fig. 6.</span><span style="font-family: EEEDEM+Arial; font-size:10px">  </span><span style="font-family: EEEDDG+TimesNewRoman; font-size:10px">Conventional pattern recognition approach for classification 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:124px; top:2339px; width:8px; height:13px;"><span style="font-family: EEEDDG+TimesNewRoman; font-size:13px">is 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:45px; top:2317px; width:254px; height:133px;"><span style="font-family: EEEDDG+TimesNewRoman; font-size:13px">In  order  to  overcome  these  problems,  we  propose  the 
+<br>Doppler  radar  detection  processing  using  Neural  Networks. 
+<br>Neural  Network 
+<br>the  well-known  pattern  recognition 
+<br>algorithm. Feed-forward Neural Network (FNN), called Multi-
+<br>Layer  Perceptron  (MLP),  has  been  widely  used.  Recently, 
+<br>Deep  Neural  Network  (DNN)  using  five  or  more  layers  has 
+<br>been  researched  for  classification  [11].  DNN  requires  high-
+<br></span><span style="font-family: EEEDDG+TimesNewRoman; font-size:13px">performance  MCUs  due 
+<br>to  high-level  computational 
+<br>complexity.  In  this  study,  we  use  FNN  for  making  cost-
+<br>effective product, because it is expected that FNN can provide 
+<br>effective classification performance. Simplified architecture of 
+<br>FNN is shown in Figure 7. 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:560px; top:2221px; width:2px; height:13px;"><span style="font-family: EEEDDG+TimesNewRoman; font-size:13px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:315px; top:2234px; width:219px; height:10px;"><span style="font-family: EEEDDG+TimesNewRoman; font-size:10px">Fig. 8.</span><span style="font-family: EEEDEM+Arial; font-size:10px">  </span><span style="font-family: EEEDDG+TimesNewRoman; font-size:10px">Doppler radar detection processing architecture using ANN 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:314px; top:2252px; width:254px; height:198px;"><span style="font-family: EEEDDG+TimesNewRoman; font-size:13px">Unlike  these  previous  researches,  the  frequency  domain 
+<br>data  or  the  angle  domain  data  is  directly  used  as  the  input 
+<br>vector  of  Neural  Network  in  the  proposed  technique.  The 
+<br>frequency domain data is calculated by the Short-Time Fourier 
+<br>Transform (STFT) and the angle domain data is calculated by 
+<br>Phase  Unwrapping  Technique  (PUT).  We  do  not  use  an 
+<br>additional processing for selecting meaningful features and for 
+<br>reducing  the  dimension  of  feature  vector.  That  is,  heuristic 
+<br>methods  are  no  longer  used  for  feature  extraction.  Thus,  the 
+<br>proposed method reduces trial and error related to looking for 
+<br>meaningful  features.  The  STFT  and  PUT  processing  window 
+<br>size is N = 512. The dimension of the feature vectors is 512. 
+<br>The input layer consists of 512 nodes and the hidden layer has 
+<br></span><span style="font-family: EEEDDG+TimesNewRoman; font-size:13px">32 nodes. The addition of Gaussian noise of the input nodes of 
+<br>the  neural  network  during  training  is  the  effective  method  to 
+<br>reduce generalization error [7], like L2 regularization. Mixing 
+<br>Gaussian noise with training data is known to be an effective 
+<br>way to prevent overfitting given data [7]. 
+<br></span></div><div style="position:absolute; border: figure 1px solid; writing-mode:False; left:45px; top:2148px; width:251px; height:148px;"><img src="Im6.8.608x360.img" border="1" style="position:absolute; left:45px; top:2148px;" width="251" height="148" />
+</div><div style="position:absolute; border: figure 1px solid; writing-mode:False; left:318px; top:1788px; width:243px; height:138px;"><img src="Im7.8.577x329.img" border="1" style="position:absolute; left:318px; top:1788px;" width="243" height="138" />
+</div><div style="position:absolute; border: figure 1px solid; writing-mode:False; left:320px; top:2010px; width:240px; height:221px;"><img src="Im8.8.678x628.img" border="1" style="position:absolute; left:320px; top:2010px;" width="240" height="221" />
+</div><span style="position:absolute; border: gray 1px solid; left:0px; top:2576px; width:612px; height:792px;"></span>
+<div style="position:absolute; top:2576px;"><a name="4">Page 4</a></div>
+<div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:45px; top:2627px; width:254px; height:89px;"><span style="font-family: EEEDDG+TimesNewRoman; font-size:13px">In  the  proposed  detection  method,  a  sequential  output 
+<br>combining ‘0’ and ‘1’ is generated according to the input data. 
+<br>‘0’  means  background  noise,  and  ‘1’  means  human  motion 
+<br>detection.  The  combination  of  successive  detection  alarms 
+<br>improves  the  detection  accuracy.  For  example,  detection 
+<br>accuracy is improved if detection is determined when there are 
+<br>several  '1'  s  in  the  detection  confirmation  time,  such  as 
+<br>'11110111'. 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:314px; top:2627px; width:254px; height:89px;"><span style="font-family: EEEDDG+TimesNewRoman; font-size:13px">human motion, the experimenter moved only within the radar 
+<br>detection  area.  For  light  control  purposes,  human  motion 
+<br>includes walking and fast walking. Strange human movements 
+<br>such  as  crawling  and  irregular  movements  were  excluded.  In 
+<br>order to collect Doppler signals caused by background noise, a 
+<br>limited test environment was applied so that the various noise 
+<br>sources  do  not  mix  with  each  other.  The  test  site  where  the 
+<br>radar is installed is shown in Fig 10. 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:45px; top:3080px; width:140px; height:10px;"><span style="font-family: EEEDDG+TimesNewRoman; font-size:10px">Fig. 9.</span><span style="font-family: EEEDEM+Arial; font-size:10px">  </span><span style="font-family: EEEDDG+TimesNewRoman; font-size:10px">Doppler signals x(t)  of eight cases 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:315px; top:3080px; width:153px; height:10px;"><span style="font-family: EEEDDG+TimesNewRoman; font-size:10px">Fig. 11.</span><span style="font-family: EEEDEM+Arial; font-size:10px"> </span><span style="font-family: EEEDDG+TimesNewRoman; font-size:10px">Doppler Sectrogram procced by STFT  
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:296px; top:3067px; width:2px; height:13px;"><span style="font-family: EEEDDG+TimesNewRoman; font-size:13px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:566px; top:3067px; width:2px; height:13px;"><span style="font-family: EEEDDG+TimesNewRoman; font-size:13px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:84px; top:3107px; width:180px; height:13px;"><span style="font-family: EEEDDG+TimesNewRoman; font-size:13px">III.</span><span style="font-family: EEEDEM+Arial; font-size:13px">  </span><span style="font-family: EEEDDG+TimesNewRoman; font-size:13px">D</span><span style="font-family: EEEDDG+TimesNewRoman; font-size:10px">ATA GATHERING OF DOPPLER SIGNAL</span><span style="font-family: EEEDDG+TimesNewRoman; font-size:13px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:45px; top:3249px; width:158px; height:10px;"><span style="font-family: EEEDDG+TimesNewRoman; font-size:10px">Fig. 10.</span><span style="font-family: EEEDEM+Arial; font-size:10px"> </span><span style="font-family: EEEDDG+TimesNewRoman; font-size:10px">Signal gathering of Doppler radar sensor 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:45px; top:3267px; width:254px; height:24px;"><span style="font-family: EEEDDG+TimesNewRoman; font-size:13px">Radar was installed in selected test sites and raw data was 
+<br>collected  for  a  long  time.  In  order  to  measure  the  signals  by 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:288px; top:3235px; width:2px; height:13px;"><span style="font-family: EEEDDG+TimesNewRoman; font-size:13px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:314px; top:3098px; width:254px; height:78px;"><span style="font-family: EEEDDG+TimesNewRoman; font-size:13px">Doppler  signals  were  collected  by  the  following  eight 
+<br>cases. The eight cases are (a) outdoor environment (LOS), (b) 
+<br>fan, (c) snow, (d) rain, (e) human walking, (f) human walking 
+<br>with  fan,  (g)  human  walking  with  snow  (h)  human  walking 
+<br>with rain. And these signals were collected three times in the 
+<br>three  different  places.  Figure  9  shows  a  Doppler  signal  x(t). 
+<br>Figure 11 shows the processed result of STFT of x(t). 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:314px; top:3181px; width:254px; height:111px;"><span style="font-family: EEEDDG+TimesNewRoman; font-size:13px">As shown in Figure 9 and 11, micro-Doppler signals of rain 
+<br>and  snow  have  instantaneous  wide-bandwidth  characteristics. 
+<br>They  have  characteristics  of  an  impulse  signal.  Snow  with 
+<br>wind  causes  low-frequency  modulation  at  the  center  of  the 
+<br>micro-Doppler signal. In the case of rain, we can observe that 
+<br></span><span style="font-family: EEEDDG+TimesNewRoman; font-size:13px">the  center  of  the  micro-Doppler  spectrum  is  in  the  negative 
+<br>region due to the directionality of the rain. The micro-Doppler 
+<br>signals  of  the  fan  consists  of  the  constant  fundamental 
+<br>frequency  and  its  harmonic  frequencies.  The  micro-Doppler 
+<br>spectrogram  of  human  walking  motion  has  a  periodic  form 
+<br></span></div><div style="position:absolute; border: figure 1px solid; writing-mode:False; left:45px; top:2723px; width:251px; height:354px;"><img src="Im9.jpg" border="1" style="position:absolute; left:45px; top:2723px;" width="251" height="354" />
+</div><div style="position:absolute; border: figure 1px solid; writing-mode:False; left:54px; top:3124px; width:234px; height:121px;"><img src="Im10.jpg" border="1" style="position:absolute; left:54px; top:3124px;" width="234" height="121" />
+</div><div style="position:absolute; border: figure 1px solid; writing-mode:False; left:315px; top:2723px; width:251px; height:354px;"><img src="Im11.8.570x804.img" border="1" style="position:absolute; left:315px; top:2723px;" width="251" height="354" />
+</div><span style="position:absolute; border: gray 1px solid; left:0px; top:3418px; width:612px; height:792px;"></span>
+<div style="position:absolute; top:3418px;"><a name="5">Page 5</a></div>
+<div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:45px; top:3469px; width:254px; height:24px;"><span style="font-family: EEEDDG+TimesNewRoman; font-size:13px">because the data was achieved from a person walking back and 
+<br>forth in the given radar-detectable area.  
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:45px; top:3497px; width:254px; height:177px;"><span style="font-family: EEEDDG+TimesNewRoman; font-size:13px">The Micro-Doppler spectral results in Figure 11 can give us 
+<br>the  idea  that  we  can  easily  classify  them.  In  the  previous 
+<br>chapter,  however,  conventional  pattern  classification  methods 
+<br>have  to  extract  meaningful  features  from  these  spectral 
+<br>imaging  results,  which  is  difficult  and  may  require  complex 
+<br>formulas.  Recent  studies  have  applied  image  processing 
+<br>techniques  to  process  this  spectral  image  [12].  However,  at 
+<br>least  two  seconds  are  required  to  obtain  an  image  size  that 
+<br>contains  meaningful  spectral  information  [12].  This  approach 
+<br>not only increases the amount of computation but also reduces 
+<br>the response speed of the sensor. For example, in the case of a 
+<br>light control, this slow reaction causes that the LED turns on 
+<br>slowly.  To  overcome  this  problem,  we  explained  the  new 
+<br>detection  method  using  FNN  in  the  previous  chapter.  This 
+<br>proposed  method  has  the  advantage  of  fast  operation  with 
+<br>small amount of computation. 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:99px; top:3686px; width:150px; height:13px;"><span style="font-family: EEEDDG+TimesNewRoman; font-size:13px">IV.</span><span style="font-family: EEEDEM+Arial; font-size:13px">  </span><span style="font-family: EEEDDG+TimesNewRoman; font-size:13px">E</span><span style="font-family: EEEDDG+TimesNewRoman; font-size:10px">XPERIMENTAL AND ANALYSIS</span><span style="font-family: EEEDDG+TimesNewRoman; font-size:13px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:45px; top:3701px; width:254px; height:100px;"><span style="font-family: EEEDDG+TimesNewRoman; font-size:13px">A  total  of  1.6  million  origin  data  are  generated  from  the 
+<br>raw  Doppler  signals.  Among  them,  160,000  were  randomly 
+<br>selected.  The  160,000  data  consists  of  80,000  background 
+<br>noise class and 80,000 human walking class. The background 
+<br>noise class includes 20,000 outdoor environment data, 20,000 
+<br>fan  data,  20,000  snow  data  and  20,000  rain  data.  Also,  the 
+<br>human  walking  class  includes  20,000  human  walking  data, 
+<br>20,000  human  walking  data  with  fan,  and  20,000  human 
+<br>walking data with snow, 20,000 human walking data with rain.  
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:45px; top:3812px; width:220px; height:13px;"><span style="font-family: EEEDJM+TimesNewRoman,Italic; font-size:13px">A.</span><span style="font-family: EEEDJO+Arial,Italic; font-size:13px">  </span><span style="font-family: EEEDJM+TimesNewRoman,Italic; font-size:13px">Detection performance of the conventional method 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:87px; top:3837px; width:135px; height:13px;"><span style="font-family: EEEDDG+TimesNewRoman; font-size:13px">the  detection  performance.  It 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:45px; top:3826px; width:254px; height:133px;"><span style="font-family: EEEDDG+TimesNewRoman; font-size:13px">ROC  (Receiver  operating  characteristic)  curve  is  used  to 
+<br>is  obtained  by 
+<br>measure 
+<br>calculating  the  overlapped  area  (AUC,  Area  under  the  ROC) 
+<br>between the two class probability distributions. Figure 8 shows 
+<br>the  ROC  curve  of  the  conventional  detection  processing 
+<br>method. In Figure 12-(i), only (a) an outdoor environment data 
+<br>and  only  (e)  human  walking  data  were  used  to  analyze  the 
+<br>detection performance. AUC by p(t) and q(t) is measured to be 
+<br>about 0.47 and 0.48 respectively. Meanwhile, in Figure 12-(ii), 
+<br>the total 160,000 data were used for analyzing ROC. AUC by 
+<br>p(t)  and  q(t)  is  measured  to  be  about  0.31  and  0.19 
+<br>respectively. 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:329px; top:3469px; width:197px; height:13px;"><span style="font-family: EEEDDG+TimesNewRoman; font-size:13px">The  detection  accuracy  performance  was 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:314px; top:3469px; width:254px; height:122px;"><span style="font-family: EEEDDG+TimesNewRoman; font-size:13px">reduced 
+<br>remarkably because of the external noises (fan, snow and rain). 
+<br>This  result  shows  that  applying  the  conventional  detection 
+<br>processing  method  under  these  conditions  causes  a  severe 
+<br>performance  degradation.  In  Figure  12-(ii),  when  the  false 
+<br>positive rate (false  alarm  rate)  of p(t)  is 5%  or 10%,  the  true 
+<br>positive rate (detection sensitivity) is about 30% or 50%. If the 
+<br>detection sensitivity of p(t) has 90%, the false alarm rate will 
+<br>be  approximately  50%  that  is  an  unacceptable  performance. 
+<br>These results show that it is not possible to apply conventional 
+<br>detection methods for outdoor purposes. 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:314px; top:3602px; width:215px; height:13px;"><span style="font-family: EEEDJM+TimesNewRoman,Italic; font-size:13px">B.</span><span style="font-family: EEEDJO+Arial,Italic; font-size:13px">  </span><span style="font-family: EEEDJM+TimesNewRoman,Italic; font-size:13px">Detection performnace of the proposed technique 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:329px; top:3616px; width:188px; height:13px;"><span style="font-family: EEEDDG+TimesNewRoman; font-size:13px">The  proposed  Neural  Network  detection 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:314px; top:3616px; width:254px; height:67px;"><span style="font-family: EEEDDG+TimesNewRoman; font-size:13px">techniques 
+<br>overcome 
+<br>this  performance  degradation.  The  frequency 
+<br>domain  features  processed  by  STFT  or  the  angle  domain 
+<br>feature  processed  by  PUT  are  directly  used  as  the  feature 
+<br>vectors  for  these  Neural  Network  detection  techniques.  PUT 
+<br>has lower computational complexity than STFT.  
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:314px; top:3687px; width:254px; height:67px;"><span style="font-family: EEEDDG+TimesNewRoman; font-size:13px">Training, validation, test data set was composed to analyze 
+<br>the classification accuracy as following: 75% of the total data 
+<br>set (160,000) for the training set, 15% for the validation data 
+<br>set,  and  15%  for  the  test  set.  The  training  set  trains  Neural 
+<br>Network classifier while the validation data set is used in order 
+<br>to avoid overfitting and to adjust classifier’s parameter.  
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:314px; top:3759px; width:254px; height:111px;"><span style="font-family: EEEDDG+TimesNewRoman; font-size:13px">Test set is used for classification performance evaluation of 
+<br>the  classifier  determined  by  training  and  validation.  The  test 
+<br>error is measured by the test data set. The test error results are 
+<br>shown in Table 2 and Table 3. The result of the ANN detection 
+<br>processing using STFT yields in 95.3% = (95.4% +95.2%) ÷2 
+<br>for  the  classification  accuracy.  The  false  positive  rate  of  this 
+<br>classifier is 4.6% and the true positive rate is 95.2%. The result 
+<br>of  Neural  Network  detection  processing  using  PUT  yields  in 
+<br>90.65% of the classification accuracy. The false positive rate of 
+<br>this classifier is 8.8% and the true positive rate is 90.1%.  
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:323px; top:3886px; width:39px; height:10px;"><span style="font-family: EEEDDG+TimesNewRoman; font-size:10px">TABLE II. </span><span style="font-family: EEEDEM+Arial; font-size:10px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:377px; top:3886px; width:181px; height:10px;"><span style="font-family: EEEDDG+TimesNewRoman; font-size:10px">E</span><span style="font-family: EEEDDG+TimesNewRoman; font-size:8px">RROR </span><span style="font-family: EEEDDG+TimesNewRoman; font-size:10px">R</span><span style="font-family: EEEDDG+TimesNewRoman; font-size:8px">ESULT </span><span style="font-family: EEEDDG+TimesNewRoman; font-size:10px">–</span><span style="font-family: EEEDDG+TimesNewRoman; font-size:8px"> </span><span style="font-family: EEEDDG+TimesNewRoman; font-size:10px">ANN</span><span style="font-family: EEEDDG+TimesNewRoman; font-size:8px"> </span><span style="font-family: EEEDDG+TimesNewRoman; font-size:10px">D</span><span style="font-family: EEEDDG+TimesNewRoman; font-size:8px">ETECTION </span><span style="font-family: EEEDDG+TimesNewRoman; font-size:10px">P</span><span style="font-family: EEEDDG+TimesNewRoman; font-size:8px">ROCESSING</span><span style="font-family: EEEDDG+TimesNewRoman; font-size:10px">(STFT) 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:352px; top:3909px; width:37px; height:10px;"><span style="font-family: EEEDDK+TimesNewRoman,Bold; font-size:10px">Confusion 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:358px; top:3918px; width:26px; height:10px;"><span style="font-family: EEEDDK+TimesNewRoman,Bold; font-size:10px">Matrix 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:467px; top:3903px; width:44px; height:10px;"><span style="font-family: EEEDDK+TimesNewRoman,Bold; font-size:10px">Actual Class 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:432px; top:3915px; width:44px; height:10px;"><span style="font-family: EEEDDK+TimesNewRoman,Bold; font-size:10px">Background 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:443px; top:3924px; width:20px; height:10px;"><span style="font-family: EEEDDK+TimesNewRoman,Bold; font-size:10px">Noise 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:510px; top:3920px; width:27px; height:10px;"><span style="font-family: EEEDDK+TimesNewRoman,Bold; font-size:10px">Human 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:327px; top:3951px; width:32px; height:10px;"><span style="font-family: EEEDDI+TimesNewRoman,BoldItalic; font-size:10px">Estimated 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:334px; top:3960px; width:18px; height:10px;"><span style="font-family: EEEDDI+TimesNewRoman,BoldItalic; font-size:10px">Class 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:371px; top:3940px; width:40px; height:10px;"><span style="font-family: EEEDDI+TimesNewRoman,BoldItalic; font-size:10px">Background 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:381px; top:3948px; width:19px; height:10px;"><span style="font-family: EEEDDI+TimesNewRoman,BoldItalic; font-size:10px">Noise 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:429px; top:3944px; width:50px; height:10px;"><span style="font-family: EEEDDG+TimesNewRoman; font-size:10px">11468 (95.4%) 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:505px; top:3944px; width:38px; height:10px;"><span style="font-family: EEEDDG+TimesNewRoman; font-size:10px">573 (4.8%) 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:378px; top:3967px; width:25px; height:10px;"><span style="font-family: EEEDDI+TimesNewRoman,BoldItalic; font-size:10px">Human 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:435px; top:3967px; width:38px; height:10px;"><span style="font-family: EEEDDG+TimesNewRoman; font-size:10px">551 (4.6%) 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:499px; top:3967px; width:50px; height:10px;"><span style="font-family: EEEDDG+TimesNewRoman; font-size:10px">11408 (95.2%) 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:57px; top:4058px; width:105px; height:10px;"><span style="font-family: EEEDDG+TimesNewRoman; font-size:10px">(i) Outdoor environment data vs 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:76px; top:4067px; width:68px; height:10px;"><span style="font-family: EEEDDG+TimesNewRoman; font-size:10px">Human walking data 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:185px; top:4051px; width:98px; height:10px;"><span style="font-family: EEEDDG+TimesNewRoman; font-size:10px">(ii) Background noise class vs 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:199px; top:4061px; width:70px; height:10px;"><span style="font-family: EEEDDG+TimesNewRoman; font-size:10px">Human walking class 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:84px; top:4077px; width:176px; height:10px;"><span style="font-family: EEEDDG+TimesNewRoman; font-size:10px">Black line : ROC of </span><span style="font-family: EEEDJM+TimesNewRoman,Italic; font-size:10px">p</span><span style="font-family: EEEDDG+TimesNewRoman; font-size:10px">(</span><span style="font-family: EEEDJM+TimesNewRoman,Italic; font-size:10px">t</span><span style="font-family: EEEDDG+TimesNewRoman; font-size:10px">) , Blue dash line : ROC of </span><span style="font-family: EEEDJM+TimesNewRoman,Italic; font-size:10px">q</span><span style="font-family: EEEDDG+TimesNewRoman; font-size:10px">(</span><span style="font-family: EEEDJM+TimesNewRoman,Italic; font-size:10px">t</span><span style="font-family: EEEDDG+TimesNewRoman; font-size:10px">) 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:45px; top:4098px; width:218px; height:10px;"><span style="font-family: EEEDDG+TimesNewRoman; font-size:10px">Fig. 12.</span><span style="font-family: EEEDEM+Arial; font-size:10px"> </span><span style="font-family: EEEDDG+TimesNewRoman; font-size:10px">ROC curve of the convetional detection processing method 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:316px; top:3994px; width:41px; height:10px;"><span style="font-family: EEEDDG+TimesNewRoman; font-size:10px">TABLE III. </span><span style="font-family: EEEDEM+Arial; font-size:10px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:370px; top:3994px; width:196px; height:10px;"><span style="font-family: EEEDDG+TimesNewRoman; font-size:10px">T</span><span style="font-family: EEEDDG+TimesNewRoman; font-size:8px">EST </span><span style="font-family: EEEDDG+TimesNewRoman; font-size:10px">E</span><span style="font-family: EEEDDG+TimesNewRoman; font-size:8px">RROR </span><span style="font-family: EEEDDG+TimesNewRoman; font-size:10px">R</span><span style="font-family: EEEDDG+TimesNewRoman; font-size:8px">ESULT </span><span style="font-family: EEEDDG+TimesNewRoman; font-size:10px">–</span><span style="font-family: EEEDDG+TimesNewRoman; font-size:8px"> </span><span style="font-family: EEEDDG+TimesNewRoman; font-size:10px">ANN</span><span style="font-family: EEEDDG+TimesNewRoman; font-size:8px"> </span><span style="font-family: EEEDDG+TimesNewRoman; font-size:10px">D</span><span style="font-family: EEEDDG+TimesNewRoman; font-size:8px">ETECTION </span><span style="font-family: EEEDDG+TimesNewRoman; font-size:10px">P</span><span style="font-family: EEEDDG+TimesNewRoman; font-size:8px">ROCESSING</span><span style="font-family: EEEDDG+TimesNewRoman; font-size:10px">(PUT) 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:352px; top:4017px; width:37px; height:10px;"><span style="font-family: EEEDDK+TimesNewRoman,Bold; font-size:10px">Confusion 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:358px; top:4026px; width:26px; height:10px;"><span style="font-family: EEEDDK+TimesNewRoman,Bold; font-size:10px">Matrix 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:467px; top:4011px; width:44px; height:10px;"><span style="font-family: EEEDDK+TimesNewRoman,Bold; font-size:10px">Actual Class 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:432px; top:4023px; width:44px; height:10px;"><span style="font-family: EEEDDK+TimesNewRoman,Bold; font-size:10px">Background 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:443px; top:4032px; width:20px; height:10px;"><span style="font-family: EEEDDK+TimesNewRoman,Bold; font-size:10px">Noise 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:510px; top:4028px; width:27px; height:10px;"><span style="font-family: EEEDDK+TimesNewRoman,Bold; font-size:10px">Human 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:327px; top:4059px; width:32px; height:10px;"><span style="font-family: EEEDDI+TimesNewRoman,BoldItalic; font-size:10px">Estimated 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:334px; top:4068px; width:18px; height:10px;"><span style="font-family: EEEDDI+TimesNewRoman,BoldItalic; font-size:10px">Class 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:371px; top:4048px; width:40px; height:10px;"><span style="font-family: EEEDDI+TimesNewRoman,BoldItalic; font-size:10px">Background 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:381px; top:4056px; width:19px; height:10px;"><span style="font-family: EEEDDI+TimesNewRoman,BoldItalic; font-size:10px">Noise 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:429px; top:4052px; width:50px; height:10px;"><span style="font-family: EEEDDG+TimesNewRoman; font-size:10px">10923 (91.2%) 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:503px; top:4052px; width:41px; height:10px;"><span style="font-family: EEEDDG+TimesNewRoman; font-size:10px">1195 (9.9%) 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:378px; top:4075px; width:25px; height:10px;"><span style="font-family: EEEDDI+TimesNewRoman,BoldItalic; font-size:10px">Human 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:433px; top:4075px; width:41px; height:10px;"><span style="font-family: EEEDDG+TimesNewRoman; font-size:10px">1053 (8.8%) 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:499px; top:4075px; width:50px; height:10px;"><span style="font-family: EEEDDG+TimesNewRoman; font-size:10px">10829 (90.1%) 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:314px; top:4090px; width:254px; height:40px;"><span style="font-family: EEEDDG+TimesNewRoman; font-size:13px"> 
+<br>For  the  final  detection  decision,    successive  '0'  and  '1' 
+<br>outputs are combined  during the detection confirmation time. 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:289px; top:4044px; width:2px; height:10px;"><span style="font-family: EEEDDG+TimesNewRoman; font-size:10px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:297px; top:4084px; width:2px; height:13px;"><span style="font-family: EEEDDG+TimesNewRoman; font-size:13px"> 
+<br></span></div><span style="position:absolute; border: black 1px solid; left:352px; top:3910px; width:35px; height:9px;"></span>
+<span style="position:absolute; border: black 1px solid; left:358px; top:3919px; width:24px; height:9px;"></span>
+<span style="position:absolute; border: black 1px solid; left:467px; top:3904px; width:42px; height:9px;"></span>
+<span style="position:absolute; border: black 1px solid; left:417px; top:3903px; width:0px; height:1px;"></span>
+<span style="position:absolute; border: black 1px solid; left:417px; top:3903px; width:141px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:558px; top:3903px; width:0px; height:1px;"></span>
+<span style="position:absolute; border: black 1px solid; left:558px; top:3903px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:417px; top:3904px; width:0px; height:10px;"></span>
+<span style="position:absolute; border: black 1px solid; left:558px; top:3904px; width:0px; height:10px;"></span>
+<span style="position:absolute; border: black 1px solid; left:432px; top:3917px; width:42px; height:9px;"></span>
+<span style="position:absolute; border: black 1px solid; left:443px; top:3925px; width:18px; height:9px;"></span>
+<span style="position:absolute; border: black 1px solid; left:510px; top:3921px; width:25px; height:9px;"></span>
+<span style="position:absolute; border: black 1px solid; left:417px; top:3915px; width:0px; height:1px;"></span>
+<span style="position:absolute; border: black 1px solid; left:417px; top:3915px; width:70px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:488px; top:3915px; width:0px; height:1px;"></span>
+<span style="position:absolute; border: black 1px solid; left:488px; top:3915px; width:70px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:558px; top:3915px; width:0px; height:1px;"></span>
+<span style="position:absolute; border: black 1px solid; left:417px; top:3917px; width:0px; height:19px;"></span>
+<span style="position:absolute; border: black 1px solid; left:488px; top:3917px; width:0px; height:19px;"></span>
+<span style="position:absolute; border: black 1px solid; left:558px; top:3917px; width:0px; height:19px;"></span>
+<span style="position:absolute; border: black 1px solid; left:327px; top:3952px; width:30px; height:8px;"></span>
+<span style="position:absolute; border: black 1px solid; left:334px; top:3961px; width:16px; height:8px;"></span>
+<span style="position:absolute; border: black 1px solid; left:371px; top:3941px; width:38px; height:8px;"></span>
+<span style="position:absolute; border: black 1px solid; left:381px; top:3950px; width:17px; height:8px;"></span>
+<span style="position:absolute; border: black 1px solid; left:322px; top:3937px; width:0px; height:3px;"></span>
+<span style="position:absolute; border: black 1px solid; left:322px; top:3937px; width:41px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:363px; top:3937px; width:0px; height:3px;"></span>
+<span style="position:absolute; border: black 1px solid; left:363px; top:3937px; width:52px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:416px; top:3937px; width:0px; height:3px;"></span>
+<span style="position:absolute; border: black 1px solid; left:416px; top:3937px; width:2px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:418px; top:3938px; width:0px; height:2px;"></span>
+<span style="position:absolute; border: black 1px solid; left:418px; top:3938px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:418px; top:3937px; width:2px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:418px; top:3938px; width:2px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:420px; top:3937px; width:67px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:420px; top:3938px; width:67px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:488px; top:3939px; width:0px; height:1px;"></span>
+<span style="position:absolute; border: black 1px solid; left:488px; top:3937px; width:2px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:488px; top:3938px; width:2px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:490px; top:3937px; width:68px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:490px; top:3938px; width:68px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:558px; top:3937px; width:0px; height:3px;"></span>
+<span style="position:absolute; border: black 1px solid; left:322px; top:3940px; width:0px; height:21px;"></span>
+<span style="position:absolute; border: black 1px solid; left:363px; top:3940px; width:0px; height:21px;"></span>
+<span style="position:absolute; border: black 1px solid; left:418px; top:3940px; width:0px; height:21px;"></span>
+<span style="position:absolute; border: black 1px solid; left:416px; top:3940px; width:0px; height:21px;"></span>
+<span style="position:absolute; border: black 1px solid; left:488px; top:3940px; width:0px; height:21px;"></span>
+<span style="position:absolute; border: black 1px solid; left:558px; top:3940px; width:0px; height:21px;"></span>
+<span style="position:absolute; border: black 1px solid; left:378px; top:3968px; width:23px; height:8px;"></span>
+<span style="position:absolute; border: black 1px solid; left:322px; top:3961px; width:0px; height:1px;"></span>
+<span style="position:absolute; border: black 1px solid; left:363px; top:3961px; width:0px; height:1px;"></span>
+<span style="position:absolute; border: black 1px solid; left:363px; top:3961px; width:52px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:418px; top:3961px; width:0px; height:1px;"></span>
+<span style="position:absolute; border: black 1px solid; left:416px; top:3961px; width:0px; height:1px;"></span>
+<span style="position:absolute; border: black 1px solid; left:418px; top:3961px; width:69px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:488px; top:3961px; width:0px; height:1px;"></span>
+<span style="position:absolute; border: black 1px solid; left:488px; top:3961px; width:70px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:558px; top:3961px; width:0px; height:1px;"></span>
+<span style="position:absolute; border: black 1px solid; left:322px; top:3963px; width:0px; height:21px;"></span>
+<span style="position:absolute; border: black 1px solid; left:322px; top:3984px; width:41px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:363px; top:3963px; width:0px; height:21px;"></span>
+<span style="position:absolute; border: black 1px solid; left:363px; top:3984px; width:52px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:418px; top:3963px; width:0px; height:21px;"></span>
+<span style="position:absolute; border: black 1px solid; left:416px; top:3963px; width:0px; height:21px;"></span>
+<span style="position:absolute; border: black 1px solid; left:416px; top:3984px; width:71px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:488px; top:3963px; width:0px; height:21px;"></span>
+<span style="position:absolute; border: black 1px solid; left:488px; top:3984px; width:70px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:558px; top:3963px; width:0px; height:21px;"></span>
+<span style="position:absolute; border: black 1px solid; left:558px; top:3984px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:352px; top:4018px; width:35px; height:9px;"></span>
+<span style="position:absolute; border: black 1px solid; left:358px; top:4027px; width:24px; height:9px;"></span>
+<span style="position:absolute; border: black 1px solid; left:467px; top:4012px; width:42px; height:9px;"></span>
+<span style="position:absolute; border: black 1px solid; left:417px; top:4011px; width:0px; height:1px;"></span>
+<span style="position:absolute; border: black 1px solid; left:417px; top:4011px; width:141px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:558px; top:4011px; width:0px; height:1px;"></span>
+<span style="position:absolute; border: black 1px solid; left:558px; top:4011px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:417px; top:4012px; width:0px; height:10px;"></span>
+<span style="position:absolute; border: black 1px solid; left:558px; top:4012px; width:0px; height:10px;"></span>
+<span style="position:absolute; border: black 1px solid; left:432px; top:4025px; width:42px; height:9px;"></span>
+<span style="position:absolute; border: black 1px solid; left:443px; top:4034px; width:18px; height:9px;"></span>
+<span style="position:absolute; border: black 1px solid; left:510px; top:4029px; width:25px; height:9px;"></span>
+<span style="position:absolute; border: black 1px solid; left:417px; top:4023px; width:0px; height:1px;"></span>
+<span style="position:absolute; border: black 1px solid; left:417px; top:4023px; width:70px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:488px; top:4023px; width:0px; height:1px;"></span>
+<span style="position:absolute; border: black 1px solid; left:488px; top:4023px; width:70px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:558px; top:4023px; width:0px; height:1px;"></span>
+<span style="position:absolute; border: black 1px solid; left:417px; top:4025px; width:0px; height:19px;"></span>
+<span style="position:absolute; border: black 1px solid; left:488px; top:4025px; width:0px; height:19px;"></span>
+<span style="position:absolute; border: black 1px solid; left:558px; top:4025px; width:0px; height:19px;"></span>
+<span style="position:absolute; border: black 1px solid; left:327px; top:4061px; width:30px; height:8px;"></span>
+<span style="position:absolute; border: black 1px solid; left:334px; top:4069px; width:16px; height:8px;"></span>
+<span style="position:absolute; border: black 1px solid; left:371px; top:4049px; width:38px; height:8px;"></span>
+<span style="position:absolute; border: black 1px solid; left:381px; top:4058px; width:17px; height:8px;"></span>
+<span style="position:absolute; border: black 1px solid; left:322px; top:4045px; width:0px; height:3px;"></span>
+<span style="position:absolute; border: black 1px solid; left:322px; top:4045px; width:41px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:363px; top:4045px; width:0px; height:3px;"></span>
+<span style="position:absolute; border: black 1px solid; left:363px; top:4045px; width:52px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:416px; top:4045px; width:0px; height:3px;"></span>
+<span style="position:absolute; border: black 1px solid; left:416px; top:4045px; width:2px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:418px; top:4046px; width:0px; height:2px;"></span>
+<span style="position:absolute; border: black 1px solid; left:418px; top:4046px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:418px; top:4045px; width:2px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:418px; top:4046px; width:2px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:420px; top:4045px; width:67px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:420px; top:4046px; width:67px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:488px; top:4047px; width:0px; height:1px;"></span>
+<span style="position:absolute; border: black 1px solid; left:488px; top:4045px; width:2px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:488px; top:4046px; width:2px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:490px; top:4045px; width:68px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:490px; top:4046px; width:68px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:558px; top:4045px; width:0px; height:3px;"></span>
+<span style="position:absolute; border: black 1px solid; left:322px; top:4048px; width:0px; height:21px;"></span>
+<span style="position:absolute; border: black 1px solid; left:363px; top:4048px; width:0px; height:21px;"></span>
+<span style="position:absolute; border: black 1px solid; left:418px; top:4048px; width:0px; height:21px;"></span>
+<span style="position:absolute; border: black 1px solid; left:416px; top:4048px; width:0px; height:21px;"></span>
+<span style="position:absolute; border: black 1px solid; left:488px; top:4048px; width:0px; height:21px;"></span>
+<span style="position:absolute; border: black 1px solid; left:558px; top:4048px; width:0px; height:21px;"></span>
+<span style="position:absolute; border: black 1px solid; left:378px; top:4076px; width:23px; height:8px;"></span>
+<span style="position:absolute; border: black 1px solid; left:322px; top:4069px; width:0px; height:1px;"></span>
+<span style="position:absolute; border: black 1px solid; left:363px; top:4069px; width:0px; height:1px;"></span>
+<span style="position:absolute; border: black 1px solid; left:363px; top:4069px; width:52px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:418px; top:4069px; width:0px; height:1px;"></span>
+<span style="position:absolute; border: black 1px solid; left:416px; top:4069px; width:0px; height:1px;"></span>
+<span style="position:absolute; border: black 1px solid; left:418px; top:4069px; width:69px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:488px; top:4069px; width:0px; height:1px;"></span>
+<span style="position:absolute; border: black 1px solid; left:488px; top:4069px; width:70px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:558px; top:4069px; width:0px; height:1px;"></span>
+<span style="position:absolute; border: black 1px solid; left:322px; top:4071px; width:0px; height:21px;"></span>
+<span style="position:absolute; border: black 1px solid; left:322px; top:4092px; width:41px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:363px; top:4071px; width:0px; height:21px;"></span>
+<span style="position:absolute; border: black 1px solid; left:363px; top:4092px; width:52px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:418px; top:4071px; width:0px; height:21px;"></span>
+<span style="position:absolute; border: black 1px solid; left:416px; top:4071px; width:0px; height:21px;"></span>
+<span style="position:absolute; border: black 1px solid; left:416px; top:4092px; width:71px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:488px; top:4071px; width:0px; height:21px;"></span>
+<span style="position:absolute; border: black 1px solid; left:488px; top:4092px; width:70px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:558px; top:4071px; width:0px; height:21px;"></span>
+<span style="position:absolute; border: black 1px solid; left:558px; top:4092px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:45px; top:3966px; width:252px; height:129px;"></span>
+<div style="position:absolute; border: figure 1px solid; writing-mode:False; left:52px; top:3969px; width:120px; height:90px;"><img src="Im12.8.560x420.img" border="1" style="position:absolute; left:52px; top:3969px;" width="120" height="90" />
+</div><div style="position:absolute; border: figure 1px solid; writing-mode:False; left:178px; top:3969px; width:111px; height:83px;"><img src="Im13.8.560x420.img" border="1" style="position:absolute; left:178px; top:3969px;" width="111" height="83" />
+</div><span style="position:absolute; border: gray 1px solid; left:0px; top:4260px; width:612px; height:792px;"></span>
+<div style="position:absolute; top:4260px;"><a name="6">Page 6</a></div>
+<div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:45px; top:4311px; width:254px; height:78px;"><span style="font-family: EEEDDG+TimesNewRoman; font-size:13px">And, when the number of '1' is more than N during this time, 
+<br>the  final  detection  is  confirmed.  Regarding  the  appropriate 
+<br>detection  confirmation  time  and  N  of  threshold  level,  the 
+<br>classification  accuracy  for  the  test  set  was  improved  to  be 
+<br>about 97%. In particular, this detection confirmation method is 
+<br>an effective approach for the purpose of reducing false alarm 
+<br>rate. 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:104px; top:4402px; width:131px; height:13px;"><span style="font-family: EEEDDG+TimesNewRoman; font-size:13px">V.</span><span style="font-family: EEEDEM+Arial; font-size:13px">  </span><span style="font-family: EEEDDG+TimesNewRoman; font-size:13px">C</span><span style="font-family: EEEDDG+TimesNewRoman; font-size:10px">ONCLUSION </span><span style="font-family: EEEDDG+TimesNewRoman; font-size:13px">&amp;</span><span style="font-family: EEEDDG+TimesNewRoman; font-size:10px"> </span><span style="font-family: EEEDDG+TimesNewRoman; font-size:13px">D</span><span style="font-family: EEEDDG+TimesNewRoman; font-size:10px">ISCUSSION</span><span style="font-family: EEEDDG+TimesNewRoman; font-size:13px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:45px; top:4417px; width:254px; height:89px;"><span style="font-family: EEEDDG+TimesNewRoman; font-size:13px">The  conventional  detection  processing  methods  of  the 
+<br>Doppler radar sensor use the static or dynamic threshold level 
+<br>to detect a moving target. Generally, the average power p(t) or 
+<br>the  unwrapped  phase  q(t)  is  compared  to  the  threshold  level. 
+<br>However,  these  conventional  methods  can  cause  high  false 
+<br>alarm  rate  because  of  the  unwanted  background  noise.  So, 
+<br>there  are  limitations  that  hinder  further  installations  and 
+<br>applications.  
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:45px; top:4511px; width:254px; height:144px;"><span style="font-family: EEEDDG+TimesNewRoman; font-size:13px">In  order  to  overcome  such  limitations,  in  this  paper,  we 
+<br>proposed the Neural Network detection processing techniques 
+<br></span><span style="font-family: EEEDDG+TimesNewRoman; font-size:13px">using 
+<br>the  pattern  recognition  algorithm.  This  proposed 
+<br>detection  processing  techniques  require  neither  complex  &amp; 
+<br>heuristic  feature  selection  approaches  nor  feature  dimension 
+<br>reduction  methods.  Without any  additional pre-processing  for 
+<br>feature  extraction,  the  frequency  domain  feature  vectors 
+<br>processed  by  STFT  or  the  angle  domain  feature  vectors 
+<br>processed by PUT are directly used as the input of the neural 
+<br>network.  In  this  study,  heuristic  methods  for  looking  for 
+<br>meaningful  features  are  not  required.  Also,  this  proposed 
+<br>methods  have  the  advantage  of  fast  operation  with  small 
+<br>amount of computation. 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:45px; top:4659px; width:254px; height:133px;"><span style="font-family: EEEDDG+TimesNewRoman; font-size:13px">To  analyze  the  classification  accuracy,  we  construct 
+<br>training  set,  validation  set  and  test  set.  After  training  and 
+<br>validation,  the  classification  accuracy  of  Neural  Network 
+<br>human  detection  technique  using  STFT  was  measured  as 
+<br>95.3%.  In  the  case  of  PUT,  the  classification  accuracy  was 
+<br>analyzed  as  90.65%.  Neural  Network  using  STFT  has  better 
+<br>performance. In Figure 12-(ii) of the conventional methods, if 
+<br>the true positive rate is 90%, the false positive rate is measured 
+<br>as  50%  while  having  70%  of  classification  accuracy. 
+<br>Therefore,  under  this  experiment,  Neural  Network  human 
+<br>detection 
+<br>the 
+<br>conventional detection methods.  
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:90px; top:4768px; width:162px; height:13px;"><span style="font-family: EEEDDG+TimesNewRoman; font-size:13px">techniques  have  better  performance 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:259px; top:4768px; width:19px; height:13px;"><span style="font-family: EEEDDG+TimesNewRoman; font-size:13px">than 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:44px; top:4796px; width:254px; height:68px;"><span style="font-family: EEEDDG+TimesNewRoman; font-size:13px">However,  lots  of  Doppler  signals  associated  with  more 
+<br>places  and  environments  are  required  for  the  algorithm 
+<br>generalization.  In  this  paper,  we  dealt  with  normal  human 
+<br>walking  motions.  The  radar  detection  performance  can  be 
+<br>changed according to the definition of various human motions 
+<br> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:314px; top:4311px; width:254px; height:122px;"><span style="font-family: EEEDDG+TimesNewRoman; font-size:13px">(ex. walking, running, clawing and so on). As mentioned, this 
+<br>paper  showed  that  the  human  detection  techniques  using 
+<br>Neural Network have the enhanced classification performance 
+<br>compared  to  the  conventional  methods.  Even  if  more  noises 
+<br>and  more  types  of  human  motion  are  added,  the  tendency  of 
+<br>performance  results  would  likely  be  maintained.  Also,  an 
+<br>improvement  in  the  classification  accuracy  performance  is 
+<br>expected if RNN (Recurrent Neural Network) are applied as a 
+<br>classifier to reflect the dynamics of the signal. In addition, it is 
+<br>expected  that  DNN  can  be  effectively  applied  for  problems 
+<br>related to classification of multiple classes. 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:414px; top:4446px; width:54px; height:13px;"><span style="font-family: EEEDDG+TimesNewRoman; font-size:13px">R</span><span style="font-family: EEEDDG+TimesNewRoman; font-size:10px">REFERENCES</span><span style="font-family: EEEDDG+TimesNewRoman; font-size:13px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:315px; top:4461px; width:253px; height:28px;"><span style="font-family: EEEDDG+TimesNewRoman; font-size:10px">[1]</span><span style="font-family: EEEDEM+Arial; font-size:10px">  </span><span style="font-family: EEEDDG+TimesNewRoman; font-size:10px">Y.  Kim,  S.  Ha  and  J.  Kwon,  “Human  detection  using  Doppler  radar 
+<br>based  on  physical  characteristics  of  targets,”  IEEE  Geoscience  and 
+<br>Remote Sensing Letters, vol.12, pp. 289 – 293, Feb. 2015. 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:315px; top:4491px; width:253px; height:28px;"><span style="font-family: EEEDDG+TimesNewRoman; font-size:10px">[2]</span><span style="font-family: EEEDEM+Arial; font-size:10px">  </span><span style="font-family: EEEDDG+TimesNewRoman; font-size:10px">Y.  Kim  and  H.  Ling,  &quot;Human  activity  classification  based  on  micro-
+<br>Doppler  signatures  using  an  artificial  neural  network.&quot;  2008  IEEE 
+<br>Antennas and Propagation Society International Symposium, 2008. 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:315px; top:4520px; width:253px; height:28px;"><span style="font-family: EEEDDG+TimesNewRoman; font-size:10px">[3]</span><span style="font-family: EEEDEM+Arial; font-size:10px">  </span><span style="font-family: EEEDDG+TimesNewRoman; font-size:10px">Darwish,  Samy  H.,  Mohamed  Abd  El-latif,  and  M.  Morsy.  &quot;Micro-
+<br></span><span style="font-family: EEEDDG+TimesNewRoman; font-size:10px">Doppler  detection  and  target  identification  using  artificial  neural 
+<br>network.&quot; 2012 IEEE Aerospace Conference, 2012. 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:315px; top:4550px; width:253px; height:28px;"><span style="font-family: EEEDDG+TimesNewRoman; font-size:10px">[4]</span><span style="font-family: EEEDEM+Arial; font-size:10px">  </span><span style="font-family: EEEDDG+TimesNewRoman; font-size:10px">Van  Dorp,  Ph,  and  F.  C.  A.  Groen,  &quot;Feature-based  human  motion 
+<br>parameter estimation with radar.&quot; IET Radar, Sonar &amp; Navigation, Vol. 
+<br>2 no. 2, pp. 135-145, 2008 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:315px; top:4579px; width:253px; height:28px;"><span style="font-family: EEEDDG+TimesNewRoman; font-size:10px">[5]</span><span style="font-family: EEEDEM+Arial; font-size:10px">  </span><span style="font-family: EEEDDG+TimesNewRoman; font-size:10px">Chen,  V.  C,  &quot;Doppler  signatures  of  radar  backscattering  from  objects 
+<br>with micro-motions.&quot; IET Signal Processing, Vol. 2, No. 3 pp. 291-300, 
+<br>2008. 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:315px; top:4609px; width:253px; height:37px;"><span style="font-family: EEEDDG+TimesNewRoman; font-size:10px">[6]</span><span style="font-family: EEEDEM+Arial; font-size:10px">  </span><span style="font-family: EEEDDG+TimesNewRoman; font-size:10px">Tahmoush,  Dave,  and  Jerry  Silvious,  &quot;Radar  micro-doppler  for  long 
+<br>range  front-view  gait  recognition.&quot;  Biometrics:  Theory,  Applications, 
+<br>and  Systems,  2009.  BTAS'09.  IEEE  3rd  International  Conference  on. 
+<br>IEEE, 2009. 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:315px; top:4647px; width:253px; height:10px;"><span style="font-family: EEEDDG+TimesNewRoman; font-size:10px">[7]</span><span style="font-family: EEEDEM+Arial; font-size:10px">  </span><span style="font-family: EEEDDG+TimesNewRoman; font-size:10px">Bishop,  Chris  M,  &quot;Training  with  noise  is  equivalent  to  Tikhonov 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:332px; top:4656px; width:223px; height:10px;"><span style="font-family: EEEDDG+TimesNewRoman; font-size:10px">regularization.&quot; Neural computation, Vol. 7, No. 1, pp. 108-116,1995 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:315px; top:4668px; width:253px; height:37px;"><span style="font-family: EEEDDG+TimesNewRoman; font-size:10px">[8]</span><span style="font-family: EEEDEM+Arial; font-size:10px">  </span><span style="font-family: EEEDDG+TimesNewRoman; font-size:10px">T. Thayaparan, S. Abrol,  E. Riseborough,  L. Stankovic,  D. Lamothe 
+<br>and  G.  Duff,  &quot;Analysis  of  radar  micro-Doppler  signatures  from 
+<br>experimental  helicopter  and  human  data.&quot;  IET  Radar,  Sonar  &amp; 
+<br>Navigation, Vol. 1, No. 4,  pp. 289-299, 2007 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:315px; top:4706px; width:253px; height:28px;"><span style="font-family: EEEDDG+TimesNewRoman; font-size:10px">[9]</span><span style="font-family: EEEDEM+Arial; font-size:10px">  </span><span style="font-family: EEEDDG+TimesNewRoman; font-size:10px">V.C. Chen, F. Li, S.-S. Ho, and H. Wechsler, &quot;Micro-Doppler effect in 
+<br>radar:  phenomenon,  model,  and  simulation  study.&quot;  IEEE  Transactions 
+<br>on Aerospace and electronic systems, Vol. 42, No. 1, pp. 2-21, 2006 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:315px; top:4736px; width:253px; height:37px;"><span style="font-family: EEEDDG+TimesNewRoman; font-size:10px">[10]</span><span style="font-family: EEEDEM+Arial; font-size:10px">  </span><span style="font-family: EEEDDG+TimesNewRoman; font-size:10px">Jingli  Li,  Son  Lam  Phung,  Fok  Hing  Chi  Tivive,  and  Abdesselam 
+<br>Bouzerdoum,  &quot;Automatic  classification  of  human  motions  using 
+<br>Doppler  radar.&quot;  The  2012  International  Joint  Conference  on  Neural 
+<br>Networks, 2012. 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:315px; top:4774px; width:253px; height:37px;"><span style="font-family: EEEDDG+TimesNewRoman; font-size:10px">[11]</span><span style="font-family: EEEDEM+Arial; font-size:10px">  </span><span style="font-family: EEEDDG+TimesNewRoman; font-size:10px">Ze,  Heiga,  Andrew  Senior,  and  Mike  Schuster,  &quot;Statistical  parametric 
+<br>speech  synthesis  using  deep  neural  networks.&quot;  Acoustics,  Speech  and 
+<br></span><span style="font-family: EEEDDG+TimesNewRoman; font-size:10px">Signal  Processing  (ICASSP),  2013  IEEE  International  Conference  on. 
+<br>IEEE, 2013.  
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:315px; top:4813px; width:253px; height:37px;"><span style="font-family: EEEDDG+TimesNewRoman; font-size:10px">[12]</span><span style="font-family: EEEDEM+Arial; font-size:10px">  </span><span style="font-family: EEEDDG+TimesNewRoman; font-size:10px">Youngwook  Kim  and  Taesup  Moon,  &quot;Human  detection  and  activity 
+<br>classification  based  on  micro-doppler 
+<br>signatures  using  deep 
+<br>convolutional neural networks.&quot; IEEE Geoscience and Remote Sensing 
+<br>Letters, Vol. 13, No. 1, pp. 8-12, 2016 
+<br></span></div><div style="position:absolute; top:0px;">Page: <a href="#1">1</a>, <a href="#2">2</a>, <a href="#3">3</a>, <a href="#4">4</a>, <a href="#5">5</a>, <a href="#6">6</a></div>
+</body></html>

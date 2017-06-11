@@ -25,9 +25,14 @@ import sys
 from nltk.corpus import names
 from gp import get_gender
 import random
+from genderize import Genderize, GenderizeException
+genderize = Genderize(
+    user_agent='GenderizeDocs/0.0',
+    api_key='975a684e9aa098d9ef7224b8c28eeb96')
+
 reload(sys)
 sys.setdefaultencoding('utf-8')
-
+from genderize import Genderize
 
 soup = BeautifulSoup(open("/Users/dipit/Documents/RA/RA/Demo/output3.html"))
 from utility import *
@@ -43,6 +48,11 @@ dic={}
 info={}
 z=[]
 bTags2=[]
+joinbook = []
+test2 = []
+gender=[]
+write_list=[]
+first_name=[]
 def extract_articles():
     #CMR9# Font style
     # for i in soup.find_all('span', style=lambda x: x and 'Regular' in x): #font style: regular#
@@ -75,8 +85,7 @@ def extract_articles():
 
 # Works for column type citations#
 
-joinbook = []
-test2 = []
+
 
 
 def extract_books1():
@@ -137,97 +146,6 @@ def extract_books():  #Works for column type citations#
         except IndexError:
             pass
     return test2
-
-
-write_list=[]
-def crossRef(lst):
-    i=0
-    for i in lst:
-        url = "http://search.crossref.org/dois?q=" + i + "&rows=2"
-        print url
-        try:
-            response = urllib.urlopen(url)
-        except SocketError as e:
-            if e.errno != errno.ECONNRESET:
-                raise  # Not error we are looking for
-            pass
-        try:
-            data = json.loads(response.read())
-        except ValueError:
-            data = " "
-
-        info['URL']= data[0]['doi']
-        info['Publisher'] = "Not Available"
-        try:
-            info['Year'] = (data[0]['year'])
-        except IndexError:
-            info['Year'] = "Not Available"
-        try:
-
-            info['Title'] = (data[0]['title'])
-        except IndexError:
-            info['Title'] = "Not Available"
-
-        try:
-            dic['authors'] = (data[0]['fullCitation']).split("'")[0]
-        except IndexError:
-            dic['authors'] = "Not Available"  # print dic
-
-        try:
-            x = (data[1]['fullCitation'])
-        except IndexError:
-            x = "Not Available"
-        try:
-            journal = (between(x, '<i>', '</i>'))
-        except IndexError:
-            journal = "Not Available"
-
-        try:
-            journal_page = after(x, "</i>").split(",")
-        except IndexError:
-            journal_page = "NULL"
-        check = (get_authors(dic.values()))
-        info['Author1Firstname'] = check[0].encode('ascii', 'ignore')
-        info['Author1Lastname'] = check[2].encode('ascii', 'ignore')
-        info['Author1Gender'] = check[1]
-        info['Author1Probability'] = check[3]
-        info['Author2Firstname'] = check[4].encode('ascii', 'ignore')
-        info['Author2Lastname'] = check[6].encode('ascii', 'ignore')
-        info['Author2Gender'] = check[5]
-        info['Author2Probability'] = check[7]
-        info['Author3Firstname'] = check[8].encode('ascii', 'ignore')
-        info['Author3Lastname'] = check[10].encode('ascii', 'ignore')
-        info['Author3Gender'] = check[9]
-        info['Author3Probability'] = check[11]
-        info['Author4Firstname'] = check[12].encode('ascii', 'ignore')
-        info['Author4Lastname'] = check[14].encode('ascii', 'ignore')
-        info['Author4Gender'] = check[13]
-        info['Author4Probability'] = check[15]
-        info['Author5Firstname'] = check[16].encode('ascii', 'ignore')
-        info['Author5Lastname'] = check[18].encode('ascii', 'ignore')
-        info['Author5Gender'] = check[17]
-        info['Author5Probability'] = check[19]
-        info['Journal'] = journal
-        try:
-            info['Volume'] = journal_page[-3]
-        except IndexError:
-            info['Volume'] = "Not Available"
-        try:
-            info['Number'] = journal_page[-2]
-        except IndexError:
-            info['Number'] = "Not Available"
-
-        try:
-            info['Pages'] = journal_page[-1]
-        except IndexError:
-            info['Pages'] = "Not Available"
-        pprint(info)
-        # time.sleep(5)
-
-        with open('/Users/dipit/Documents/RA/RA/Demo/demo.json', 'a') as fp:
-            json_text = json.dumps(info, indent=4)
-            fp.write("{}\n".format(json_text))
-
 
 def googleBooks(lst):
     for i in lst[:]:
@@ -325,17 +243,173 @@ def googleBooks(lst):
                 fp.write("{}\n".format(json_text))
 
 
+def crossRef(lst):
+    i=0
+    for i in lst:
+        url = "https://api.crossref.org/works?query=" + i + "&rows=2"
+        print url
+        try:
+            response = urllib.urlopen(url)
+        except SocketError as e:
+            if e.errno != errno.ECONNRESET:
+                raise  # Not error we are looking for
+            pass
+        try:
+            data = json.loads(response.read())
+        except ValueError:
+            data = " "
+        # pprint (data['message']['items'][0])
+        try:
+            info['DOI'] = 'http://dx.doi.org/'+ (data['message']['items'][0]['DOI'])
+        except KeyError:
+            info['DOI'] = 'Unavailable'
+
+        try:
+            info['ISSN']= (data['message']['items'][0]['ISSN'])
+        except KeyError:
+            info['ISSN'] = 'Unavailable'
+        try:
+
+            info['Author1Lastname']= (data['message']['items'][0]['author'][0]['family'])
+        except KeyError:
+            info['Author1Lastname'] = 'NULL'
+        try:
+            info['Author1Firstname']=(data['message']['items'][0]['author'][0]['given']).split(' ')[0]
+
+        except KeyError:
+            info['Author1Firstname']='NULL'
+
+        try:
+            info['Author2Firstname'] = (data['message']['items'][0]['author'][1]['given'])
+
+        except KeyError:
+            info['Author2Firstname'] = 'NULL'
+        except IndexError:
+            info['Author2Firstname'] = 'NULL'
+
+        try:
+            info['Author2Lastname']= (data['message']['items'][0]['author'][1]['family'])
+        except KeyError:
+            info['Author2Lastname'] = 'NULL'
+        except IndexError:
+            info['Author2Lasttname'] = 'NULL'
 
 
-# print extract_articles()
-# print extract_books()
+        try:
+            info['Author3Firstname'] = (data['message']['items'][0]['author'][2]['given'])
 
-# print extract_books1()
+        except KeyError:
+            info['Author3Firstname'] = 'NULL'
+        except IndexError:
+            info['Author3Firstname'] = 'NULL'
+
+        try:
+            info['Author3Lastname']= (data['message']['items'][0]['author'][2]['family'])
+        except KeyError:
+            info['Author3Lastname'] = 'NULL'
+        except IndexError:
+            info['Author3Lasttname'] = 'NULL'
+
+        try:
+            info['Author4Firstname'] = (data['message']['items'][0]['author'][3]['given'])
+
+        except KeyError:
+            info['Author4Firstname'] = 'NULL'
+        except IndexError:
+            info['Author4Firstname'] = 'NULL'
+
+        try:
+            info['Author4Lastname'] = (data['message']['items'][0]['author'][3]['family'])
+        except KeyError:
+            info['Author4Lastname'] = 'NULL'
+        except IndexError:
+            info['Author4Lasttname'] = 'NULL'
+
+        try:
+            info['Author5Firstname'] = (data['message']['items'][0]['author'][4]['given'])
+
+        except KeyError:
+            info['Author5Firstname'] = 'NULL'
+        except IndexError:
+            info['Author5Firstname'] = 'NULL'
+
+        try:
+            info['Author5Lastname'] = (data['message']['items'][0]['author'][4]['family'])
+        except KeyError:
+            info['Author5Lastname'] = 'NULL'
+        except IndexError:
+            info['Author5Lasttname'] = 'NULL'
+
+
+        try:
+            info['Cited by'] = (data['message']['items'][0]['is-referenced-by-count'])
+        except KeyError:
+            info['Cited by'] ='Unavailable'
+
+        try:
+            info['Issue']=(data['message']['items'][0]['issue'])
+        except KeyError:
+            info['Issue']='Unavailable'
+
+        try:
+            info['Page'] = (data['message']['items'][0]['page'])
+        except KeyError:
+            info['Page'] = 'Unavailable'
+
+        try:
+            info['Publisher'] = (data['message']['items'][0]['publisher'])
+        except KeyError:
+            info['Publisher'] = 'Unavailable'
+
+        try:
+            info['Title'] = (data['message']['items'][0]['title'])
+        except KeyError:
+            info['Title'] = 'Unavailable'
+
+        try:
+            info['Type'] = (data['message']['items'][0]['type'])
+        except KeyError:
+            info['Type'] = 'Unavailable'
+
+        try:
+            info['Volume'] = (data['message']['items'][0]['volume'])
+        except KeyError:
+            info['Volume'] = 'Unavailable'
+
+        # print list(info)
+        # first_name = list(info.values())
+        first_name.extend([info.get('Author1Firstname'),info.get('Author2Firstname'),info.get('Author3Firstname'),info.get('Author4Firstname'),info.get('Author5Firstname')])
+        for i in  range(1,len(get_author_details(first_name)),2):
+            gender.append(get_author_details(first_name)[i])
+
+        info['Author1Gender']= gender[0]
+        info['Author2Gender']=gender[2]
+        info['Author3Gender'] = gender[4]
+        info['Author4Gender'] = gender[6]
+        info['Author5Gender'] = gender[8]
+        info['Author1Probability']= gender[1]
+        info['Author2Probability']= gender[3]
+        info['Author3Probability']= gender[5]
+        info['Author4Probability']= gender[7]
+        info['Author5Probability']= gender[9]
+
+
+
+
+        pprint (info)
+        with open('/Users/dipit/Documents/RA/RA/Demo/demo.json', 'a') as fp:
+            json_text = json.dumps(info, indent=4)
+            fp.write("{}\n".format(json_text))
+
+
+
+
+
+
+
+
 books= extract_books()
-# print books
+googleBooks(books)
 articles= extract_articles()
 crossRef(articles)
-googleBooks(books)
-
-
 os.system("mongoimport --db sql2md --collection records2 --drop --file /Users/dipit/Documents/RA/RA/Demo/demo.json")

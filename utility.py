@@ -26,10 +26,11 @@ from nltk.corpus import names
 from gp import get_gender
 import random
 from genderize import Genderize, GenderizeException
+import os
 # genderize = Genderize(
 #     user_agent='GenderizeDocs/0.0',
 #     api_key='975a684e9aa098d9ef7224b8c28eeb96')
-
+file=[]
 reload(sys)
 sys.setdefaultencoding('utf-8')
 from genderize import Genderize
@@ -127,7 +128,7 @@ def get_first_name(fullname):
     try:
         firstname = fullname.split()[0]
     except Exception as e:
-        print str(e)
+        print str(e)+'exception'
     return firstname
 
 
@@ -225,3 +226,12 @@ def after(value, a):
     adjusted_pos_a = pos_a + len(a)
     if adjusted_pos_a >= len(value): return ""
     return value[adjusted_pos_a:]
+
+
+def traverse(dir):
+    for dirpath, subdirs, files in os.walk(dir):
+        if (files == ".DS_Store"):
+            os.remove("/Users/dipit/Documents/RA/RA/Docs/PDF/" + files)
+        file.extend(os.path.join(dirpath, x) for x in files)
+    return file
+print os.path.dirname(os.getcwd())
